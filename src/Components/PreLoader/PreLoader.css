@@ -1,0 +1,133 @@
+.body-preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.animation-container {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+.words {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  animation: words-disappear 3s forwards;
+  animation-delay: 1s;
+}
+
+.word {
+  font-family: Jost-Medium;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 57.8px;
+  color: white;
+  opacity: 0;
+  animation: word-reveal 1s forwards;
+}
+
+.word:nth-child(1) { animation-delay: 0s; }
+.word:nth-child(2) { animation-delay: 1s; }
+.word:nth-child(3) { animation-delay: 2s; }
+
+.box {
+  width: 410px;
+  height: 65px;
+  background-color: #ff9800;
+  opacity: 1;
+  position: absolute;
+  transform-origin: center; /* Set the origin at the center for scaling */
+  transform: scaleX(0); /* Start with no width (compressed) */
+  animation: box-grow-shrink-center 2s forwards;
+  animation-delay: 4s;
+}
+
+@keyframes box-grow-shrink-center {
+  0% {
+    transform: scaleX(0); /* Shrink to center */
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1); /* Fully expand from center */
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0); /* Shrink back to center */
+    opacity: 0; /* Fade out */
+  }
+}
+
+
+
+.team-text {
+  font-family: Jost-SemiBold;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 57.8px;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  position: absolute;
+  animation: final-text 1s forwards;
+  animation-delay: 6s;
+  width: 285px;
+
+
+}
+
+@keyframes word-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes words-disappear {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* @keyframes box-slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+} */
+
+@keyframes final-text {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

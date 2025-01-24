@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+/* 400 */
+@font-face {
+  font-family: Jost-Regular;
+  src: url("./assets/font-family/Jost-Regular.ttf");
+}
+/* 500 */
+@font-face {
+  font-family: Jost-Medium;
+  src: url("./assets/font-family/Jost-Medium.ttf");
+}
+ /* 600 */
+@font-face {
+  font-family: Jost-SemiBold;
+  src: url("./assets/font-family/Jost-SemiBold.ttf");
+}
+ /* 700 */
+@font-face {
+  font-family: Jost-Bold;
+  src: url("./assets/font-family/Jost-Bold.ttf");
+}
+ /* 800 */
+ @font-face {
+  font-family: Jost-ExtraBold;
+  src: url("./assets/font-family/Jost-ExtraBold.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-container{
+  /* max-width: 1920px;
+  min-width: 200px; */
+  width: 100%;
+  border: 1px solid black;
+  height: 400px;
+  margin: 0 auto;
 }

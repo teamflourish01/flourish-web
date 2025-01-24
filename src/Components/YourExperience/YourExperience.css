@@ -1,0 +1,135 @@
+.your-exp {
+  width: 100%;
+  background-color: black;
+}
+.your-exp-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-side-your-exp {
+  padding: 100px 0;
+}
+
+.your-exp-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 30px 0 60px;
+  max-width: 392px;
+  min-width: 100px;
+  width: 100%;
+}
+.testi-desc-txt {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  line-height: 28.9px;
+  text-align: center;
+  color: white;
+  max-width: 646px;
+  min-width: 200px;
+  width: 100%;
+}
+
+
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+  position: relative; 
+}
+
+.images img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 1;
+  transition: transform 0.3s;
+}
+
+.images img:nth-child(odd) {
+  transform: translateY(
+    0
+  ); 
+}
+
+.images img:nth-child(even) {
+  transform: translateY(
+    30px
+  ); 
+}
+
+.images img.active {
+  border: 3px solid #ff9800;
+}
+
+.testimonial-content {
+  margin: 50px 0 30px;
+}
+
+.testimonial-content .testi-title {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  line-height: 31.79px;
+  text-align: center;
+  color: #ff9800;
+  padding: 11px 0 30px;
+}
+.quote {
+  text-align: center;
+}
+
+.arrows button {
+  margin: 10px;
+  font-size: 20px;
+  background: none;
+  color: #ff9800;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.arrows button:hover {
+  transform: scale(1.2);
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  gap: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dot.active-dot {
+  background-color: #ff9800;
+}

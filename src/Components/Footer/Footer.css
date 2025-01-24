@@ -1,0 +1,166 @@
+.footer {
+  width: 100%;
+  background-color: black;
+}
+.footer-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 30px 104px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+.f-desc-txt {
+  max-width: 421px;
+  min-width: 100px;
+  width: 100%;
+  font-family: Jost-Regular;
+  font-size: 20px;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 30px 0;
+}
+.hr-line-footer {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Adjust color and thickness */
+  width: 100%;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+  gap: 20px;
+}
+.social-icon svg {
+  font-size: 35px;
+}
+.social-icon path {
+  color: rgba(255, 255, 255, 0.5);
+}
+.wp-icon svg {
+  font-size: 45px;
+}
+.icons-f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: 1.7px solid #ffffff;
+  color: #ffffff;
+  font-size: 20px;
+  transition: color 0.3s ease, outline-color 0.3s ease;
+}
+
+.icons-f:hover {
+  color: #5aba47;
+  outline-color: #5aba47;
+}
+
+.title-head-f {
+  font-family: Jost-SemiBold;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36.13px;
+  text-align: left;
+  color: #ff9800;
+  padding-bottom: 15px;
+}
+
+.footer-link {
+  text-decoration: none;
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: white;
+  position: relative; /* Required for positioning pseudo-element */
+  display: inline-block;
+  /* padding-left: 10px; */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.margin-b-8-f {
+  margin-bottom: 8px;
+}
+
+.footer-link:hover {
+  color: white;
+  padding-left: 10px;
+}
+
+.active-footer-link {
+  color: #ff9800;
+}
+.active-footer-link:hover {
+  color: #ff9800;
+}
+
+/* Hover effect: move text and show dot */
+.footer-link:hover {
+  transform: translateX(10px); /* Move text 10px to the right */
+  color: white; /* Optional: Change color on hover */
+}
+
+/* Dot before the text */
+.footer-link::before {
+  content: ""; /* Empty content for the dot */
+  position: absolute;
+  left: 0; /* Position the dot at the start of the text */
+  top: 50%; /* Center the dot vertically */
+  transform: translateY(-20%) scale(0); /* Initially hidden */
+  width: 6px; /* Dot size */
+  height: 6px;
+  background-color: white; /* Dot color */
+  border-radius: 50%; /* Make it a circle */
+  transition: transform 0.3s ease; /* Smooth scaling animation */
+}
+.active-footer-link:hover {
+  transform: translateX(10px); /* Move text 10px to the right */
+  color: #ff9800; /* Optional: Change color on hover */
+}
+.active-footer-link::before {
+  content: ""; /* Empty content for the dot */
+  position: absolute;
+  left: 0; /* Position the dot at the start of the text */
+  top: 50%; /* Center the dot vertically */
+  transform: translateY(-20%) scale(0); /* Initially hidden */
+  width: 6px; /* Dot size */
+  height: 6px;
+  background-color: #ff9800; /* Dot color */
+  border-radius: 50%; /* Make it a circle */
+  transition: transform 0.3s ease; /* Smooth scaling animation */
+}
+/* Show the dot on hover */
+.footer-link:hover::before {
+  transform: translateY(-20%) scale(1); /* Scale up the dot to full size */
+}
+
+.flex-con-info-f{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.flex-con-info-f-l{
+    display: flex;
+    gap: 10px;
+    
+}
+.con-info-text{
+    font-family: Jost-Regular;
+font-size: 20px;
+font-weight: 400;
+line-height: 28.9px;
+text-align: left;
+color: white;
+
+}
+.loc-top-p{
+    position: relative;
+    top: 5px;
+
+}

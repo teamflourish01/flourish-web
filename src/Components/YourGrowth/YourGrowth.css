@@ -1,0 +1,50 @@
+.your-growth {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.your-growth-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 30px;
+}
+.flourish-means {
+  font-family: Jost-SemiBold;
+  font-size: 25px;
+  line-height: 36.13px;
+  text-align: left;
+}
+.growth-boxs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.growth-box {
+  padding-top: 30px;
+  max-width: 430px;
+  min-width: 100px;
+  width: 100%;
+}
+.title-txt-growth {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 31.79px;
+  text-align: left;
+  padding: 14px 0;
+}
+.desc-txt-growth {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(6, 6, 6, 0.5);
+}
+.hr-width{
+    border:none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin: 25px 0 0;
+}

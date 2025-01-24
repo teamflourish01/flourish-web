@@ -1,0 +1,88 @@
+.strategy {
+  width: 100%;
+  background-color: black;
+}
+.our-strategy-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-side-v-s-c {
+  padding: 100px 0;
+  max-width: 353px;
+  min-width: 200px;
+  width: 100%;
+}
+.your-our-strategy {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  line-height: 72.25px;
+  /* padding-top: 100px; */
+  color: white;
+}
+.stroke-txt-strategy {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  line-height: 60.25px;
+  color: transparent; /* Make the text itself invisible */
+  -webkit-text-stroke: 1px white; /* Outline color and width */
+}
+.v-s-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 30px 0 60px;
+}
+.hr-animation {
+  position: relative; /* Make it a positioning context for the pseudo-element */
+  width: 1px;
+  height: 564px; /* The height of the original hr line */
+  background-color: rgba(255, 255, 255, 0.2); /* Set the color of the hr line */
+  border: none;
+  margin: 0 116px 0 124px;
+}
+
+.hr-animation::after {
+  content: ""; /* Creating an empty content for the pseudo-element */
+  position: absolute;
+  left: 0; /* Align the white line at the top of the hr element */
+  top: 0; /* Start the line off-screen to the left */
+  width: 1px; /* Width of the white running line */
+  height: 96px; /* Make it the same height as the hr element */
+  background: linear-gradient(
+    90deg,
+    #383838 50%,
+    #ffffff 50%
+  ); /* Gradient effect */
+  animation: lineMove 6s linear infinite; /* Continuous animation */
+  border: none;
+}
+
+@keyframes lineMove {
+  0% {
+    top: -100%; /* Start off-screen to the left */
+  }
+  100% {
+    top: 100%; /* Move to the far right of the hr element */
+  }
+}
+
+.right-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: white;
+  max-width: 727px;
+  min-width: 200px;
+  width: 100%;
+}

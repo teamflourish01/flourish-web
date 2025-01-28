@@ -1,6 +1,8 @@
-.top-banner {
+/* .top-banner {
   width: 100%;
-  background-color: black;
+  background-color: #060606;
+  position: relative;
+  overflow: hidden;
 }
 .top-banner-container {
   max-width: 1380px;
@@ -11,7 +13,39 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 30px;
+} */
+
+.icosahedron-bg {
+  position: absolute;
+  top: -135px;  /* Move slightly outside the viewport */
+  right: -240px; /* Move slightly outside the viewport */
+  width: 600px;  /* Increase size */
+  height: 600px; /* Increase size */
+  z-index: 0; /* Ensure it's behind the text */
+  opacity: 0.5; /* 50% transparency */
+  pointer-events: none; /* Prevent interaction */
 }
+
+.top-banner {
+  position: relative;
+  width: 100%;
+  background-color: #060606;
+  overflow: hidden;
+}
+
+.top-banner-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  z-index: 0; /* Keep content above the icosahedron */
+}
+
 .t-b-desc {
   max-width: 786px;
   min-width: 200px;
@@ -43,21 +77,6 @@
   color: #ffffffb2;
   padding: 30.11px 0 59.85px;
 }
-/* 
-.view-works-cirlce {
-  width: 168px;
-  height: 168px;
-  border-radius: 50%;
-  border: 0.5px solid #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.view-works-cirlce svg{
-  fill: white;
-  font-size: 39px;
-} */
-
 .view-works-container {
   position: relative;
   width: 231px;
@@ -101,3 +120,59 @@
     transform: rotate(-360deg);
   }
 }
+.rotating-hexagon {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -100px;
+  z-index: 1;
+}
+.rotating-hexagon {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #000, #333, #000);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .icosahedron-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 0;
+} */
+
+.icosahedron {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateY(45deg);
+}
+
+.edge {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: 2px solid black;
+  transform-origin: center;
+}
+
+.edge:nth-child(1) { transform: rotateY(0deg); }
+.edge:nth-child(2) { transform: rotateY(60deg); }
+.edge:nth-child(3) { transform: rotateY(120deg); }
+

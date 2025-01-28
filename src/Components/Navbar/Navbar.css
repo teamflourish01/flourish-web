@@ -1,7 +1,8 @@
 .navbar {
   width: 100%;
-  background-color: black;
+  background-color: #060606;
   position: relative;
+  /* height: 100vh; */
 }
 
 .navbar-container {
@@ -13,13 +14,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: #060606;
 }
 .logo-c {
   display: flex;
 }
-.h-icon-c{
-    cursor: pointer;
+.h-icon-c {
+  cursor: pointer;
 }
 /* Menu styles */
 .menu-navbar {
@@ -33,6 +34,7 @@
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: 999;
+  height: 100vh;
 }
 
 .menu-navbar.open {
@@ -94,92 +96,89 @@
   color: #ff9800;
 }
 
-
-
 /* Hover effect: move text and show dot */
 .nav-link:hover {
-    transform: translateX(30px); /* Move text 10px to the right */
-    color: white; /* Optional: Change color on hover */
-  }
-  
-  /* Dot before the text */
-  .nav-link::before {
-    content: ""; /* Empty content for the dot */
-    position: absolute;
-    left: 0; /* Position the dot at the start of the text */
-    top: 50%; /* Center the dot vertically */
-    transform: translateY(-50%) scale(0); /* Initially hidden */
-    width: 12px; /* Dot size */
-    height: 12px;
-    background-color: white; /* Dot color */
-    border-radius: 50%; /* Make it a circle */
-    transition: transform 0.3s ease; /* Smooth scaling animation */
-  }
-  .active-nav-link:hover {
-    transform: translateX(30px); /* Move text 10px to the right */
-    color: #ff9800; /* Optional: Change color on hover */
-  }
-  .active-nav-link::before {
-    content: ""; /* Empty content for the dot */
-    position: absolute;
-    left: 0; /* Position the dot at the start of the text */
-    top: 50%; /* Center the dot vertically */
-    transform: translateY(-50%) scale(0); /* Initially hidden */
-    width: 12px; /* Dot size */
-    height: 12px;
-    background-color: #ff9800; /* Dot color */
-    border-radius: 50%; /* Make it a circle */
-    transition: transform 0.3s ease; /* Smooth scaling animation */
-  }
-  /* Show the dot on hover */
-  .nav-link:hover::before {
-    transform: translateY(-50%) scale(1); /* Scale up the dot to full size */
-  }
+  transform: translateX(30px); /* Move text 10px to the right */
+  color: white; /* Optional: Change color on hover */
+}
 
-
+/* Dot before the text */
+.nav-link::before {
+  content: ""; /* Empty content for the dot */
+  position: absolute;
+  left: 0; /* Position the dot at the start of the text */
+  top: 50%; /* Center the dot vertically */
+  transform: translateY(-50%) scale(0); /* Initially hidden */
+  width: 12px; /* Dot size */
+  height: 12px;
+  background-color: white; /* Dot color */
+  border-radius: 50%; /* Make it a circle */
+  transition: transform 0.3s ease; /* Smooth scaling animation */
+}
+.active-nav-link:hover {
+  transform: translateX(30px); /* Move text 10px to the right */
+  color: #ff9800; /* Optional: Change color on hover */
+}
+.active-nav-link::before {
+  content: ""; /* Empty content for the dot */
+  position: absolute;
+  left: 0; /* Position the dot at the start of the text */
+  top: 50%; /* Center the dot vertically */
+  transform: translateY(-50%) scale(0); /* Initially hidden */
+  width: 12px; /* Dot size */
+  height: 12px;
+  background-color: #ff9800; /* Dot color */
+  border-radius: 50%; /* Make it a circle */
+  transition: transform 0.3s ease; /* Smooth scaling animation */
+}
+/* Show the dot on hover */
+.nav-link:hover::before {
+  transform: translateY(-50%) scale(1); /* Scale up the dot to full size */
+}
 
 .arrow {
-    display: inline-block;
-    margin-left: 5px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    padding: 5px;
-    transform: rotate(45deg); /* Default: down arrow */
-    transition: transform 0.3s ease;
-  }
-  
-  /* On hover, change to left arrow */
-  .dropdown-container:hover .arrow {
-    transform: rotate(-45deg); /* Left arrow */
-  }
-  
-  /* Dropdown menu styles */
-  .dropdown-container {
-    position: relative; /* Needed for dropdown positioning */
-  }
-  
-  .dropdown {
-    display: none; /* Hide dropdown by default */
-    position: absolute;
-    bottom: -10%;
-    left: 200%;
-    color: white;
-    list-style: none;
-    padding: 10px 0;
-    background-color: transparent;
-    width: 200px;
-    z-index: 999;
-  }
-  
-  .dropdown li {
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
- 
-  
-  /* Show dropdown on hover */
-  .dropdown-container:hover .dropdown {
-    display: block;
-  }
-  
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  padding: 5px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  bottom: 5px;
+  right: 5px;
+}
+
+/* On hover, change to left arrow */
+.dropdown-container:hover .arrow {
+  transform: rotate(-45deg); /* Left arrow */
+}
+
+/* Dropdown menu styles */
+.dropdown-container {
+  position: relative; /* Needed for dropdown positioning */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: -372%;
+  left: 90%;
+  color: white;
+  list-style: none;
+  padding: 5px 0;
+  background-color: transparent;
+  /* width: 100vw; */
+  height: 95svh;
+  z-index: 999;
+}
+
+.dropdown li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+/* Show dropdown on hover */
+.dropdown-container:hover .dropdown {
+  display: flex;
+}

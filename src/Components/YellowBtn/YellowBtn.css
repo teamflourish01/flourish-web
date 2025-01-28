@@ -2,7 +2,7 @@
   width: 238px;
   height: 70.25px;
   background-color: #ff9800;
-  color: black;
+  color: #060606;
   border: none;
   border-radius: 50px;
   padding: 14px 18px;
@@ -30,7 +30,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: black;
+  background-color: #060606;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +63,7 @@
   z-index: -1;
   top: 34%;
   right: 11%;
-  background: black;
+  background: #060606;
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -79,7 +79,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: black;
+  background-color: #060606;
   border: 1px solid #ff9800;
   padding: 10px;
 }

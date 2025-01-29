@@ -1,29 +1,22 @@
-/* .top-banner {
-  width: 100%;
-  background-color: #060606;
-  position: relative;
-  overflow: hidden;
-}
-.top-banner-container {
-  max-width: 1380px;
-  min-width: 200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 0 30px;
-} */
-
 .icosahedron-bg {
   position: absolute;
-  top: -135px;  /* Move slightly outside the viewport */
-  right: -240px; /* Move slightly outside the viewport */
-  width: 600px;  /* Increase size */
-  height: 600px; /* Increase size */
-  z-index: 0; /* Ensure it's behind the text */
-  opacity: 0.5; /* 50% transparency */
-  pointer-events: none; /* Prevent interaction */
+  z-index: 0; 
+  opacity: 0.2; 
+  pointer-events: none; 
+}
+
+.icosahedron-right {
+  top: -135px;  
+  right: -240px; 
+  width: 600px;  
+  height: 600px;
+}
+
+.icosahedron-left {
+  bottom: -165px;  
+  left: -195px; 
+  width: 500px;  
+  height: 500px;
 }
 
 .top-banner {
@@ -43,7 +36,7 @@
   margin: 0 auto;
   padding: 0 30px;
   position: relative;
-  z-index: 0; /* Keep content above the icosahedron */
+  z-index: 0;
 }
 
 .t-b-desc {
@@ -146,16 +139,6 @@
   }
 }
 
-/* .icosahedron-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
-  z-index: 0;
-} */
-
 .icosahedron {
   width: 100px;
   height: 100px;
@@ -164,15 +147,4 @@
   transform: rotateX(45deg) rotateY(45deg);
 }
 
-.edge {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  border: 2px solid black;
-  transform-origin: center;
-}
-
-.edge:nth-child(1) { transform: rotateY(0deg); }
-.edge:nth-child(2) { transform: rotateY(60deg); }
-.edge:nth-child(3) { transform: rotateY(120deg); }
 

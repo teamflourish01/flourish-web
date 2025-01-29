@@ -1,0 +1,96 @@
+.btn-yellow-w {
+    width: 238px;
+    height: 70.25px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    outline: 1px solid #ff9800;
+    transition: background-color 1s ease-out;
+  }
+  
+  .p-txt-btn-w {
+    font-family: Jost-Medium;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 31.79px;
+    text-align: left;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .circle-bg-arrow-w {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  .circle-bg-arrow-w::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 40%;
+    right: 30%;
+    background: white;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    transform: scale(2);
+    transition: transform 1s ease-out, height 0.8s ease-out, width 0.8s ease-out,
+      background-color 0.8s ease-out;
+  }
+  
+  .circle-bg-arrow-w img {
+    max-width: 100%;
+    border-radius: 4px;
+    transition: transform 1s ease-out, opacity 0.3s ease;
+  }
+  
+  .circle-bg-arrow-w:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 34%;
+    right: 11%;
+    background: white;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    transform: scale(2);
+    transition: transform 1s ease-out, height 1s ease-out, width 1s ease-out,
+      background-color 1s ease-out;
+  }
+  
+  .btn-yellow-w:hover .circle-bg-arrow-w:before {
+    transform: scale(20);
+    top: 30%;
+    right: 11%;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #ff9800;
+    padding: 10px;
+  }
+  
+  .btn-yellow-w:hover .circle-bg-arrow-w img {
+    transform: scale(1.1);
+    opacity: 0.8;
+    transform: rotate(60deg);
+  }
+  .btn-yellow-w:hover p {
+    transition: all 1s ease-out;
+    color: #ff9800;
+  }
+  

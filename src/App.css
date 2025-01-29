@@ -31,11 +31,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-.app-container{
+/* .app-container{
   /* max-width: 1920px;
-  min-width: 200px; */
+  min-width: 200px; 
   width: 100%;
   border: 1px solid black;
   height: 400px;
   margin: 0 auto;
-}
+} */

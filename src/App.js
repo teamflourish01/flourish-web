@@ -6,6 +6,8 @@ import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import { useEffect, useState } from "react";
 import PreLoader from "./Components/PreLoader/PreLoader";
+import BrandingMainP from "./Pages/Service/Branding/BrandingMainP/BrandingMainP";
+import BrandingSubP from "./Pages/Service/Branding/BrandingSubP/BrandingSubP";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 9000); // Set the desired loading duration
+    }, 500); // Set the desired loading duration
     return () => clearTimeout(timer);
   }, []);
 
@@ -26,6 +28,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/branding" element={<BrandingMainP />}></Route>
+            <Route path="/branding-positioning" element={<BrandingSubP/>}></Route>
+
           </Routes>
           <Footer />
         </div>

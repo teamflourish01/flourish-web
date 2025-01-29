@@ -1,0 +1,14 @@
+.black-b-t-s {
+  width: 100%;
+  background-color: #060606;
+  display: flex;
+  justify-content: center;
+}
+.title-b-t-s {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  line-height: 72.25px;
+  text-align: left;
+  color: white;
+  padding: 48px 0 137px;
+}

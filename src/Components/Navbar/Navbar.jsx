@@ -55,7 +55,7 @@ const Navbar = () => {
             </li>
             <li className="margin-b-30 dropdown-container">
               <NavLink
-                to=""
+                to="/service"
                 className={({ isActive }) =>
                   isActive ? "nav-link active-nav-link" : "nav-link"
                 }

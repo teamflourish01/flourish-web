@@ -1,0 +1,93 @@
+.vision-white-banner {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.vision-white-banner-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.your-our-strategy-black {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  line-height: 72.25px;
+  color: black;
+  white-space: nowrap;
+}
+.stroke-txt-strategy {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  line-height: 60.25px;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+.v-s-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 30px 0 60px;
+}
+.right-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: white;
+  max-width: 727px;
+  min-width: 200px;
+  width: 100%;
+}
+.right-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: black;
+  max-width: 727px;
+  min-width: 200px;
+  width: 100%;
+}
+
+.hr-animation-white-bg {
+  position: relative; 
+  width: 1.5px;
+  height: 564px; 
+  background-color: rgba(6, 6, 6, 0.09); 
+  border: none;
+  margin: 0 116px 0 124px;
+  overflow: hidden; 
+}
+
+.hr-animation-white-bg::after {
+  content: ""; 
+  position: absolute;
+  left: 0; 
+  top: 0; 
+  width: 1.5px; 
+  height: 96px; 
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+  animation: lineMove 9s linear infinite; 
+}
+
+@keyframes lineMove {
+  0% {
+    transform: translateY(-100%); 
+  }
+  100% {
+    transform: translateY(500%); 
+  }
+}

@@ -211,7 +211,11 @@ const YourExperience = () => {
               <span className="stroke-txt-strategy"> Our </span>Priority
             </p>
             <p className="your-exp-desc">
-              Our client's success stories reflect our dedication and expertise.
+              Our client’s success stories reflect our dedication and expertise.
+              From boosting brand awareness to driving higher conversions, we’ve
+              delivered results that make a real impact. See what our clients
+              say about their experience working with us and how we helped them
+              achieve remarkable business growth.
             </p>
           </div>
           <hr className="hr-animation-exp " />

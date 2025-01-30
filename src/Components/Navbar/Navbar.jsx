@@ -7,7 +7,7 @@ import close from "../../assets/close-icon-nav.svg";
 import ServiceNav from "../ServiceNav/ServiceNav";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -59,7 +59,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "nav-link active-nav-link" : "nav-link"
                 }
-                onClick={toggleMenu}
+                // onClick={toggleMenu}
               >
                 Services <span className="arrow"></span>
                 <div className="dropdown">

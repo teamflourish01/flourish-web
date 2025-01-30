@@ -19,3 +19,83 @@
     color: rgba(0, 0, 0, 0.5);
     padding: 25px 0 0 ;
 }
+.benefits-container-sl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 0;
+    max-width: 951px;
+    min-width: 200px;
+    width: 100%;
+    /* margin: auto; */
+    position: relative;
+    padding: 59px 0;
+    margin-left: 42px;
+  }
+  
+  .benefit-sl {
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* Line below each row */
+    flex-direction: column;
+    position: relative;
+  }
+  .benefits-container-sl::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: -3%;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Color of the vertical line */
+}
+
+  .b-p-60{
+    padding-left: 60px;
+  }
+  .b-p-42{
+    padding-left: 60px;
+  }
+  .benefit-sl:last-child {
+    /* border-bottom: none; Removes line from the last row */
+  }
+  /* Apply 60px left padding to the left column */
+.benefit-sl:nth-child(odd) {
+  padding-left: 60px;
+  /* max-width: 387px; */
+}
+
+/* Apply 42px left padding to the right column */
+.benefit-sl:nth-child(even) {
+  padding-left: 42px;
+  /* max-width: 387px; */
+
+}
+  
+  .benefit-number-sl {
+    font-family: Jost-Medium;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 46.24px;
+    text-align: left;
+    -webkit-text-stroke: 1px black;
+    color: white;
+  }
+  
+  .benefit-text-sl {
+    font-family: Jost-Regular;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28.9px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.5);
+    white-space: break-spaces;
+    width: 387px;
+    
+  }
+  .flex-brand-posi{
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+  }

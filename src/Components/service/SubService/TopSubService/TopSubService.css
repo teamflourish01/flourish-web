@@ -38,7 +38,8 @@
 
 .f-p-boxes {
   padding: 10px 0 20px;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5)
 }
 .f-p-b-n {
   font-family: Jost-Medium;

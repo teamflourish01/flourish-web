@@ -8,6 +8,9 @@ import { useEffect, useState } from "react";
 import PreLoader from "./Components/PreLoader/PreLoader";
 import BrandingMainP from "./Pages/Service/Branding/BrandingMainP/BrandingMainP";
 import BrandingSubP from "./Pages/Service/Branding/BrandingSubP/BrandingSubP";
+import Contact from "./Components/Contact/Contact";
+import ContactUs from "./Pages/ContactUs/ContactUs";
+import Nav from "./Components/Nav/Nav";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -25,9 +28,12 @@ function App() {
         <PreLoader />
       ) : (
         <div className="app-container">
-          <Navbar />
+          <Nav />
+          {/* <Navbar/> */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/contact" element={<ContactUs />}></Route>
+
             <Route path="/branding" element={<BrandingMainP />}></Route>
             <Route path="/branding-positioning" element={<BrandingSubP/>}></Route>
 

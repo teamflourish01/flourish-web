@@ -26,7 +26,6 @@
   text-align: left;
   padding: 20px 0 30px;
   color: #06060680;
-
 }
 
 .form-container {
@@ -68,4 +67,38 @@
 
 .full-width {
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .something {
+    font-size: 40px;
+    line-height: 57.8px;
+  }
+  .contact-us {
+    padding: 60px 0;
+  }
+  .contact-us-container {
+    padding: 0 25px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .something {
+    font-size: 25px;
+    line-height: 36.13px;
+  }
+  .contact-us {
+    padding: 60px 0;
+  }
+  .contact-us-container {
+    padding: 0 10px;
+  }
+  .enter-your {
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .half-width-container{
+    flex-direction: column;
+  }
 }

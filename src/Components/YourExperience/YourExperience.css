@@ -196,3 +196,90 @@
 .testinomial-your-exp {
   height: 490px;
 }
+
+@media (max-width: 1024px) {
+  .your-exp-container {
+    flex-direction: column;
+    align-items: center;
+    padding: unset;
+  }
+  .your-exp-desc {
+    padding: 30px 0 0;
+    max-width: unset;
+  }
+  .left-side-your-exp {
+    padding: 80px 25px 44px;
+  }
+  .hr-animation-exp {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin: unset;
+    overflow: hidden;
+  }
+
+  .hr-animation-exp::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 96px;
+    height: 1px;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0)
+    );
+    animation: lineMoveE 9s linear infinite;
+  }
+  @keyframes lineMoveE {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  .testinomial-your-exp {
+    margin: 44px 25px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .your-exp-desc {
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .left-side-your-exp {
+    padding: 50px 10px 44px;
+  }
+  .testinomial-your-exp {
+    margin: 44px 10px 50px;
+    height: 590px;
+  }
+  .images img:nth-child(odd) {
+    transform: translateY(0);
+  }
+
+  .images img:nth-child(even) {
+    transform: translateY(0);
+  }
+  .images {
+    flex-wrap: wrap;
+    margin: 10px 0 10px 0;
+  }
+  .arrows {
+    top: 340px;
+    left: 0;
+  }
+  .testi-desc-txt{
+    font-size: 16px;
+    line-height: 23.12px;
+    padding: 0 10px;
+  }
+  .testimonial-content .testi-title{
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+}

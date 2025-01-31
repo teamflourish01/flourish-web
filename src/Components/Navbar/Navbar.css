@@ -1,15 +1,13 @@
-/* 
 .navbar {
   width: 100%;
   margin: 0 auto;
   background-color: #060606;
-  position: sticky; 
-  top: 0; 
+  position: sticky;
+  top: 0;
   left: 0;
-  z-index: 1000; 
+  z-index: 1000;
   transition: background-color 0.3s ease-in-out;
 }
-
 
 .navbar-container {
   max-width: 1380px;
@@ -84,7 +82,7 @@
   line-height: 57.8px;
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
-  position: relative; 
+  position: relative;
   display: inline-block;
   padding-left: 20px;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -102,40 +100,40 @@
 }
 
 .nav-link:hover {
-  transform: translateX(30px); 
-  color: white; 
+  transform: translateX(30px);
+  color: white;
 }
 
 .nav-link::before {
-  content: ""; 
+  content: "";
   position: absolute;
-  left: 0; 
-  top: 50%; 
-  transform: translateY(-50%) scale(0); 
-  width: 12px; 
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 12px;
   height: 12px;
-  background-color: white; 
-  border-radius: 50%; 
-  transition: transform 0.3s ease; 
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 .active-nav-link:hover {
-  transform: translateX(30px); 
-  color: #ff9800; 
+  transform: translateX(30px);
+  color: #ff9800;
 }
 .active-nav-link::before {
   content: "";
   position: absolute;
-  left: 0; 
-  top: 50%; 
-  transform: translateY(-50%) scale(0); 
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
   width: 12px;
   height: 12px;
-  background-color: #ff9800; 
-  border-radius: 50%; 
-  transition: transform 0.3s ease; 
+  background-color: #ff9800;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 .nav-link:hover::before {
-  transform: translateY(-50%) scale(1); 
+  transform: translateY(-50%) scale(1);
 }
 
 .arrow {
@@ -156,7 +154,7 @@
 }
 
 .dropdown-container {
-  position: relative; 
+  position: relative;
 }
 
 .dropdown {
@@ -179,7 +177,15 @@
 
 .dropdown-container:hover .dropdown {
   display: flex;
-} */
+}
 
-
-
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 22px 25px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 22px 10px;
+  }
+}

@@ -88,7 +88,7 @@
 }
 
 .box-of-one {
-  height: 160px;
+  /* height: 160px; */
   padding: 33px 15px;
   display: flex;
   align-items: center;
@@ -107,9 +107,11 @@
 }
 .box-num-flex {
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  /* gap: 10px; */
+  width: 100%;
 }
 .stroke-txt-strategy-01 {
   font-family: Jost-SemiBold;
@@ -160,6 +162,26 @@
   position: relative;
   top: -1px;
 }
+.arrow-box-r {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.arrow-box-r button {
+  font-size: 24px;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: transform 1s;
+  position: relative;
+  top: -1px;
+}
 .box-of-one {
   transition: opacity 1s, transform 1s;
 }
@@ -167,4 +189,136 @@
 .box-of-one.transitioning {
   opacity: 0;
   transform: translateY(20px);
+}
+
+@media (max-width: 1024px) {
+  .your-challenge-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: unset;
+  }
+  .hr-animation-chalange {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin: unset;
+    overflow: hidden;
+  }
+  .hr-animation-chalange::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 96px;
+    height: 1px;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0)
+    );
+    animation: lineMoveC 9s linear infinite;
+  }
+  @keyframes lineMoveC {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  .left-side-your-challange {
+    padding: 80px 25px 46px;
+    max-width: unset;
+    min-width: 200px;
+    width: 100%;
+  }
+  .right-side-your-challange {
+    max-width: unset;
+    min-width: 200px;
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding-bottom: 80px;
+  }
+  .box-scroll-container {
+    /* padding: 0 25px; */
+    max-width: unset;
+    gap: 24px;
+    height: unset;
+    padding: 44px 25px 30px;
+  }
+  .arrows-chal {
+    flex-direction: row;
+    padding: 0 25px;
+    gap: 40px;
+  }
+  .arrows-chal button {
+    font-size: 24px;
+    background: none;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-side-your-challange {
+    padding: 50px 10px 46px;
+  }
+  .v-s-desc {
+    font-family: Jost-Regular;
+    font-size: 16px;
+    line-height: 23.12px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 25px 0 50px;
+  }
+  .box-scroll-container {
+    padding: 44px 10px 30px;
+  }
+  .right-side-your-challange {
+    padding-bottom: 50px;
+  }
+  .your-our-strategy {
+    font-family: Jost-Bold;
+    font-size: 25px;
+    line-height: 36.13px;
+  }
+  .stroke-txt-strategy {
+    font-size: 25px;
+    line-height: 36.13px;
+    -webkit-text-stroke: 0.5px white;
+  }
+  .title-branding-box {
+    font-size: 20px;
+    line-height: 28.9px;
+  }
+  .stroke-txt-strategy-01 {
+    font-size: 24px;
+    line-height: 34.68px;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+  }
+  .desc-box {
+    font-size: 16px;
+    line-height: 23.12px;
+    padding-top: 20px;
+  }
+  .box-of-one{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .arrow-box{
+    display: none;
+  }
+  .arrow-box-r{
+    display: flex;
+  }
+  .arrows-chal {
+    padding: 0 10px;
+}
 }

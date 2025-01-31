@@ -20,6 +20,10 @@ const YourFuture = () => {
             <span className="stroke-txt">Your</span> Future,
             <span className="stroke-txt"> Our </span>Commitment
           </p>
+          <p className="your-f-our-c-mobile">
+            <span className="stroke-txt">Your</span> Future,<br/>
+            <span className="stroke-txt"> Our </span>Commitment
+          </p>
           <p 
             className="desc-y-o" 
             data-aos="fade-up"  

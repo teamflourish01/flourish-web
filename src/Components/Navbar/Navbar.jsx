@@ -7,7 +7,7 @@ import close from "../../assets/close-icon-nav.svg";
 import ServiceNav from "../ServiceNav/ServiceNav";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

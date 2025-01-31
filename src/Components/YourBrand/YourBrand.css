@@ -12,10 +12,8 @@
 
 .nine-grid-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
-  /* grid-template-rows: repeat(3, 1fr); */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  /* padding-bottom: 100px; */
 }
 
 .card-container-nine {
@@ -83,4 +81,51 @@
 }
 .details-p-card-span {
   color: #06060680;
+}
+
+@media (max-width: 1024px) {
+  .your-brand-container {
+    padding: 80px 25px;
+  }
+  .card-container-nine {
+    width: 353px;
+    height: 403px;
+  }
+  .nine-grid-cards {
+    grid-template-columns: repeat(9, 1fr);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+  .card-details-nine {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .card-front-nine img {
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .card-nine {
+    max-width: unset;
+    min-width: unset;
+    width: 353px;
+  }
+  .details-p-card {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 768px) {
+  .your-brand-container {
+    padding: 60px 10px;
+  }
+  .details-p-card {
+    font-size: 16px;
+    line-height: 35px;
+  }
+  .card-nine {
+    width: 290px;
+  }
+  .card-container-nine {
+    width: 290px;
+}
 }

@@ -19,6 +19,10 @@ const YourGrowth = () => {
             <span className="stroke-txt">Your</span> Growth,
             <span className="stroke-txt"> Our </span>Ethics
           </p>
+          <p className="your-f-our-c-mobile">
+            <span className="stroke-txt">Your</span> Growth,<br/>
+            <span className="stroke-txt"> Our </span>Ethics
+          </p>
           <p className="desc-y-o" data-aos="fade-up" data-aos-delay="200">
             At Flourish, we believe that brands, like ideas, don’t just
             grow—they thrive. Our name reflects our commitment to nurturing

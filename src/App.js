@@ -28,8 +28,8 @@ function App() {
         <PreLoader />
       ) : (
         <div className="app-container">
-          <Nav />
-          {/* <Navbar/> */}
+          {/* <Nav /> */}
+          <Navbar/>
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/contact" element={<ContactUs />}></Route>

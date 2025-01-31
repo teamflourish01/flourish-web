@@ -99,3 +99,23 @@
     align-items: center;
     padding-top: 50px;
   }
+
+  @media(max-width:1024px){
+    .flex-brand-posi{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .top-sub-service-container{
+      padding: 0 25px;
+    }
+    .benefits-container-sl{
+      margin-left: unset;
+    }
+    .benefits-container-sl::before{
+      display: none;
+    }
+    .benefit-sl:nth-child(odd) {
+      padding-left: unset;
+      /* max-width: 387px; */
+  }
+  }

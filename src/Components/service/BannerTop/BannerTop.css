@@ -12,3 +12,16 @@
   color: white;
   padding: 48px 0 137px;
 }
+
+@media (max-width: 1024px) {
+  .title-b-t-s {
+    font-size: 40px;
+    line-height: 57.8px;
+  }
+}
+@media (max-width: 768px) {
+  .title-b-t-s {
+    font-size: 30px;
+    line-height: 43.35px;
+  }
+}

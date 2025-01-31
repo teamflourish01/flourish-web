@@ -44,7 +44,7 @@ const ContactUs = () => {
                       </div>
                     </div>
                   </div>
-
+                  {/* <div className="info-i-f-r"> */}
                   {/* Email */}
                   <div className="info-item">
                     <div className="office-d-f">
@@ -72,6 +72,7 @@ const ContactUs = () => {
                       </div>
                     </div>
                   </div>
+                  {/* </div> */}
                 </div>
               </div>
             </div>
@@ -91,6 +92,7 @@ const ContactUs = () => {
                       </div>
                     </div>
                   </div>
+                  {/* <div className="info-i-f-r"> */}
 
                   {/* Email */}
                   <div className="info-item">
@@ -119,7 +121,8 @@ const ContactUs = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                  </div>
+                {/* </div> */}
               </div>
             </div>
             <div className="office">

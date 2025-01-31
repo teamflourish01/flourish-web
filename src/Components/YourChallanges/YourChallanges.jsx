@@ -105,8 +105,13 @@ const YourChallanges = () => {
                 className={`box-of-one ${isTransitioning ? 'transitioning' : ''}`}
               >
                 <div className="box-num-flex">
+                  <div>
                   <p className="stroke-txt-strategy-01">{box.no}</p>
                   <p className="title-branding-box">{box.title}</p>
+                  </div>
+                  <div className="arrow-box-r">
+                    <button>→</button>
+                  </div>
                 </div>
                 <div className="desc-arr-container-flex">
                   <p className="desc-box">{box.description}</p>

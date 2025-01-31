@@ -89,8 +89,8 @@
   font-weight: 600;
   line-height: 36.13px;
   text-align: center;
-  color: #FF9800;
-padding: 29px 0 28px;
+  color: #ff9800;
+  padding: 29px 0 28px;
 }
 .info-box-c-s {
   display: flex;
@@ -100,11 +100,62 @@ padding: 29px 0 28px;
   border-top: 1px solid #00000080;
   margin: 15px 0 0;
 }
-.w-657{
+.w-657 {
   max-width: 657px;
   min-width: 200px;
   width: 100%;
 }
-.p-b-100{
+.p-b-100 {
   padding-bottom: 100px;
+}
+.info-i-f-r {
+  display: flex;
+  gap: unset;
+}
+@media (max-width: 1024px) {
+  .info-box {
+    flex-direction: column;
+  }
+  .info-item {
+    border-right: unset;
+  }
+  .con-page-container {
+    padding: 0 25px;
+  }
+}
+@media (max-width: 768px) {
+  .info-box {
+    flex-direction: column;
+    padding: 8.5px 0;
+  }
+  .info-item {
+    border-right: unset;
+    padding: 12.5px 0 12.5px 0;
+  }
+  .info-item-l{
+    padding: 12.5px 0 12.5px 0;
+
+  }
+  .con-page-container {
+    padding: 0 10px;
+  }
+  .map-container {
+    margin-bottom: 60px;
+  }
+  .text {
+    white-space: unset;
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .india-c-o {
+    font-size: 21px;
+    line-height: 30.35px;
+  }
+  .label {
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .p-b-100 {
+    padding-bottom: 60px;
+}
 }

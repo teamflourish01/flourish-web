@@ -1,18 +1,13 @@
-/* .navbar {
-  width: 100%;
-  background-color: #060606;
-  position: relative;
-} */
+/* 
 .navbar {
-    /* max-width: 1380px;
-    min-width: 200px; */
+   
     width: 100%;
     margin: 0 auto;
     background-color: #060606;
-    position: sticky; /* Fixes the navbar at the top */
-    top: 0; /* Ensures it stays at the top */
+    position: sticky; 
+    top: 0; 
     left: 0;
-    z-index: 1000; /* Keeps it above other elements */
+    z-index: 1000; 
     transition: background-color 0.3s ease-in-out;
   }
   
@@ -33,19 +28,8 @@
   .h-icon-c {
     cursor: pointer;
   }
-  /* Menu styles */
   .menu-navbar {
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    overflow: hidden;
-    transform: translateY(-100%);
-    transition: transform 0.5s ease-in-out;
-    z-index: 999;
-    height: 100vh; */
+
   }
   
   .menu-navbar.open {
@@ -55,12 +39,6 @@
   .menu-navbar.close {
     transform: translateY(-100%);
   }
-  
-  /* .menu-header-navbar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-  } */
   
   .close-btn-navbar {
     background: none;
@@ -75,7 +53,6 @@
   
   .menu-navbar ul {
     list-style: none;
-    /* padding: 100px 10px 0 100px; */
     margin: 0;
     height: calc(100vh - 100px);
     overflow-y: scroll;
@@ -93,7 +70,7 @@
     line-height: 57.8px;
     text-align: left;
     color: rgba(255, 255, 255, 0.5);
-    position: relative; /* Required for positioning pseudo-element */
+    position: relative; 
     display: inline-block;
     padding-left: 20px;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -110,44 +87,41 @@
     color: #ff9800;
   }
   
-  /* Hover effect: move text and show dot */
   .nav-link:hover {
-    transform: translateX(30px); /* Move text 10px to the right */
-    color: white; /* Optional: Change color on hover */
+    transform: translateX(30px); 
+    color: white; 
   }
   
-  /* Dot before the text */
   .nav-link::before {
-    content: ""; /* Empty content for the dot */
+    content: ""; 
     position: absolute;
-    left: 0; /* Position the dot at the start of the text */
-    top: 50%; /* Center the dot vertically */
-    transform: translateY(-50%) scale(0); /* Initially hidden */
-    width: 12px; /* Dot size */
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%) scale(0); 
+    width: 12px;
     height: 12px;
-    background-color: white; /* Dot color */
-    border-radius: 50%; /* Make it a circle */
-    transition: transform 0.3s ease; /* Smooth scaling animation */
+    background-color: white; 
+    border-radius: 50%; 
+    transition: transform 0.3s ease; 
   }
   .active-nav-link:hover {
-    transform: translateX(30px); /* Move text 10px to the right */
-    color: #ff9800; /* Optional: Change color on hover */
+    transform: translateX(30px); 
+    color: #ff9800; 
   }
   .active-nav-link::before {
-    content: ""; /* Empty content for the dot */
+    content: ""; 
     position: absolute;
-    left: 0; /* Position the dot at the start of the text */
-    top: 50%; /* Center the dot vertically */
-    transform: translateY(-50%) scale(0); /* Initially hidden */
-    width: 12px; /* Dot size */
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%) scale(0); 
+    width: 12px; 
     height: 12px;
-    background-color: #ff9800; /* Dot color */
-    border-radius: 50%; /* Make it a circle */
-    transition: transform 0.3s ease; /* Smooth scaling animation */
+    background-color: #ff9800;
+    border-radius: 50%; 
+    transition: transform 0.3s ease; 
   }
-  /* Show the dot on hover */
   .nav-link:hover::before {
-    transform: translateY(-50%) scale(1); /* Scale up the dot to full size */
+    transform: translateY(-50%) scale(1); 
   }
   
   .arrow {
@@ -163,19 +137,18 @@
     right: 5px;
   }
   
-  /* On hover, change to left arrow */
+ 
   .dropdown-container:hover .arrow {
-    transform: rotate(-45deg); /* Left arrow */
+    transform: rotate(-45deg); 
   }
   
-  /* Dropdown menu styles */
+ 
   .dropdown-container {
-    position: relative; /* Needed for dropdown positioning */
+    position: relative; 
   }
   
   .dropdown {
     display: flex;
-    /* z-index: 999; */
     align-items: flex-start;
     justify-content: center;
     height: calc(100vh - 100px);
@@ -188,7 +161,6 @@
     cursor: pointer;
   }
   
-  /* Show dropdown on hover */
   .dropdown-container:hover .dropdown {
     display: flex;
   }
@@ -205,7 +177,6 @@
     overflow: hidden;
     transform: translateY(-100%);
     transition: transform 0.5s ease-in-out;
-    /* z-index: 999; */
     height: 100vh;
   }
   .flex.open {
@@ -220,4 +191,4 @@
     min-width: 100px;
     width: 100%;
   }
-  
+   */

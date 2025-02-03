@@ -35,7 +35,22 @@
   /* max-width: 1920px;
   min-width: 200px; 
   width: 100%;
-  border: 1px solid black;
+
   height: 400px;
   margin: 0 auto;
+
+}
+.home-main-heading-inner span{
+  color: black;
+}
+
+.home-main-heading-inner{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  font-family: Jost-Regular;
+
+
+}
+
 } */
+

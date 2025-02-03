@@ -1,0 +1,131 @@
+.brand-top-banner {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 100px 0;
+}
+.brand-top-banner-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.branding-title-t-b {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 72.25px;
+}
+.craft-desc {
+  font-family: Jost;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+  max-width: 1000px;
+  min-width: 200px;
+  width: 100%;
+  padding: 25px 0 23px;
+}
+
+.ladyqueimg {
+  position: absolute;
+  max-width: 1320px;
+  min-width: 200px;
+  width: 95%;
+  height: 178px;
+}
+.text-des-ladyque {
+  position: relative;
+}
+.que-con {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.img-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.que-con-img {
+  position: relative;
+  top: 56px;
+  right: 76px;
+}
+.sub-service-t-b-t-b {
+  font-family: Jost-SemiBold;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36.13px;
+  text-align: left;
+  padding: 50px 0 25px;
+}
+
+.sub-s-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    max-width: 1320px; 
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    gap: 14px;
+    padding-bottom: 10px; 
+  }
+  .sub-s-box {
+    min-width: 319px; 
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 4px 0px #00000026;
+  }
+ 
+.s-s-b-01 {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  line-height: 31.79px;
+  text-align: left;
+  -webkit-text-stroke: 1px black;
+  color: white;
+}
+.s-s-b-b-t {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 31.79px;
+  text-align: left;
+  padding: 5px 0 0;
+}
+.p-10-15-d {
+  padding: 15px 10px;
+  border-bottom: 1px solid #06060680;
+}
+.bet-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+}
+.explore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  gap: 10px;
+}
+.explore-service-txt {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+}
+.link-txt{
+  text-decoration: none;
+}

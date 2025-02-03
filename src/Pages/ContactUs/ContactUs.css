@@ -1,0 +1,161 @@
+.con-page {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.con-page-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.map-container {
+  width: 100%;
+  max-width: 100%;
+  height: 550px;
+  margin-bottom: 100px;
+}
+.india-c-o {
+  font-family: Jost-SemiBold;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36.13px;
+  text-align: left;
+}
+
+.container-ofc {
+  border-radius: unset;
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #00000080;
+  border-top: 1px solid #00000080;
+  margin: 15px 0 30px;
+}
+
+.info-item {
+  /* width: 30%; */
+  border-right: 1px solid #00000080;
+  padding: 31px 62px 31px 0;
+}
+
+.label {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 31.79px;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.text {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  line-height: 28.9px;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #06060680;
+}
+
+.text a {
+  text-decoration: none;
+  color: #06060680;
+}
+
+.info-item-l {
+  /* width: 30%; */
+  padding: 31px 62px 31px 0;
+}
+.office-d-f {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.hr-line-ofc {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 15px;
+}
+.img-icon-contact {
+  padding-right: 15px;
+}
+.coming-soon-txt {
+  font-family: Jost-SemiBold;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36.13px;
+  text-align: center;
+  color: #ff9800;
+  padding: 29px 0 28px;
+}
+.info-box-c-s {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #00000080;
+  border-top: 1px solid #00000080;
+  margin: 15px 0 0;
+}
+.w-657 {
+  max-width: 657px;
+  min-width: 200px;
+  width: 100%;
+}
+.p-b-100 {
+  padding-bottom: 100px;
+}
+.info-i-f-r {
+  display: flex;
+  gap: unset;
+}
+@media (max-width: 1024px) {
+  .info-box {
+    flex-direction: column;
+  }
+  .info-item {
+    border-right: unset;
+  }
+  .con-page-container {
+    padding: 0 25px;
+  }
+}
+@media (max-width: 768px) {
+  .info-box {
+    flex-direction: column;
+    padding: 8.5px 0;
+  }
+  .info-item {
+    border-right: unset;
+    padding: 12.5px 0 12.5px 0;
+  }
+  .info-item-l{
+    padding: 12.5px 0 12.5px 0;
+
+  }
+  .con-page-container {
+    padding: 0 10px;
+  }
+  .map-container {
+    margin-bottom: 60px;
+  }
+  .text {
+    white-space: unset;
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .india-c-o {
+    font-size: 21px;
+    line-height: 30.35px;
+  }
+  .label {
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .p-b-100 {
+    padding-bottom: 60px;
+}
+}

@@ -37,6 +37,10 @@ const YourBrand = () => {
             <span className="stroke-txt">Your</span> Brand,
             <span className="stroke-txt"> Our </span>Responsibility
           </p>
+          <p className="your-f-our-c-mobile">
+            <span className="stroke-txt">Your</span> Brand,<br/>
+            <span className="stroke-txt"> Our </span>Responsibility
+          </p>
           <p className="desc-y-o">
             Your brand’s reputation is our passion. Our branding and marketing
             agency in Ahmedabad is committed to helping businesses build brands

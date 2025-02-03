@@ -1,0 +1,79 @@
+.top-sub-service {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 100px 0;
+}
+.top-sub-service-container {
+  max-width: 1380px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.define-t-s-s {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 72.25px;
+  text-align: left;
+}
+.top-s-s-c-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 25px 0 50px;
+}
+.flourish-process-title {
+  font-family: Jost-SemiBold;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36.13px;
+  text-align: left;
+  color: #060606;
+  padding-bottom: 5px;
+}
+
+.f-p-boxes {
+  padding: 10px 0 20px;
+  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.f-p-b-n {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 31.79px;
+  text-align: left;
+  color: white;
+  -webkit-text-stroke: 1px #060606;
+}
+
+.f-p-b-title {
+  font-family: Jost-Medium;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 31.79px;
+  text-align: left;
+  padding: 5px 0 10px;
+}
+.f-p-b-desc {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.9px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .define-t-s-s {
+    font-size: 40px;
+    line-height: 57.8px;
+  }
+  .top-sub-service{
+    padding: 100px 0 80px;
+  }
+}

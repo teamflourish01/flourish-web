@@ -3,14 +3,18 @@ import "../Work/work.css";
 import Breadcrums from "../../Components/Breadcrums/Breadcrums";
 import ppeople from "../../assets/ppeople.svg";
 import notch from "../../assets/notch.svg";
-import food from "../../assets/food.svg";
+import food from "../../assets/foodw.svg";
+import fasw from "../../assets/fasw.svg";
+import fgcg from "../../assets/fgcg.svg";
+import renw from "../../assets/renw.svg";
 import premium from "../../assets/premium.svg";
-import workimg from "../../assets/workimg.svg";
-import manufacture from "../../assets/manufacture.svg";
-import health from "../../assets/health.svg";
+import workimg from "../../assets/real.svg";
+import manufacture from "../../assets/mss.svg";
+import health from "../../assets/healthw.svg";
+import technow from "../../assets/technow.svg"
 import techno from "../../assets/techno.svg";
-import renuable from "../../assets/renua.svg";
-import education from "../../assets/education.svg";
+import renuable from "../../assets/Renuable.svg";
+import education from "../../assets/educationw.svg";
 import fashion from "../../assets/fashion.svg";
 const Work = () => {
   return (
@@ -68,10 +72,20 @@ const Work = () => {
                 <div className="work-boxs">
                   <div className="work-c-flex">
                     <div className="div-img">
-                      <img src={education} alt="" />
+                      <img src={fasw} alt="" />
                     </div>
                     <hr />
-                    <p className="real-work-p">Education</p>
+                    <p className="real-work-p-m">Fashion</p>
+                  </div>
+                </div>
+
+                <div className="work-boxs">
+                  <div className="work-c-flex">
+                    <div className="div-img">
+                      <img src={renw} alt="" />
+                    </div>
+                    <hr />
+                    <p className="real-work-p-m">Renuable</p>
                   </div>
                 </div>
 
@@ -81,29 +95,29 @@ const Work = () => {
                       <img src={education} alt="" />
                     </div>
                     <hr />
-                    <p className="real-work-p">Education</p>
+                    <p className="real-work-p-m">Education</p>
                   </div>
                 </div>
 
                 <div className="work-boxs">
                   <div className="work-c-flex">
                     <div className="div-img">
-                      <img src={education} alt="" />
+                      <img src={technow} alt="" />
                     </div>
                     <hr />
-                    <p className="real-work-p">Education</p>
+                    <p className="real-work-p-m">Technology</p>
                   </div>
                 </div>
-
-                <div className="work-box">
-                  <p className="work-p">All</p>
-                </div>
-                <div className="work-box">
-                  <p className="work-p">All</p>
+                <div className="work-boxs">
+                  <div className="work-c-flex">
+                    <div className="div-img">
+                      <img src={fgcg} alt="" />
+                    </div>
+                    <hr />
+                    <p className="real-work-p-m">FMCG</p>
+                  </div>
                 </div>
               </div>
-
-            
             </div>
           </div>
 

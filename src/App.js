@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import PreLoader from "./Components/PreLoader/PreLoader";
 import BrandingMainP from "./Pages/Service/Branding/BrandingMainP/BrandingMainP";
 import BrandingSubP from "./Pages/Service/Branding/BrandingSubP/BrandingSubP";
+import Blogs from "./Pages/Blogs/Blogs";
+import Singleblogpage from "./Pages/Blogs/Singleblogpage/Singleblogpage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +32,10 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/branding" element={<BrandingMainP />}></Route>
             <Route path="/branding-positioning" element={<BrandingSubP/>}></Route>
+            <Route path="/blogs" element={<Blogs/>}></Route>
+            <Route path="/Singleblogpage" element={<Singleblogpage/>}></Route>
+
+            
 
           </Routes>
           <Footer />

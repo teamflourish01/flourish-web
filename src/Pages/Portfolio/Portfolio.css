@@ -1,0 +1,175 @@
+.portfoilio-100{
+    width: 100%;
+    background: rgba(245, 245, 245, 1);
+}
+
+
+
+.portfolio-container{
+    max-width: 1320px;
+    min-width: 200px;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+}
+
+/* Portfolio container */
+.portfoilio-100 {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 26px;
+    border-radius: 10px;
+    
+    
+  }
+  
+  /* Left section (form) */
+  .portfolio-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+  }
+  .port-left-main{
+    max-width: 764px;
+    min-width: 200px;
+    width: 100%;
+  }
+  .portfolio-right-main{
+    max-width: 541px;
+    min-width: 200px;
+    width: 100%;
+    background-color: white;
+    padding: 59px 11px;
+  }
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input
+  {
+    flex: 1;
+   height: 60px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding-left: 20px;
+    line-height: 28.9px;
+  font-family: Jost-Regular;
+  outline: none;
+
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: none;
+    height: 209px;
+    border: none;
+padding-left: 20px;
+padding-top: 16px;
+line-height: 28.9px;
+  font-family: Jost-Regular;
+    box-sizing: border-box;
+  }
+  
+  .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e69500;
+  }
+  
+  .submit-btn .arrow {
+    margin-left: 10px;
+  }
+  
+  /* Right section (image) */
+  .portfolio-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .portfolio-right img {
+    height: 347px;
+    width: 520px;
+  }
+  @media screen and (max-width:1024px) {
+    .portfolio-container{
+      flex-direction: column;
+    }
+    .port-left-main{
+      max-width: unset;
+      min-width: unset;
+    }
+    .portfoilio-100 {
+    padding: 100px 25px;
+    
+}
+.submit-btn{
+  margin-top: 25px;
+  margin-bottom: 44px;
+}
+.portfolio-right-main{
+  max-width: unset;
+  min-width: unset;
+  width: 100%;
+  padding: 23px 11px;
+  
+}
+.portfolio-right img {
+    height: 419px;
+    width: 100%;
+    max-width: 628px;
+}
+
+
+  }
+
+
+  @media screen and (max-width:768px) {
+        .portfoilio-100 {
+        padding: 60px 10px;
+    }
+    .portfolio-right-main {
+       
+        padding: 9px 18px;
+    }
+    .form-row{
+      flex-direction: column;
+    }
+    input{
+      padding: 16px 0 15px 20px;
+    }
+    .form-row {
+gap: 15px;
+    }
+    .portfolio-left {
+gap: 15px;
+    }
+    .portfolio-right img {
+        height: 175px;
+        width: 100%;
+        max-width: 628px;
+    }
+  }

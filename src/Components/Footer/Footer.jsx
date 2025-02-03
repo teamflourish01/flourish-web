@@ -51,6 +51,7 @@ const Footer = () => {
               <SlSocialLinkedin />
             </div>
           </div>
+          <div className="res-1024">
           <div className="footer-column-2">
             <p className="title-head-f">Quick Links</p>
             <ul>
@@ -220,6 +221,7 @@ const Footer = () => {
               </li>
               
             </ul>
+          </div>
           </div>
         </div>
       </div>

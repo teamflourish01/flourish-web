@@ -38,7 +38,8 @@
 
 .f-p-boxes {
   padding: 10px 0 20px;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .f-p-b-n {
   font-family: Jost-Medium;
@@ -65,4 +66,14 @@
   line-height: 28.9px;
   text-align: left;
   color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .define-t-s-s {
+    font-size: 40px;
+    line-height: 57.8px;
+  }
+  .top-sub-service{
+    padding: 100px 0 80px;
+  }
 }

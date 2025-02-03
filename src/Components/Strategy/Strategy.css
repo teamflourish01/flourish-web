@@ -29,8 +29,8 @@
   font-family: Jost-Bold;
   font-size: 50px;
   line-height: 60.25px;
-  color: transparent; /* Make the text itself invisible */
-  -webkit-text-stroke: 1px white; /* Outline color and width */
+  color: transparent;
+  -webkit-text-stroke: 1px white;
 }
 .v-s-desc {
   font-family: Jost-Regular;
@@ -42,35 +42,38 @@
   padding: 30px 0 60px;
 }
 .hr-animation {
-  position: relative; /* Make it a positioning context for the pseudo-element */
+  position: relative;
   width: 1px;
-  height: 564px; /* The height of the original hr line */
-  background-color: rgba(255, 255, 255, 0.2); /* Set the color of the hr line */
+  height: 564px;
+  background-color: rgba(255, 255, 255, 0.2);
   border: none;
   margin: 0 116px 0 124px;
-  overflow: hidden; /* Ensure the pseudo-element stays within bounds */
+  overflow: hidden;
 }
 
 .hr-animation::after {
-  content: ""; /* Creating an empty content for the pseudo-element */
+  content: "";
   position: absolute;
-  left: 0; /* Align the white line at the top of the hr element */
-  top: 0; /* Start at the top */
-  width: 1px; /* Width of the moving line */
-  height: 96px; /* Match the height of the hr */
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0),   rgba(255, 255, 255, 0.8)); /* Vertical gradient */
-  animation: lineMove 9s linear infinite; /* Continuous animation */
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 96px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.8)
+  ); /* Vertical gradient */
+  animation: lineMove 9s linear infinite;
 }
 
 @keyframes lineMove {
   0% {
-    transform: translateY(-100%); /* Start off-screen above */
+    transform: translateY(-100%);
   }
   100% {
-    transform: translateY(500%); /* Move to the bottom */
+    transform: translateY(500%);
   }
 }
-
 
 .right-desc {
   font-family: Jost-Regular;
@@ -82,4 +85,72 @@
   max-width: 727px;
   min-width: 200px;
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .your-our-strategy {
+    font-family: Jost-Bold;
+    font-size: 40px;
+    line-height: 57.8px;
+  
+}
+  .our-strategy-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: unset;
+  }
+  .left-side-v-s-c {
+    padding: 80px 25px 44px;
+    max-width: unset;
+    width: 100%;
+  }
+  .hr-animation {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin: unset;
+    overflow: hidden;
+  }
+
+  .hr-animation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 96px;
+    height: 1px;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0)
+    );
+    animation: lineMoveE 9s linear infinite;
+  }
+  @keyframes lineMoveE {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  .right-desc {
+    padding: 44px 25px 80px;
+    max-width: unset;
+  }
+}
+
+
+@media(max-width:768px){
+  .left-side-v-s-c {
+    padding: 50px 10px 44px;
+  }
+  .right-desc {
+    padding: 44px 10px 50px;
+    max-width: unset;
+    font-size: 16px;
+    line-height: 23.12px;
+}
+
 }

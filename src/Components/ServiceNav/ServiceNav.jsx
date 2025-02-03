@@ -4,7 +4,7 @@ import "../ServiceNav/ServiceNav.css";
 const ServiceNav = () => {
   return (
     <>
-    <hr className="hr-animation-servicenav " />
+    {/* <hr className="hr-animation-servicenav " /> */}
 
     <div className="service-container">
 

@@ -59,7 +59,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "nav-link active-nav-link" : "nav-link"
                 }
-                onClick={toggleMenu}
+                // onClick={toggleMenu}
               >
                 Services <span className="arrow"></span>
                 <div className="dropdown">

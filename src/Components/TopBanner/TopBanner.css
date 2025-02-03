@@ -1,21 +1,21 @@
 .icosahedron-bg {
   position: absolute;
-  z-index: 0; 
-  opacity: 0.2; 
-  pointer-events: none; 
+  z-index: 0;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .icosahedron-right {
-  top: -135px;  
-  right: -240px; 
-  width: 600px;  
+  top: -135px;
+  right: -240px;
+  width: 600px;
   height: 600px;
 }
 
 .icosahedron-left {
-  bottom: -165px;  
-  left: -195px; 
-  width: 500px;  
+  bottom: -165px;
+  left: -195px;
+  width: 500px;
   height: 500px;
 }
 
@@ -147,4 +147,63 @@
   transform: rotateX(45deg) rotateY(45deg);
 }
 
+@media (max-width: 1024px) {
+  .top-banner-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 25px;
+  }
+  .we-tra-txt {
+    font-family: Jost-Bold;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 86.7px;
+  }
+  .icosahedron-left {
+    display: none;
+  }
+  .desc-text-area {
+    padding: 30px 0 60px;
+  }
+  .t-b-desc {
+    padding: 60px 0 80px;
+  }
+  .view-works-container {
+    margin: 0 0 60px;
+    /* top: 23px; */
+  }
+}
 
+@media (max-width: 768px) {
+  .we-tra-txt {
+    font-family: Jost-Bold;
+    font-size: 30px;
+    line-height: 43.35px;
+}
+.span-txt-t-b {
+  font-family: Jost-Regular;
+  font-size: 30px;
+  line-height: 43.35px;
+}
+.desc-text-area {
+  font-family: Jost-Medium;
+  font-size: 17px;
+  line-height: 24.57px;
+
+}
+.top-banner-container {
+  padding: 0 10px;
+}
+/* .icosahedron-right {
+  top: -52px;
+  right: -251px;
+  width: 388px;
+  height: 600px;
+} */
+/* canvas {
+  display: block;
+  width: 200px !important;
+  height: 250px !important;
+  touch-action: auto;
+} */
+}

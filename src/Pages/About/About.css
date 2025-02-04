@@ -1,0 +1,586 @@
+
+*{
+ 
+}
+
+
+.about-container-main {
+  width: 100%;
+  background: rgba(245, 245, 245, 1);
+
+}
+.about-to-bottopm-p {
+  padding: 100px 0;
+}
+.inner-line {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 114px;
+  margin: 30px 0;
+}
+.about-container {
+  max-width: 1320px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.about-right-img {
+  max-width: 645px;
+  min-width: 200px;
+  width: 100%;
+  height: 430px;
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+.about-right {
+  max-width: 588px;
+  min-width: 250px;
+  width: 100%;
+}
+.about-left {
+  max-width: 645px;
+  min-width: 200px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.img-discovery-flex-ss{
+ 
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    align-items: center;
+
+}
+.heading-100{
+  width: 100%;
+  background: rgba(245, 245, 245, 1);
+}
+.heading-inner {
+  max-width: 1320px;
+  min-width: 200px;
+
+  width: 100%;
+ 
+
+  margin: 0 auto;
+}
+.home-main-heading-inner {
+  padding: 20px 0;
+}
+.about-r-l-flex {
+  display: flex;
+  gap: 57px;
+  align-items: center;
+}
+
+.to-creation {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 28.9px;
+  font-family: Jost-Regular;
+}
+.at-flourish {
+  font-family: Jost-Bold;
+  font-size: 50px;
+  line-height: 72.25px;
+}
+
+/* Container and Header Styling */
+/* Container and Header Styling */
+
+.timeline-container {
+  background-color: rgba(6, 6, 6, 1);
+
+  color: white;
+  padding: 100px 0;
+}
+
+/*  */
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.timeline-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.timeline-header p {
+  margin-top: 25px;
+  color: gray;
+  font-size: 20px;
+  line-height: 28.9px;
+  font-family: Jost-Regular;
+}
+
+.our-journy {
+  max-width: 1320px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.discovery:hover .img-process {
+  transform: scale(0.98); /* Reduces the size to 90% */
+  transition: transform 0.3s ease-in-out; /* Adds smooth transition */
+}
+
+.discovery:hover .we-take {
+  color: white;
+}
+/* Timeline Structure */
+.timeline {
+  position: relative;
+  max-width: 1320px;
+  min-width: 200px;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0 0 0;
+  margin: 0 auto;
+}
+
+.timeline-image{
+  display: flex
+;
+    align-items: flex-end;
+    position: relative;
+    opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+    right: -67px;
+}
+.timeline-image-secound{
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.first-image {
+  position: absolute;
+  left: -100%;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0; /* Adjust this value to move the line down */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 100%;
+  /* padding: 0 20px; */
+
+  background-color: gray;
+  z-index: 1;
+}
+.timeline-year span {
+  
+  /* transition: background-color 0.5s ease; */
+}
+
+/* Timeline Items */
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1320px;
+  min-width: 200px;
+
+  width: 100%;
+  padding-bottom: 59px;
+}
+.timeline-item.left .timeline-image {
+  align-self: flex-start; /* Align image to the top for left-aligned items */
+  position: absolute;
+    left: 0;
+    display: flex;
+    top: -36px;
+    max-width: 1320px;
+    min-width: 200px;
+}
+.second-image{
+  position: relative;
+    left: 395px;
+}
+
+.timeline-item.right .timeline-image {
+  align-self: flex-end; /* Align image to the bottom for right-aligned items */
+}
+
+.timeline-item.right .timeline-content {
+  text-align: left;
+  margin-left: 20px;
+  align-self: flex-start;
+}
+
+.timeline-item.left .timeline-content {
+  text-align: right;
+  margin-right: 20px;
+  align-self: flex-end;
+}
+
+.timeline-year {
+  position: absolute;
+  top: -40px; /* Adjust to place it above the line */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.timeline-item.right .timeline-year {
+  order: 1; /* Center year/dot for right alignment */
+}
+
+.timeline-item.left .timeline-year {
+  order: 2; /* Center year/dot for left alignment */
+}
+
+.timeline-content {
+  max-width: 597px;
+  min-width: 200px;
+  width: 100%;
+  text-align: center;
+}
+.milstone-describe {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+
+  font-size: 20px;
+  line-height: 28.9px;
+  font-family: Jost-Regular;
+}
+
+/* Year and Dot Styling */
+.timeline-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px; /* Space between year and dot */
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+}
+
+.timeline-year span {
+ 
+  background-color: rgba(6, 6, 6, 1);
+  font-size: 16px;
+  line-height: 23.12px;
+  font-family: Jost-SemiBold;
+}
+.our-glowing {
+  font-size: 50px;
+  line-height: 72.25px;
+  font-family: Jost-Bold;
+}
+.mission-vision-flex {
+  max-width: 1320px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+}
+.mission {
+  max-width: 653px;
+  min-width: 200px;
+  width: 100%;
+
+  /* height: 439px; */
+  padding: 8px 22px 25px 23px;
+  background-color: white;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.vision {
+  max-width: 653px;
+  min-width: 200px;
+  width: 100%;
+  /* height: 439px; */
+  padding: 8px 22px 25px 23px;
+  background-color: white;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.mission-icon-h {
+  border: 1px solid red;
+}
+.img-p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 8px;
+}
+.our-m-p {
+  font-size: 40px;
+  font-family: Jost-Bold;
+  white-space: nowrap;
+}
+.mission-desc {
+  font-size: 20px;
+  line-height: 28.9px;
+  font-family: Jost-Regular;
+  color: rgba(0, 0, 0, 0.5);
+  padding-top: 19px;
+}
+.disc-hr {
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+.discovery-container {
+  padding: 100px 0;
+}
+.our-process-container {
+  background-color: black;
+  padding: 100px 0;
+}
+.our-process-heading {
+  font-size: 50px;
+  line-height: 72.25px;
+  font-family: Jost-Bold;
+  color: white;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.discovery {
+  max-width: 653px;
+  min-width: 200px;
+  width: 100%;
+  height: 235px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 10px;
+}
+.discovery-flex {
+  max-width: 1320px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+}
+.discovery-top-p {
+  padding-top: 30px;
+}
+.we-take {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  line-height: 28.9px;
+}
+
+
+.img-process {
+  width: 300px; 
+  height: 210px; 
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+.img-discovery-flex {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  align-items: center;
+}
+.number {
+  font-size: 22px;
+  line-height: 31.79px;
+  font-family: Jost-Medium;
+
+  color: transparent; /* Make the inside color transparent */
+  -webkit-text-stroke: 0.5px white;
+}
+.zeroone-h {
+  font-size: 22px;
+  font-family: Jost-Medium;
+  color: white;
+  line-height: 31.79px;
+}
+.number-discovery {
+  display: flex;
+  gap: 10px;
+}
+.img-discovery-flex-secound{
+  
+    display: flex;
+
+    gap: 15px;
+    padding: 15px;
+    align-items: center;
+
+}
+
+
+@media screen and (max-width:1024px) {
+  /* .aos-animate {
+    display: none !important;
+  } */
+  .our-glowing{
+    font-size: 40px;
+    line-height: 57px;
+  }
+  .timeline-content{
+    max-width: unset;
+    min-width: unset;
+  }
+  .timeline-item.left .timeline-content {
+    text-align: left;
+    margin-left: 85px;
+    align-self: flex-start;
+  }
+  .timeline-item.right .timeline-content {
+    text-align: left;
+    margin-left: 85px;
+    align-self: flex-start;
+  }
+  .about-r-l-flex{
+    flex-wrap: wrap;
+    flex-flow: column-reverse;
+    padding: 0 25px;
+  }
+  .timeline-line{
+    transform: unset;
+    left: 40px;
+  }
+  .timeline-year{
+    left: 42px;
+  }
+  .timeline-item{
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+  .timeline-image{
+    position: static;
+  }
+  .timeline-item.left .timeline-image{
+    position: static;
+    display: none;
+  }
+  .home-main-heading-inner {
+    padding: 20px 0 20px 25px;
+}
+.about-right{
+  max-width: unset;
+  min-width: unset;
+  
+}
+.mission-vision-flex{
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.mission{
+  max-width: unset;
+  min-width: unset;
+}
+.vision{
+  max-width: unset;
+  min-width: unset;
+}
+.discovery-container {
+  padding: 80px 25px;
+}
+.about-to-bottopm-p{
+  padding: 80px 0;
+}
+.our-process-container{
+  padding: 80px 0;
+}
+.our-process-heading{
+  padding-bottom:30px ;
+}
+.discovery-flex{
+  gap: 18px;
+  padding: 0 25px;
+}
+.discovery{
+ height: unset;
+}
+.img-discovery-flex{
+  flex-direction: column;
+}
+.img-process{
+  max-width: 300px;
+  min-width: 150px;
+  width: 100%;
+}
+.img-discovery-flex-secound{
+  flex-flow: column-reverse;
+}
+.img-discovery-flex-ss{
+  flex-flow: column-reverse;
+}
+}
+
+
+@media screen and (max-width:768px) {
+  .discovery-flex {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+}
+.our-glowing{
+  font-size: 25px;
+  line-height: 36.13px;
+}
+.our-process-container {
+  padding: 50px 0;
+}
+.our-process-heading {
+  padding-bottom: 30px;
+  font-size: 30px;
+  line-height: 43.35px;
+}
+.mission-desc{
+  font-size: 16px;
+  line-height: 23.12px;
+}
+.mission {
+padding: 10px;
+}
+.our-m-p{
+  font-size: 25px;
+  line-height: 36.13px;
+}
+.discovery{
+  max-width: unset;
+  min-width: unset;
+}
+.discovery-top-p{
+  padding-top: 15px;
+}
+.about-right-img{
+  height: unset;
+}
+.about-right-img {
+top: 13px;
+left: 13px;
+}
+.about-r-l-flex {
+ gap: 40.72px;
+ padding: 0 10px;
+}
+.at-flourish {
+  
+  font-size: 25px;
+  line-height: 36.13px;
+}
+
+.inner-line{
+  margin: 20px 0;
+}
+.to-creation {
+  font-size: 16px;
+ 
+  line-height: 23.12px;
+ 
+}
+.about-to-bottopm-p {
+  padding: 60px 0;
+}
+.discovery-container {
+  padding: 60px 10px;
+}
+}

@@ -6,12 +6,23 @@ import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import { useEffect, useState } from "react";
 import PreLoader from "./Components/PreLoader/PreLoader";
+
+import About from "./Pages/About/About";
+import Portfolio from "./Pages/Portfolio/Portfolio";
+import Work from "./Pages/Work/Work";
+
 import BrandingMainP from "./Pages/Service/Branding/BrandingMainP/BrandingMainP";
 import BrandingSubP from "./Pages/Service/Branding/BrandingSubP/BrandingSubP";
+
+import Blogs from "./Pages/Blogs/Blogs";
+import Singleblogpage from "./Pages/Blogs/Singleblogpage/Singleblogpage";
+
 import Contact from "./Components/Contact/Contact";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Nav from "./Components/Nav/Nav";
 import TabNav from "./Components/TabNav/TabNav";
+
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -36,16 +47,27 @@ function App() {
           {/* <Navbar/> */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
+
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/portfolio" element={<Portfolio />}></Route>
+            <Route path="/work" element={<Work />}></Route>
+
             <Route path="/contact" element={<ContactUs />}></Route>
             <Route path="/tabnav" element={<TabNav />}></Route>
 
             <Route path="/branding" element={<BrandingMainP />}></Route>
+
             <Route
               path="/branding-positioning"
               element={<BrandingSubP />}
             ></Route>
+
+            <Route path="/branding-positioning" element={<BrandingSubP/>}></Route>
+            <Route path="/blogs" element={<Blogs/>}></Route>
+            <Route path="/Singleblogpage" element={<Singleblogpage/>}></Route>
+
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       )}
     </>

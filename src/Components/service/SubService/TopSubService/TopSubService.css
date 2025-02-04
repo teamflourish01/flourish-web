@@ -77,3 +77,40 @@
     padding: 100px 0 80px;
   }
 }
+@media (max-width: 768px) {
+  .define-t-s-s {
+    font-size: 25px;
+    line-height: 36.13px;
+  }
+  .top-sub-service{
+    padding: 60px 0 60px;
+  }
+  .top-s-s-c-desc{
+    padding: 20px 0 40px;
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .flourish-process-title {
+    font-size: 21px;
+    line-height: 30.35px;
+  }
+  .f-p-b-n{
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .f-p-b-title{
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .f-p-b-desc{
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .f-p-boxes{
+    padding: 20px 0 20px;
+  }
+  .top-sub-service-container{
+    padding: 0 10px;
+  }
+}
+

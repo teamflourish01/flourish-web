@@ -17,16 +17,14 @@
   line-height: 72.25px;
 }
 .craft-desc {
-  font-family: Jost;
+  font-family: Jost-Regular;
   font-size: 20px;
   font-weight: 400;
   line-height: 28.9px;
   text-align: left;
   color: rgba(0, 0, 0, 0.5);
-  max-width: 1000px;
-  min-width: 200px;
-  width: 100%;
   padding: 25px 0 23px;
+  width: calc(100% - 16%);
 }
 
 .ladyqueimg {
@@ -65,24 +63,24 @@
 }
 
 .sub-s-box-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    max-width: 1320px; 
-    overflow-x: auto; 
-    overflow-y: hidden; 
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-    gap: 14px;
-    padding-bottom: 10px; 
-  }
-  .sub-s-box {
-    min-width: 319px; 
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0px 0px 4px 0px #00000026;
-  }
- 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1320px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  gap: 14px;
+  padding-bottom: 10px;
+}
+.sub-s-box {
+  min-width: 319px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 4px 0px #00000026;
+}
+
 .s-s-b-01 {
   font-family: Jost-Medium;
   font-size: 22px;
@@ -126,6 +124,66 @@
   text-align: left;
   color: rgba(0, 0, 0, 0.5);
 }
-.link-txt{
+.link-txt {
   text-decoration: none;
+}
+@media (max-width: 1024px) {
+  .ladyqueimg {
+    top: 46%;
+  }
+  .brand-top-banner-container {
+    padding: 0 25px;
+  }
+  .brand-top-banner {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 768px) {
+  .ladyqueimg {
+    display: none;
+  }
+  .text-des-ladyque {
+    border-bottom: 1px solid #00000080;
+  }
+  .que-con-img {
+    display: none;
+  }
+  .craft-desc {
+    width: 100%;
+    font-size: 16px;
+    line-height: 23.12px;
+    padding: 20px 0 15px;
+  }
+  .brand-top-banner-container {
+    padding: 0 10px;
+  }
+  .branding-title-t-b {
+    font-size: 25px;
+    line-height: 36.13px;
+  }
+
+  .sub-service-t-b-t-b {
+    padding: 40px 0 20px;
+    font-size: 21px;
+    line-height: 30.35px;
+  }
+  .s-s-b-01 {
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .s-s-b-b-t {
+    font-size: 17px;
+    line-height: 24.57px;
+  }
+  .bet-desc {
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .explore-service-txt {
+    font-size: 16px;
+    line-height: 23.12px;
+  }
+  .sub-s-box-container {
+    padding-bottom: unset;
+  }
 }

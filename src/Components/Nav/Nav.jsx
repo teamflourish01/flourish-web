@@ -7,7 +7,8 @@ import close from "../../assets/close-icon-nav.svg";
 import ServiceNav from "../ServiceNav/ServiceNav";
 
 const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -49,13 +50,16 @@ const Nav = () => {
                   About
                 </NavLink>
               </li>
-              <li className="margin-b-30 dropdown-container">
+              <li className="margin-b-30 dropdown-container"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+                >
                 <NavLink
-                  to="/service"
+                  to="/tabnav"
                   className={({ isActive }) =>
                     isActive ? "nav-link active-nav-link" : "nav-link"
                   }
-                  // onClick={toggleMenu}
+                  onClick={toggleMenu}
                 >
                   Services <span className="arrow"></span>
                   {/* <div className="dropdown">
@@ -121,10 +125,13 @@ const Nav = () => {
             </ul>
           </div>
           <hr className="hr-animation-servicenav " />
-
+         
           <div className="dropdown">
+          {isDropdownOpen && (
             <ServiceNav />
+          )}
           </div>
+         
         </div>
         <div className="menu-header-navbar">
           <button className="close-btn-navbar" onClick={toggleMenu}>

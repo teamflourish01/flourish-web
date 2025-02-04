@@ -17,7 +17,7 @@ function Home() {
       <YourFuture/>
       <YourChallanges/>
       <YourSuccess/>
-      <YourExperience/>
+      {/* <YourExperience/> */}
       <YourBrand/>
       <Strategy/>
       <YourGrowth/>

@@ -26,7 +26,7 @@ const SecLast = () => {
             With strategic branding, your business can
           </p>
           <div className="flex-brand-posi">
-            <img src={seclastimg} alt="" />
+            <img src={seclastimg} alt="" className="b-p-img"/>
 
             <div className="benefits-container-sl">
               {data.map((item, index) => (

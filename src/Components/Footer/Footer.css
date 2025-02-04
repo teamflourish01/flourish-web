@@ -176,7 +176,7 @@
   }
   .res-1024 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
   .wp-icon svg {
     font-size: 38px !important;
@@ -188,12 +188,16 @@
     padding-top: 30px;
     padding-bottom: 50px;
   }
+  .f-desc-txt{
+    max-width: unset;
+  }
 }
 @media (max-width: 768px) {
   .footer-container {
     padding: 50px 10px;
   }
   .res-1024 {
+    gap: 25px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -201,5 +205,21 @@
     padding-top: 30px;
     padding-bottom: 40px;
   }
-
+  .f-desc-txt {
+    font-size: 16px;
+    line-height: 23.12px;
+    padding: 25px 0 30px;
+  }
+  .title-head-f {
+    font-size: 21px;
+    line-height: 30.35px;
+  }
+  .footer-link{
+    font-size: 18px;
+    line-height: 26.01px;
+  }
+  .con-info-text {
+    font-size: 18px;
+    line-height: 26.01px;
+  }
 }

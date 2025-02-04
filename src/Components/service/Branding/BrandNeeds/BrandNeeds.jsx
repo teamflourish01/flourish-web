@@ -16,11 +16,11 @@ const BrandNeeds = () => {
           </div>
           {/* <div className="vertical-line"></div> */}
           <div className="vertical-line">
-  <div className="horizontal-line"></div>
-  <div className="horizontal-line"></div>
-  <div className="horizontal-line"></div>
-  <div className="horizontal-line"></div>
-</div>
+            <div className="horizontal-line"></div>
+            <div className="horizontal-line"></div>
+            <div className="horizontal-line"></div>
+            <div className="horizontal-line"></div>
+          </div>
 
           <div className="brand-text">
             <div className="brand-benefits">

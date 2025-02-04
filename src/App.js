@@ -20,6 +20,7 @@ import Singleblogpage from "./Pages/Blogs/Singleblogpage/Singleblogpage";
 import Contact from "./Components/Contact/Contact";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Nav from "./Components/Nav/Nav";
+import TabNav from "./Components/TabNav/TabNav";
 
 
 
@@ -39,8 +40,11 @@ function App() {
         <PreLoader />
       ) : (
         <div className="app-container">
-          {/* <Nav /> */}
-          <Navbar/>
+          <Routes>
+          <Route path="/tabnav" element={<TabNav />}></Route>
+          </Routes>
+          <Nav />
+          {/* <Navbar/> */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
 
@@ -49,8 +53,15 @@ function App() {
             <Route path="/work" element={<Work />}></Route>
 
             <Route path="/contact" element={<ContactUs />}></Route>
+            <Route path="/tabnav" element={<TabNav />}></Route>
 
             <Route path="/branding" element={<BrandingMainP />}></Route>
+
+            <Route
+              path="/branding-positioning"
+              element={<BrandingSubP />}
+            ></Route>
+
             <Route path="/branding-positioning" element={<BrandingSubP/>}></Route>
             <Route path="/blogs" element={<Blogs/>}></Route>
             <Route path="/Singleblogpage" element={<Singleblogpage/>}></Route>

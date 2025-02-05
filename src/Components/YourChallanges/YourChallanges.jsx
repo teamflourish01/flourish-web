@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../YourChallanges/YourChallanges.css";
 import YellowBtn from "../YellowBtn/YellowBtn";
-
+import arrowr from '../../assets/arrowr.svg'
 const boxes = [
   {
     no: "01",
@@ -103,20 +103,24 @@ const YourChallanges = () => {
               <div 
                 key={`${currentIndex}-${index}`}
                 className={`box-of-one ${isTransitioning ? 'transitioning' : ''}`}
+                style={{border:`${index === 0 ? '1px solid white' : ' 1px solid rgba(255, 255, 255, 0.5)'}`}}
+
               >
                 <div className="box-num-flex">
                   <div>
-                  <p className="stroke-txt-strategy-01">{box.no}</p>
-                  <p className="title-branding-box">{box.title}</p>
+                  <p className={`stroke-txt-strategy-01 ${index === 0 ? 'text-white' : 'text-gray-400'}`}>{box.no}</p>
+                  <p className={`title-branding-box ${index === 0 ? 'text-white' : 'text-gray-400'}`}>{box.title}</p>
                   </div>
                   <div className="arrow-box-r">
-                    <button>→</button>
+                    {/* <button>→</button> */}
+                    <img src={arrowr} alt="" />
+
                   </div>
                 </div>
                 <div className="desc-arr-container-flex">
-                  <p className="desc-box">{box.description}</p>
-                  <div className="arrow-box">
-                    <button>→</button>
+                  <p className={`desc-box ${index === 0 ? 'text-white' : 'text-gray-400'}`}>{box.description}</p>
+                  <div className="arrow-box" style={{backgroundColor:`${index === 0 ? 'white' : 'rgba(255, 255, 255, 0.5)'}`}}>
+                  <img src={arrowr} alt="" />
                   </div>
                 </div>
               </div>

@@ -1,10 +1,19 @@
 import React from "react";
 import "../TabNav/TabNav.css";
-
+import orgarw from '../../assets/orgleft.svg'
+import closebtn from '../../assets/close-icon-nav.svg'
 const TabNav = () => {
   return (
     <>
+    <div className="service-tabnav"> <div className="go-back-flex">
+          <div className="go-back-txt-flex">
+            <img src={orgarw} alt="" />
+            <div className="org-go-back">Go Back</div>
+          </div>
+          <img src={closebtn} alt="" />
+        </div>
       <div className="service-container-tab">
+       
         <div className="service-category-tab">
           <h3>Visual Experience</h3>
           <ul>
@@ -51,6 +60,7 @@ const TabNav = () => {
             <li>Software Development</li>
           </ul>
         </div>
+        <div className="hr-animation-servicenav-tab"></div>
         <div className="service-category-tab">
           <h3>Digital Marketing</h3>
           <ul>
@@ -78,6 +88,7 @@ const TabNav = () => {
             <li>Digital Transformation Roadmap Creation</li>
           </ul>
         </div>
+      </div>
       </div>
     </>
   );

@@ -93,7 +93,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   width: 100%;
   opacity: 0;
   transform: translateY(50px);
@@ -125,7 +125,12 @@
   font-size: 30px;
   line-height: 43.35px;
   text-align: left;
+}
+.text-gray-400{
   color: rgba(255, 255, 255, 0.5);
+}
+.text-white{
+  color: white;
 }
 .desc-arr-container-flex {
   display: flex;
@@ -141,26 +146,26 @@
   font-size: 20px;
   line-height: 28.9px;
   text-align: left;
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
 }
 .arrow-box {
-  width: 67.2px;
+  width: 83.33px;
   height: 42px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  /* background-color: rgba(255, 255, 255, 0.5); */
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.arrow-box button {
+.arrow-box img {
   font-size: 24px;
   background: none;
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
   border: none;
   cursor: pointer;
   transition: transform 1s;
-  position: relative;
-  top: -1px;
+  /* position: relative;
+  top: 1px; */
 }
 .arrow-box-r {
   width: 35px;

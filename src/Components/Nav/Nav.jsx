@@ -50,12 +50,12 @@ const Nav = () => {
                   About
                 </NavLink>
               </li>
-              <li className="margin-b-30 dropdown-container"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
-                >
+              <li
+                className="margin-b-30 dropdown-container"
+                onClick={() => setIsDropdownOpen(true)}
+              >
                 <NavLink
-                  to="/tabnav"
+                  to="/service"
                   className={({ isActive }) =>
                     isActive ? "nav-link active-nav-link" : "nav-link"
                   }
@@ -125,19 +125,15 @@ const Nav = () => {
             </ul>
           </div>
           <hr className="hr-animation-servicenav " />
-         
-          <div className="dropdown">
-          {isDropdownOpen && (
-            <ServiceNav />
-          )}
-          </div>
-         
-        </div>
-        <div className="menu-header-navbar">
+
+          <div className="dropdown">{isDropdownOpen && <ServiceNav />}</div>
+          <div className="menu-header-navbar">
           <button className="close-btn-navbar" onClick={toggleMenu}>
             <img src={close} alt="Close" />
           </button>
         </div>
+        </div>
+       
       </div>
     </>
   );

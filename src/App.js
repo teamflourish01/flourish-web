@@ -21,6 +21,7 @@ import Contact from "./Components/Contact/Contact";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Nav from "./Components/Nav/Nav";
 import TabNav from "./Components/TabNav/TabNav";
+import MobNav from "./Components/MobNav/MobNav";
 
 
 
@@ -40,13 +41,15 @@ function App() {
         <PreLoader />
       ) : (
         <div className="app-container">
-          <Routes>
+          {/* <Routes>
           <Route path="/tabnav" element={<TabNav />}></Route>
-          </Routes>
+          </Routes> */}
           <Nav />
           {/* <Navbar/> */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/tabnav" element={<TabNav />}></Route>
+            <Route path="/mobnav" element={<MobNav />}></Route>
 
             <Route path="/about" element={<About />}></Route>
             <Route path="/portfolio" element={<Portfolio />}></Route>
@@ -67,7 +70,7 @@ function App() {
             <Route path="/Singleblogpage" element={<Singleblogpage/>}></Route>
 
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       )}
     </>

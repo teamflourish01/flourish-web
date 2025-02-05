@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../About/about.css";
+import "../About/About.css";
 import { gsap } from "gsap";
 import AOS from "aos";
 import first from "../../assets/first.svg";

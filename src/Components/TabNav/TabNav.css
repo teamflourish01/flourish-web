@@ -1,82 +1,103 @@
+.service-tabnav {
+  max-width: 768px;
+  min-width: 200px;
+  width: 100%;
+  padding: 25px;
+  background-color: black;
+  margin: 0 auto;
+}
 .service-container-tab {
-    width: 100%;
-    background-color: black;
-  }
-  .service-container-tab {
-    display: grid;
-    grid-template-columns: repeat(4, 0.9fr);
-    gap: 20px;
-    padding: 10px 0 0;
-    background-color: unset;
-    background-color: black;
+  display: grid;
+  grid-template-columns: repeat(4, 0.9fr);
+  gap: 40px 20px;
+  background-color: unset;
+  background-color: black;
+}
 
+.service-category-tab h3 {
+  font-family: Jost-Medium;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28.9px;
+  text-align: left;
+  margin-bottom: 10px;
+  color: white;
+  white-space: nowrap;
+}
+
+.service-category-tab ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-category-tab ul li {
+  font-family: Jost-Regular;
+  font-size: 18px;
+  line-height: 26.01px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+}
+.hr-animation-servicenav-tab {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  margin: unset;
+  overflow: hidden;
+  top: 454px;
+  right: 1px;
+}
+
+.hr-animation-servicenav-tab::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 96px;
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  animation: lineMoveC 9s linear infinite;
+}
+@keyframes lineMoveC {
+  0% {
+    transform: translateX(-100%);
   }
-  
-  .service-category-tab h3 {
-    font-family: Jost-Medium;
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 36.13px;
-    text-align: left;
-    margin-bottom: 10px;
-    color: white;
+  100% {
+    transform: translateX(700%);
   }
-  
-  .service-category-tab ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+}
+.go-back-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 36px;
+}
+.go-back-txt-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}
+.org-go-back {
+  font-family: Jost-Regular;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.01px;
+  text-align: center;
+  color: rgba(255, 152, 0, 1);
+}
+@media (max-width: 1530px) {
+  .service-container-tab {
+    grid-template-columns: repeat(4, 0.9fr);
   }
-  
-  .service-category-tab ul li {
-    font-family: Jost-Regular;
-    font-size: 18px;
-    line-height: 26.01px;
-    text-align: left;
-    color: rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 1230px) {
+  .service-container-tab {
+    grid-template-columns: repeat(2, 0.9fr);
   }
-  .hr-animation-servicenav-tab {
-    position: relative;
-    width: 1px;
-    height: calc(100vh - -215px);
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
-    margin: unset;
-    overflow: hidden;
-    top: -100px;
-  }
-  
-  .hr-animation-servicenav-tab::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1px;
-    height: 96px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.8)
-    );
-    animation: lineMoveC 12s linear infinite;
-  }
-  @keyframes lineMoveC {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(700%);
-    }
-  }
-  
-  @media (max-width: 1530px) {
-    .service-container-tab {
-      grid-template-columns: repeat(3, 0.9fr);
-    }
-  }
-  @media (max-width: 1230px) {
-    .service-container-tab {
-      grid-template-columns: repeat(2, 0.9fr);
-    }
-  }
-  
+}

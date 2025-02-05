@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../About/about.css";
+import "../About/About.css";
 import { gsap } from "gsap";
 import AOS from "aos";
 import first from "../../assets/first.svg";
@@ -158,6 +158,7 @@ const About = () => {
                     solutions and personalized strategies.
                   </div>
                 </div>
+                <div className="main-img-about-left">
                 <div className="about-left">
                   <img
                     src={banner}
@@ -165,6 +166,7 @@ const About = () => {
                     srcset=""
                     className="about-right-img"
                   />
+                </div>
                 </div>
               </div>
             </div>

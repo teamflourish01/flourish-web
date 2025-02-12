@@ -48,12 +48,12 @@ const YourBrand = () => {
           </p>
 
           <div className="nine-grid-cards">
-            <div class="card-container-nine" >
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine" >
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Gajanan bungalows
@@ -69,12 +69,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Tywist
@@ -90,12 +90,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Sakar Group
@@ -111,12 +111,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Shyam Group
@@ -132,12 +132,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Mahamahal
@@ -153,12 +153,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Flonix
@@ -174,12 +174,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Frutzoo
@@ -195,12 +195,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Optodolce
@@ -216,12 +216,12 @@ const YourBrand = () => {
                 </div>
               </div>
             </div>
-            <div class="card-container-nine">
-              <div class="card-nine">
-                <div class="card-front-nine">
+            <div className="card-container-nine">
+              <div className="card-nine">
+                <div className="card-front-nine">
                   <img src={logo} alt="Logo" />
                 </div>
-                <div class="card-details-nine">
+                <div className="card-details-nine">
                   <p className="details-p-card">
                     <span className="details-p-card-span">Client Name: </span>
                     Role

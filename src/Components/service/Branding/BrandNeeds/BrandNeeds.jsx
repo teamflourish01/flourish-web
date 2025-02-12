@@ -2,11 +2,13 @@ import React from "react";
 import "../BrandNeeds/BrandNeeds.css";
 import chess from "../../../../assets/Branding/chess.png";
 
-const BrandNeeds = () => {
+const BrandNeeds = ({ ServiceData }) => {
+  let url = process.env.REACT_APP_DEV_URL;
+
   return (
     <div className="brand-needs">
       <div className="brand-needs-container">
-        <h2 className="brand-title">Why Your Brand Needs It?</h2>
+        <h2 className="brand-title">{ServiceData?.brand_need_question}</h2>
         <p className="brand-subtitle">
           Here’s why your brand needs professional branding
         </p>
@@ -25,41 +27,24 @@ const BrandNeeds = () => {
           <div className="brand-text">
             <div className="brand-benefits">
               <div className="benefit">
-                <p className="b-n-title">Stand Out From the Crowd</p>
-                <p className="b-n-p-des">
-                  Differentiation is the key to visibility. A unique brand
-                  identity ensures you don’t get lost in a saturated market.
-                </p>
+                <p className="b-n-title">{ServiceData?.brand_need_heading1}</p>
+                <p className="b-n-p-des">{ServiceData?.brand_need_text1}</p>
               </div>
               <div className="benefit">
-                <p className="b-n-title">Build Trust & Loyalty</p>
-                <p className="b-n-p-des">
-                  Customers are more likely to choose a brand they trust.
-                  Effective branding instills confidence and encourages repeat
-                  business.
-                </p>
+                <p className="b-n-title">{ServiceData?.brand_need_heading2}</p>
+                <p className="b-n-p-des">{ServiceData?.brand_need_text2}</p>
               </div>
               <div className="benefit">
-                <p className="b-n-title">Boost Marketing Effectiveness</p>
-                <p className="b-n-p-des">
-                  A clear brand message amplifies your marketing efforts,
-                  ensuring higher ROI and better audience engagement.
-                </p>
+                <p className="b-n-title">{ServiceData?.brand_need_heading3}</p>
+                <p className="b-n-p-des">{ServiceData?.brand_need_text3}</p>
               </div>
               <div className="benefit">
-                <p className="b-n-title">Drive Growth & Scalability</p>
-                <p className="b-n-p-des">
-                  A strong brand lays the foundation for long-term success,
-                  making it easier to expand your offerings and enter new
-                  markets.
-                </p>
+                <p className="b-n-title">{ServiceData?.brand_need_heading4}</p>
+                <p className="b-n-p-des">{ServiceData?.brand_need_text4}</p>
               </div>
               <div className="benefit">
-                <p className="b-n-title">Attract Top Talent</p>
-                <p className="b-n-p-des">
-                  A reputable brand attracts not only customers but also skilled
-                  professionals who want to be a part of your journey.
-                </p>
+                <p className="b-n-title">{ServiceData?.brand_need_heading5}</p>
+                <p className="b-n-p-des">{ServiceData?.brand_need_text5}</p>
               </div>
             </div>
           </div>

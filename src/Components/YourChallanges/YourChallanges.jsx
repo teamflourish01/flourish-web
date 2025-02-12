@@ -108,8 +108,8 @@ const YourChallanges = () => {
               >
                 <div className="box-num-flex">
                   <div>
-                  <p className={`stroke-txt-strategy-01 ${index === 0 ? 'text-white' : 'text-gray-400'}`}>{box.no}</p>
-                  <p className={`title-branding-box ${index === 0 ? 'text-white' : 'text-gray-400'}`}>{box.title}</p>
+                  <p className={`stroke-txt-strategy-01 ${index === 0 ? 'text-white-no' : 'text-gray-400'}`}>{box.no}</p>
+                  <p className={`title-branding-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box.title}</p>
                   </div>
                   <div className="arrow-box-r">
                     {/* <button>→</button> */}
@@ -118,7 +118,7 @@ const YourChallanges = () => {
                   </div>
                 </div>
                 <div className="desc-arr-container-flex">
-                  <p className={`desc-box ${index === 0 ? 'text-white' : 'text-gray-400'}`}>{box.description}</p>
+                  <p className={`desc-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box.description}</p>
                   <div className="arrow-box" style={{backgroundColor:`${index === 0 ? 'white' : 'rgba(255, 255, 255, 0.5)'}`}}>
                   <img src={arrowr} alt="" />
                   </div>

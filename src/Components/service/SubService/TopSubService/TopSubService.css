@@ -76,6 +76,9 @@
   .top-sub-service{
     padding: 100px 0 80px;
   }
+  .top-sub-service-container{
+    padding: 0 25px;
+  }
 }
 @media (max-width: 768px) {
   .define-t-s-s {

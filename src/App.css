@@ -31,6 +31,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+.app-container{
+  position: relative;
+  top: 89px;
+}
 /* .app-container{
   /* max-width: 1920px;
   min-width: 200px; 
@@ -54,3 +58,13 @@
 
 } */
 
+/* .div{
+  position: relative;
+  top: 89px;
+} */
+
+@media(max-width:1024px){
+  .app-container{
+    /* top: unset; */
+  }
+}

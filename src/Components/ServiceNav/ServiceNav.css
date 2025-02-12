@@ -27,7 +27,9 @@
   padding: 0;
   margin: 0;
 }
-
+.text-deco{
+  text-decoration: none;
+}
 .service-category ul li {
   font-family: Jost-Regular;
   font-size: 18px;

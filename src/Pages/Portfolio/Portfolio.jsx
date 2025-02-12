@@ -2,6 +2,7 @@ import React from "react";
 import "../Portfolio/Portfolio.css";
 import portfolio from "../../assets/portfolio.svg"
 import Breadcrums from "../../Components/Breadcrums/Breadcrums";
+import YellowWhiteBtn from "../../Components/YellowWhiteBtn/YellowWhiteBtn";
 const Portfolio = () => {
   return (
     <>
@@ -24,9 +25,8 @@ const Portfolio = () => {
       </div>
      
       <textarea placeholder="Message"></textarea>
-      <button type="submit" className="submit-btn">
-        Submit <span className="arrow">➜</span>
-      </button>
+      <YellowWhiteBtn btnName="Submit"/>
+
     </div>
     </div>
 

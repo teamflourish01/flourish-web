@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../WhyItImpo/WhyItImpo.css";
 import impl from "../../../../assets/impl.svg";
 import impone from "../../../../assets/imp1.svg";
@@ -6,25 +6,28 @@ import imptwo from "../../../../assets/imp2.svg";
 import impthree from "../../../../assets/imp3.svg";
 import impfour from "../../../../assets/imp4.svg";
 
-const impicon = [
-  {
-    img: impone,
-    desc: "Attract the right customers.",
-  },
-  {
-    img: imptwo,
-    desc: "Enhance credibility in the market.",
-  },
-  {
-    img: impthree,
-    desc: "Drive long-term loyalty and growth.",
-  },
-  {
-    img: impfour,
-    desc: "Investing in branding ensures your business is memorable, recognizable, and positioned for success.",
-  },
-];
-const WhyItImpo = () => {
+const WhyItImpo = ({ ServiceData }) => {
+
+  let url=process.env.REACT_APP_DEV_URL
+
+  const impicon = [
+    {
+      img: ServiceData?.img_fact_1,
+      desc: ServiceData?.important_fact_1,
+    },
+    {
+      img: ServiceData?.img_fact_2,
+      desc: ServiceData?.important_fact_2,
+    },
+    {
+      img: ServiceData?.img_fact_3,
+      desc: ServiceData?.important_fact_3,
+    },
+    {
+      img: ServiceData?.img_fact_4,
+      desc: ServiceData?.important_fact_4,
+    },
+  ];
   return (
     <>
       <div className="why-imp">
@@ -47,7 +50,16 @@ const WhyItImpo = () => {
                     className="imp-img-bg-w"
                     style={{ top: `${85 + index * 70}px` }}
                   >
-                    <img src={imp.img} alt="" />
+                    <img
+                      src={`${url}/service/${imp.img}`}
+                      alt=""
+                      className="img-res-imp"
+                    />
+
+                    {/* <img 
+                    src={``}
+                    // src={imp.img}
+                     alt="" /> */}
                   </div>
                 </React.Fragment>
               ))}
@@ -55,10 +67,12 @@ const WhyItImpo = () => {
             <div className="flex-why-des-txt">
               {impicon.map((imp, index) => (
                 <div div className="flex-res-imp-why">
-                  <div
-                    className="imp-img-bg-w-res"
-                  >
-                    <img src={imp.img} alt="" className="img-res-imp" />
+                  <div className="imp-img-bg-w-res">
+                    <img
+                      src={`${url}/service/${imp.img}`}
+                      alt=""
+                      className="img-res-imp"
+                    />
                   </div>
                   <p
                     className="why-imp-txt-dsc"

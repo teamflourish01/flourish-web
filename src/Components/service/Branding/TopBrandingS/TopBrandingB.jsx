@@ -38,7 +38,7 @@ const SubService = [
   },
 ];
 
-const TopBrandingB = () => {
+const TopBrandingB = ({ServiceData}) => {
   return (
     <>
       <div className="brand-top-banner">
@@ -48,11 +48,9 @@ const TopBrandingB = () => {
           </div>
           <div className="img-con">
             <div className="text-des-ladyque">
-              <p className="branding-title-t-b">What is branding?</p>
+              <p className="branding-title-t-b">{ServiceData?.service_title}</p>
               <p className="craft-desc">
-                Craft a powerful brand identity that resonates with your target
-                audience and leaves a lasting impression. Our branding services
-                ensure your business stands out in a crowded market.
+              {ServiceData?.service_text}
               </p>
             </div>
             <img src={ladyque} alt="" className="ladyqueimg" />
@@ -62,7 +60,7 @@ const TopBrandingB = () => {
           <p className="sub-service-t-b-t-b">Sub-Services</p>
 
           <div className="sub-s-box-container">
-            {SubService.map((ss, index) => (
+            {SubService?.map((ss, index) => (
               <div className="sub-s-box" key={index}>
                 <div className="p-10-15-d">
                   <p className="s-s-b-01">{ss.number}</p>

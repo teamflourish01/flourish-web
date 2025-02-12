@@ -77,19 +77,19 @@
   width: 1.5px;
   height: 96px;
   background: linear-gradient(
-    270deg,
-    rgba(0, 0, 0, 0.5),
+    360deg,
+    rgba(0, 0, 0, 0.3),
     rgba(255, 255, 255, 0.5)
   );
-  animation: lineMove 9s linear infinite;
+  animation: lineMoveVision 9s linear infinite;
 }
 
-@keyframes lineMove {
+@keyframes lineMoveVision {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
   100% {
-    transform: translateX(500%);
+    transform: translateY(500%);
   }
 }
 

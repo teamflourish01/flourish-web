@@ -1,10 +1,13 @@
 .service-tabnav {
-  max-width: 768px;
-  min-width: 200px;
+  /* max-width: 768px;
+  min-width: 200px; */
   width: 100%;
   padding: 25px;
   background-color: black;
-  margin: 0 auto;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  /* margin: 0 auto; */
 }
 .service-container-tab {
   display: grid;
@@ -31,12 +34,29 @@
   margin: 0;
 }
 
+.service-category-tab ul li a {
+  font-family: Jost-Regular;
+  font-size: 18px;
+  line-height: 26.01px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
 .service-category-tab ul li {
   font-family: Jost-Regular;
   font-size: 18px;
   line-height: 26.01px;
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
+}
+.nav-link-s {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: unset;
+}
+.active-nav-link-s {
+  color: white !important;
 }
 .hr-animation-servicenav-tab {
   position: absolute;
@@ -46,7 +66,7 @@
   border: none;
   margin: unset;
   overflow: hidden;
-  top: 454px;
+  top: 366px;
   right: 1px;
 }
 
@@ -96,8 +116,9 @@
     grid-template-columns: repeat(4, 0.9fr);
   }
 }
-@media (max-width: 1230px) {
-  .service-container-tab {
-    grid-template-columns: repeat(2, 0.9fr);
+
+@media (max-width: 1024px) {
+  .service-tabnav {
+    top: -89px;
   }
 }

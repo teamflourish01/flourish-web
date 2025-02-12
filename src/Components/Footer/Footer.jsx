@@ -6,9 +6,9 @@ import { SlSocialInstagram } from "react-icons/sl";
 import { LuFacebook } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
-import call from '../../assets/call.svg'
-import mail from '../../assets/mail.svg'
-import location from '../../assets/location.svg'
+import call from "../../assets/call.svg";
+import mail from "../../assets/mail.svg";
+import location from "../../assets/location.svg";
 
 const Footer = () => {
   return (
@@ -52,176 +52,206 @@ const Footer = () => {
             </div>
           </div>
           <div className="res-1024">
-          <div className="footer-column-2">
-            <p className="title-head-f">Quick Links</p>
-            <ul>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f dropdown-container">
-                <NavLink
-                  to="/services"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Services
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/portfolio"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Portfolio
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/work"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Work
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/blogs"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Blogs
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/clients"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Clients
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Contact Us
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-column-3">
-            <p className="title-head-f">Services</p>
-            <ul>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="-"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Branding
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="-"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Visual Experience
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f dropdown-container">
-                <NavLink
-                  to="-"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Content Creation
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="-"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Digital Marketing
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="-"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Web/App Development
-                </NavLink>
-              </li>
-              <li className="margin-b-8-f">
-                <NavLink
-                  to="-"
-                  className={({ isActive }) =>
-                    isActive ? "footer-link active-footer-link" : "footer-link"
-                  }
-                >
-                  Strategy and Consultation
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-column-4">
-            <p className="title-head-f">Contact Info</p>
-            <ul>
-              <li className="margin-b-8-f flex-con-info-f">
+            <div className="footer-column-2">
+              <p className="title-head-f">Quick Links</p>
+              <ul>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    About Us
+                  </NavLink>
+                </li>
+                {/* <li className="margin-b-8-f dropdown-container">
+                  <NavLink
+                    to="/services"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Services
+                  </NavLink>
+                </li> */}
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/portfolio"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Portfolio
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/work"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Work
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/blogs"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Blogs
+                  </NavLink>
+                </li>
+                {/* <li className="margin-b-8-f">
+                  <NavLink
+                    to="/clients"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Clients
+                  </NavLink>
+                </li> */}
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Contact Us
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-column-3">
+              <p className="title-head-f">Services</p>
+              <ul>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="/service/Branding"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Branding
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="-"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Visual Experience
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f dropdown-container">
+                  <NavLink
+                    to="-"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Content Creation
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="-"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Digital Marketing
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="-"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Web/App Development
+                  </NavLink>
+                </li>
+                <li className="margin-b-8-f">
+                  <NavLink
+                    to="-"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "footer-link active-footer-link"
+                        : "footer-link"
+                    }
+                  >
+                    Strategy and Consultation
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-column-4">
+              <p className="title-head-f">Contact Info</p>
+              <ul>
+                <li className="margin-b-8-f flex-con-info-f">
                   <img src={call} alt="" />
                   <p className="con-info-text">+91 94996 19901</p>
-              </li>
-              <li className="margin-b-8-f flex-con-info-f">
-              <img src={mail} alt="" />
-              <p className="con-info-text">info@teamflourish.co</p>
-              </li>
-              <li className="margin-b-8-f  flex-con-info-f-l">
-                <div className="loc-top-p">
-              <img src={location} alt="" />
-              </div>
-              <p className="con-info-text">A-206, PNTC, radio mirchi road,<br/> vejalpur, Ahmedabad 380015</p>
-              </li>
-              
-            </ul>
-          </div>
+                </li>
+                <li className="margin-b-8-f flex-con-info-f">
+                  <img src={mail} alt="" />
+                  <p className="con-info-text">info@teamflourish.co</p>
+                </li>
+                <li className="margin-b-8-f  flex-con-info-f-l">
+                  <div className="loc-top-p">
+                    <img src={location} alt="" />
+                  </div>
+                  <p className="con-info-text">
+                    A-206, PNTC, radio mirchi road,
+                    <br /> vejalpur, Ahmedabad 380015
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

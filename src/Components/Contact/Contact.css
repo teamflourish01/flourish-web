@@ -32,7 +32,10 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
+}
+.ybtn{
+  padding-top: 35px;
 }
 
 .input,

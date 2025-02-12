@@ -46,30 +46,33 @@ function App() {
           </Routes> */}
           <Nav />
           {/* <Navbar/> */}
+          {/* <div className="div"> */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/tabnav" element={<TabNav />}></Route>
-            <Route path="/mobnav" element={<MobNav />}></Route>
+            {/* <Route path="/tabnav" element={<TabNav />}></Route> */}
+            {/* <Route path="/mobnav" element={<MobNav />}></Route> */}
 
             <Route path="/about" element={<About />}></Route>
             <Route path="/portfolio" element={<Portfolio />}></Route>
             <Route path="/work" element={<Work />}></Route>
 
             <Route path="/contact" element={<ContactUs />}></Route>
-            <Route path="/tabnav" element={<TabNav />}></Route>
+            {/* <Route path="/tabnav" element={<TabNav />}></Route> */}
 
-            <Route path="/branding" element={<BrandingMainP />}></Route>
+            <Route path="/service/:slug" element={<BrandingMainP/>}></Route>
 
             <Route
-              path="/branding-positioning"
+              path="/subservice/brand-positioning"
               element={<BrandingSubP />}
             ></Route>
+            
 
-            <Route path="/branding-positioning" element={<BrandingSubP/>}></Route>
+            {/* <Route path="/branding-positioning" element={<BrandingSubP/>}></Route> */}
             <Route path="/blogs" element={<Blogs/>}></Route>
             <Route path="/Singleblogpage" element={<Singleblogpage/>}></Route>
 
           </Routes>
+          {/* </div> */}
           <Footer />
         </div>
       )}

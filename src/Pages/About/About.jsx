@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "../About/About.css";
 import { gsap } from "gsap";
 import AOS from "aos";
+import group from "../../assets/group.svg";
 import first from "../../assets/first.svg";
 import img2021 from "../../assets/img2021.svg";
 import img2022 from "../../assets/img2022.svg";
@@ -13,6 +14,7 @@ import banner from "../../assets/aboutbanner.svg";
 import mission from "../../assets/missionimg.svg";
 import process from "../../assets/process.svg";
 import Breadcrums from "../../Components/Breadcrums/Breadcrums";
+import VisionWhiteBanner from "../../Components/service/Branding/VisionWhiteBanner/VisionWhiteBanner";
 
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
@@ -158,16 +160,17 @@ const About = () => {
                     solutions and personalized strategies.
                   </div>
                 </div>
-                <div className="main-img-about-left">
-                <div className="about-left">
-                  <img
-                    src={banner}
-                    alt=""
-                    srcset=""
-                    className="about-right-img"
-                  />
-                </div>
-                </div>
+                {/* <div className="main-img-about-left"> */}
+                  <div className="about-left">
+                    <img
+                      src={banner}
+                      alt=""
+                      srcset=""
+                      className="about-right-img"
+                    />
+                  </div>
+                {/* </div> */}
+                
               </div>
             </div>
           </div>
@@ -418,6 +421,8 @@ const About = () => {
           </div>
         </div>
       </section>
+      <VisionWhiteBanner />
+
     </>
   );
 };

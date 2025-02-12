@@ -23,11 +23,11 @@
   padding: 18px 0;
 }
 .padding-container-work {
-  padding: 100px 0 0 0;
+  padding: 100px 30px 0 30px;
 }
 .work-box {
   max-width: 240px;
-  height: 222px;
+  /* height: 222px; */
   min-width: 50px;
   width: 100%;
   border-radius: 10px;
@@ -100,22 +100,89 @@
   min-width: 200px;
   width: 100%;
   margin: 0 auto;
+  gap: 15px;
 }
 .bg-name {
   background-color: white;
   font-size: 25px;
   line-height: 36.13px;
   font-family: Jost-SemiBold;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5); /* Default text color */
   text-align: center;
   padding: 31px 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  transition: color 0.3s ease-in-out;
 }
 .section-b-work {
-  padding-bottom: 100px;
+  
+  padding:  0 30px 100px;
 }
 .work-c-flex {
   display: flex;
   flex-direction: column;
+}
+.gried-box1 {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.work-div-img{
+  max-width: 212px;
+  min-width: 50px;
+  width: 100%;
+  margin: 0 auto;
+}
+.gried-box1 img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+  position: relative;
+}
+
+.gried-box1:hover img {
+  transform: scale(1.1); /* Increase image size on hover */
+}
+.gried-box1:hover .bg-name {
+  color: black; 
+}
+@media screen and (max-width:1024px){
+  .work-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Scroll enable karega */
+    white-space: nowrap;
+  }
+  .section-b-work {
+    padding: 0 25px 100px;
+}
+  .work-gried {
+    display: flex;
+    gap: 29px;
+    min-width: 2600px; /* Fixed width taaki horizontal scroll aaye */
+  }
+  .gajanan-b-gried{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .padding-container-work {
+    padding: 100px 25px 0 25px;
+}
+  
+}
+
+@media screen  and (max-width:768px){
+  .gajanan-b-gried{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .padding-container-work {
+    padding: 100px 10px 0 10px;
+}
+  .about-left {
+    margin: unset;
+    margin-right: 15px;
+}
+.section-b-work {
+  padding: 0 10px 100px;
+}
 }

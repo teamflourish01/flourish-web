@@ -9,6 +9,7 @@
     max-width: 1320px;
     min-width: 200px;
     width: 100%;
+    padding: 0 30px;
     /* border: 1px solid red; */
     margin: 0 auto;
 }
@@ -112,11 +113,16 @@ line-height: 28.9px;
   
   .portfolio-right img {
     height: 347px;
-    width: 520px;
+    max-width: 520px;
+    min-width: 200px;
+    width: 100%;
   }
   @media screen and (max-width:1024px) {
     .portfolio-container{
       flex-direction: column;
+    }
+    .portfolio-container{
+      padding: unset;
     }
     .port-left-main{
       max-width: unset;

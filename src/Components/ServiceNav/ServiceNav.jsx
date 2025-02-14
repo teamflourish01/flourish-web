@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../ServiceNav/ServiceNav.css";
 import { NavLink } from "react-router-dom";
 
-const ServiceNav = ({toggleMenu}) => {
+const ServiceNav = ({ toggleMenu }) => {
+  let url = process.env.REACT_APP_DEV_URL;
+  const [service, setService] = useState([]);
+
+  const getData = async () => {
+    try {
+      let data = await fetch(`${url}/service/`);
+      data = await data.json();
+      console.log(data.data, "service nav");
+
+      setService(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       {/* <hr className="hr-animation-servicenav " /> */}
 
       <div className="service-container">
-        <div className="service-category">
+        {/* <div className="service-category">
           <h3>Visual Experience</h3>
           <ul>
             <li>Logo Design</li>
@@ -33,30 +50,44 @@ const ServiceNav = ({toggleMenu}) => {
             <li>Social Media Content</li>
             <li>Content Calendar</li>
           </ul>
-        </div>
-        <div className="service-category">
-          <h3>Branding</h3>
-          <ul>
-            <li>
-              {" "}
+        </div> */}
+        {service?.map((e, index) => (
+          <div className="service-category">
+            <h3>
               <NavLink
-                to="/brand-positioning"
+                to={`/service/${e?.slug}`}
                 className={({ isActive }) =>
-                  isActive ? " text-deco nav-link-s active-nav-link-s" : "nav-link-s"
+                  isActive
+                    ? "text-deco nav-link-s active-nav-link-s"
+                    : "nav-link-s"
                 }
                 onClick={toggleMenu}
               >
-                Brand Positioning
+                {e?.name}
               </NavLink>
-            </li>
-            <li>Brand Story</li>
-            <li>Brand Messaging</li>
-            <li>Brand Theme</li>
-            <li>Digital Branding</li>
-            <li>Brand Identity</li>
-          </ul>
-        </div>
-        <div className="service-category">
+            </h3>
+            {e.subservices && e.subservices.length > 0 && (
+              <ul>
+                {e.subservices.map((subname, subIndex) => (
+                  <li key={subIndex}>
+                    <NavLink
+                      to={`/subservice/${subname?.slug}`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? " text-deco nav-link-s active-nav-link-s"
+                          : "nav-link-s"
+                      }
+                      onClick={toggleMenu}
+                    >
+                       {subname?.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+        {/* <div className="service-category">
           <h3>Development</h3>
           <ul>
             <li>Website Development</li>
@@ -91,7 +122,7 @@ const ServiceNav = ({toggleMenu}) => {
             <li>Analytics Reporting</li>
             <li>Digital Transformation Roadmap Creation</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </>
   );

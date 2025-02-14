@@ -8,145 +8,139 @@ import ServiceNav from "../ServiceNav/ServiceNav";
 import MobNav from "../MobNav/MobNav";
 
 const MobileNavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [count, setCount] = useState(0);
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(true); // Default open
+  const [isMainMenuOpen, setIsMainMenuOpen] = useState(false);
+  const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  // Toggle Main Menu
+  const toggleMainMenu = () => {
+    setIsMainMenuOpen(!isMainMenuOpen);
+    setIsServiceMenuOpen(false); // Close Service Menu when toggling main menu
   };
-  const closeMenu = () => {
-    setIsMobileNavOpen(false);
+
+  // Open Service Menu
+  const openServiceMenu = () => {
+    setIsServiceMenuOpen(true);
   };
-  const handleServiceClick = () => {
-    setCount(1); 
-    toggleMenu();
+
+  // Go Back to Main Menu
+  const goBackToMainMenu = () => {
+    setIsServiceMenuOpen(false);
   };
-  const handleGoBack = () => {
-    setCount(0); 
-    toggleMenu();
+
+  // Close Everything (Main Menu + Service Menu)
+  const closeAllMenus = () => {
+    setIsMainMenuOpen(false);
+    setIsServiceMenuOpen(false);
   };
-  return count === 0 ? ( 
+  return (
     <>
       <div className="navbar">
         <div className="navbar-container">
           <div className="logo-c">
             <img src={logo} alt="Logo" />
           </div>
-          <div className="h-icon-c" onClick={toggleMenu}>
+          <div className="h-icon-c" onClick={toggleMainMenu}>
             <img src={hicon} alt="Hamburger Icon" />
           </div>
         </div>
-        <div className={`flex ${menuOpen ? "open" : "close"}`}>
-          <div className="menu-navbar">
-            <ul>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  About
-                </NavLink>
-              </li>
-              <li
-                className="margin-b-30 dropdown-container"
-                onClick={handleServiceClick}
-              >
-                <NavLink
-                  to="/service"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                >
-                  Services <span className="arrow"></span>
-                </NavLink>
-              </li>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/portfolio"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  Portfolio
-                </NavLink>
-              </li>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/work"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  Work
-                </NavLink>
-              </li>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/blogs"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  Blogs
-                </NavLink>
-              </li>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/clients"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  Clients
-                </NavLink>
-              </li>
-              <li className="margin-b-30">
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-nav-link" : "nav-link"
-                  }
-                  onClick={toggleMenu}
-                >
-                  Contact Us
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-          <hr className="hr-animation-servicenav " />
-          <div className="dropdown">{isDropdownOpen && <ServiceNav />}</div>
-          <div className="menu-header-navbar">
-            <button className="close-btn-navbar" onClick={toggleMenu}>
-              <img src={close} alt="Close" />
-            </button>
-          </div>
+        <div className={`flex ${isMainMenuOpen ? "open" : "close"}`} style={{padding:`${isServiceMenuOpen ? "0px" : "20px"}`}}>
+          {isMainMenuOpen && !isServiceMenuOpen && (
+            <div className="menu-navbar">
+              <div className="menu-header-navbar">
+                <button className="close-btn-navbar" onClick={closeAllMenus}>
+                  <img src={close} alt="Close" />
+                </button>
+              </div>
+              <ul>
+                <li className="margin-b-30">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-nav-link" : "nav-link"
+                    }
+                    onClick={closeAllMenus}
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li className="margin-b-30">
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-nav-link" : "nav-link"
+                    }
+                    onClick={closeAllMenus}
+                  >
+                    About
+                  </NavLink>
+                </li>
+                <li className="margin-b-30 dropdown-container">
+                  <NavLink
+                    to=""
+                    className={({ isActive }) =>
+                      isActive ? "nav-link nav-link" : "nav-link"
+                    }
+                    onClick={openServiceMenu}
+                  >
+                    Services <span className="arrow"></span>
+                  </NavLink>
+                </li>
+                <li className="margin-b-30">
+                  <NavLink
+                    to="/portfolio"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-nav-link" : "nav-link"
+                    }
+                    onClick={closeAllMenus}
+                  >
+                    Portfolio
+                  </NavLink>
+                </li>
+                <li className="margin-b-30">
+                  <NavLink
+                    to="/work"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-nav-link" : "nav-link"
+                    }
+                    onClick={closeAllMenus}
+                  >
+                    Work
+                  </NavLink>
+                </li>
+                <li className="margin-b-30">
+                  <NavLink
+                    to="/blogs"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-nav-link" : "nav-link"
+                    }
+                    onClick={closeAllMenus}
+                  >
+                    Blogs
+                  </NavLink>
+                </li>
+                <li className="margin-b-30">
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-nav-link" : "nav-link"
+                    }
+                    onClick={closeAllMenus}
+                  >
+                    Contact Us
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          )}
+          {isServiceMenuOpen && (
+            <MobNav
+              goBackToMainMenu={goBackToMainMenu}
+              closeAllMenus={closeAllMenus}
+            />
+          )}
         </div>
       </div>
     </>
-  ) : (
-    isMobileNavOpen && (
-    <MobNav handleGoBack={handleGoBack} toggleMenu={toggleMenu} closeMenu={closeMenu}/> 
-    )
   );
 };
 

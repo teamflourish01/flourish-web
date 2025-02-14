@@ -4,7 +4,8 @@ import YellowBtn from "../YellowBtn/YellowBtn";
 import { PiHandTap } from "react-icons/pi";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import pdf from '../../assets/fcpl.pdf'
+import pdf from "../../assets/fcpl.pdf";
+
 const RotatingIcosahedron = () => {
   const meshRef = useRef();
 
@@ -19,12 +20,16 @@ const RotatingIcosahedron = () => {
   return (
     <mesh ref={meshRef}>
       <icosahedronGeometry args={[2, 0]} /> {/* Increased size */}
-      <meshBasicMaterial wireframe color="rgba(254, 254, 254, 0.2)" /> {/* Black with 50% opacity */}
+      <meshBasicMaterial wireframe color="rgba(254, 254, 254, 0.2)" />{" "}
+      {/* Black with 50% opacity */}
     </mesh>
   );
 };
 
-const TopBanner = () => {
+const TopBanner = ({ homeDetails }) => {
+  const str = homeDetails?.top_title ||"";
+  const arr = str.split(" ");
+  const text = arr;
   return (
     <div className="top-banner">
       {/* Background icosahedron */}
@@ -48,15 +53,12 @@ const TopBanner = () => {
       <div className="top-banner-container">
         <div className="t-b-desc">
           <p className="we-tra-txt">
-            We <span className="span-txt-t-b">transform</span> business{" "}
-            <span className="span-txt-t-b">into</span>{" "}
-            <span className="under-line">BRAND</span>
+           { text[0]} <span className="span-txt-t-b">{ text[1]}</span> { text[2]}{" "}
+            <span className="span-txt-t-b">{ text[3]}</span>{" "}
+            <span className="under-line">{ text[4]}</span>
           </p>
           <p className="desc-text-area">
-            We craft stunning brand identities and digital experiences that help
-            businesses grow and thrive. We are a branding and marketing agency
-            in Ahmedabad that turns ideas into impactful visuals that leave a
-            lasting impression.
+           {homeDetails?.top_text}
           </p>
           <YellowBtn btnName="View Works" />
         </div>
@@ -82,12 +84,12 @@ const TopBanner = () => {
             </svg>
             {/* <PiHandTap /> */}
             <div
-    className="clickable-icon"
-    onClick={() => window.open({pdf}, "_blank")}
-    style={{ cursor: "pointer" }}
-  >
-    <PiHandTap size={40} color="white" />
-  </div>
+              className="clickable-icon"
+              onClick={() => window.open({ pdf }, "_blank")}
+              style={{ cursor: "pointer" }}
+            >
+              <PiHandTap size={40} color="white" />
+            </div>
           </div>
         </div>
       </div>
@@ -96,4 +98,3 @@ const TopBanner = () => {
 };
 
 export default TopBanner;
-

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Home/Home.css'
 import TopBanner from '../../Components/TopBanner/TopBanner';
 import YourFuture from '../../Components/YourFuture/YourFuture';
@@ -9,18 +9,101 @@ import YourExperience from '../../Components/YourExperience/YourExperience';
 import YourChallanges from '../../Components/YourChallanges/YourChallanges';
 import YourSuccess from '../../Components/YourSuccess/YourSuccess';
 import ServiceNav from '../../Components/ServiceNav/ServiceNav';
+
 function Home() {
+
+  const [homeDetails, setHomeDetails] = useState({});
+  const [client, setClient] = useState([]);
+  const [testimonial, setTestimonial] = useState([]);
+
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  let url=process.env.REACT_APP_DEV_URL
+
+  const getClientData = async () => {
+    try {
+      // console.log(url);
+      
+      setLoading(true);
+      const response = await fetch(
+        `${url}/client`
+      );
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const res = await response.json();
+      // console.log(res, "home");
+
+      setClient(res.data); // Store fetched data in state
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+  }
+
+  const GetTestimonial = async () => {
+    try {
+      console.log(url);
+      
+      setLoading(true);
+      const response = await fetch(
+        `${url}/testimonial`
+      );
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const res = await response.json();
+      // console.log(res, "testimonial");
+
+      setTestimonial(res.data); // Store fetched data in state
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        console.log(url);
+        
+        setLoading(true);
+        const response = await fetch(
+          `${url}/home`
+        );
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const res = await response.json();
+        // console.log(res, "home");
+
+        setHomeDetails(res.data[0]); // Store fetched data in state
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    getData();
+    getClientData();
+    GetTestimonial();
+  }, []); // Runs when `slug` changes
+
+  
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
   return (
     <div className='home'>
       {/* <ServiceNav/> */}
-      <TopBanner/>
-      <YourFuture/>
-      <YourChallanges/>
-      <YourSuccess/>
-      {/* <YourExperience/> */}
-      <YourBrand/>
-      <Strategy/>
-      <YourGrowth/>
+      <TopBanner homeDetails={homeDetails}/>
+      <YourFuture homeDetails={homeDetails} url={url}/>
+      <YourChallanges homeDetails={homeDetails}/>
+      <YourSuccess homeDetails={homeDetails}/>
+      <YourExperience homeDetails={homeDetails} testimonials={testimonial} url={url}/>
+      <YourBrand homeDetails={homeDetails} client={client}/>
+      <Strategy homeDetails={homeDetails}/>
+      <YourGrowth homeDetails={homeDetails} url={url}/>
     </div>
   );
 }

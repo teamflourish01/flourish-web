@@ -41,7 +41,7 @@ const boxes = [
   },
 ];
 
-const YourChallanges = () => {
+const YourChallanges = ({homeDetails}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -75,20 +75,21 @@ const YourChallanges = () => {
     return [first, second, third];
   };
 
+  const str = homeDetails?.third_title ||"";
+  const arr = str.split(" ");
+  const text = arr;
+
   return (
     <div className="your-challanges">
       <div className="your-challenge-container">
         <div className="left-side-your-challange">
           <p className="your-our-strategy">
-            <span className="stroke-txt-strategy">Your</span> Challenges,
+            <span className="stroke-txt-strategy">{text[0]} {" "}</span>{text[1]}
             <br />
-            <span className="stroke-txt-strategy"> Our </span>Solutions
+            <span className="stroke-txt-strategy"> {text[2]} </span>{text[3]}
           </p>
           <p className="v-s-desc">
-            We are more than just a branding and marketing agency in Ahmedabad;
-            we are your partners in shaping a future of growth and innovation.
-            Our purpose is to help businesses unlock their true potential by
-            building brands that leave a lasting impact.
+            {homeDetails.third_text}
           </p>
           <YellowBtn btnName="View Services" />
         </div>

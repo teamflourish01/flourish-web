@@ -41,6 +41,7 @@
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
+  padding-bottom: 10px;
 }
 .service-category-tab ul li {
   font-family: Jost-Regular;
@@ -119,6 +120,6 @@
 
 @media (max-width: 1024px) {
   .service-tabnav {
-    top: -89px;
+    top: 0px;
   }
 }

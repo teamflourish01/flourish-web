@@ -1,15 +1,21 @@
 .dtle-blg-top-sec {
-  height: 337px;
+  /* height: 337px; */
   /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
   text-align: center;
   align-items: center;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+.font-family{
+  font-family: Jost-Regular;
+  padding-bottom: 100px;
 }
 .dtle-blg-date-author {
   margin-top: 15px;
   display: flex;
-  width: 280px;
+  /* width: 280px; */
   gap: 15px;
 }
 .dtle-blg-bg-fl {
@@ -35,6 +41,7 @@
   font-weight: 400;
   line-height: 24px;
   color: #97989f;
+  white-space: nowrap;
 }
 .dtle-blg-text p {
   font-family: Jost-Bold;
@@ -42,18 +49,18 @@
   font-weight: 700;
   line-height: 72.25px;
   text-align: left;
-  width: 764px;
+  max-width: 764px;
+  min-width: 200px;
+  width: 100%;
+  padding-top: 100px;
 }
 .dtle-blg-img-cont {
-  padding: 37px 0;
+  /* padding: 37px 0; */
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  width: 502px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0px 0px 4px 0px #0000001A;
+
 
 }
 
@@ -102,11 +109,14 @@ color: #00000080;
   margin-right: 8px;
   font-size: 14px;
   border-radius: 50%;
-  width: 22.5px;
-  height: 22.5px;
+  width: 30px;
+  height: 30px;
   display: flex;
+  padding: 9.36px 7.36px;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+
 }
 .dtl-check-span{
   font-family: Jost-Regular;
@@ -124,4 +134,45 @@ line-height: 31.79px;
 text-align: left;
 font-family: Jost-Medium;
 color: #060606;
+}
+
+.img-width-blog{
+  max-width: 502px;
+  min-width: 200px;
+  width: 100%;
+  height: 337px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px 0px #0000001A;
+
+}
+
+@media(max-width:1024px){
+  .dtle-blg-top-sec{
+    flex-direction: column;
+    height: unset;
+    align-items: flex-start;
+  }
+  .dtle-blg-img-cont{
+    width: 100%;
+  }
+  .dtle-blg-text p{
+    font-size: 40px;
+    line-height: 57.8px;
+  }
+  .dtle-blg-date-author{
+    margin-bottom: 30px;
+  }
+
+}
+
+@media(max-width:768px){
+  .dtle-blg-text p {
+   padding-top: 60px;
+  }
+.font-family{
+  padding-bottom: 60px;
+}
+.dtle-blg-top-sec{
+  padding-bottom: 40px;
+}
 }

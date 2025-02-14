@@ -1,270 +1,105 @@
-// import React, { useState } from "react";
-// import "../MobNav/MobNav.css";
-// import { IoIosArrowDown } from "react-icons/io";
-// import orgarw from "../../assets/orgleft.svg";
-// import closebtn from "../../assets/close-icon-nav.svg";
-// const MobileNav = ({handleGoBack}) => {
-//   const [openCategory, setOpenCategory] = useState(true);
-//   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-
-//   const services = [
-//     {
-//       title: "Visual Experience",
-//       items: [
-//         "Logo Design",
-//         "Print Design",
-//         "Brochure Design",
-//         "Packaging Design",
-//         "Flyer Design",
-//         "Product Design",
-//         "Hoarding Design",
-//         "Stationary Design",
-//       ],
-//     },
-//     {
-//       title: "Content Creation",
-//       items: [
-//         "Blogs",
-//         "Articles",
-//         "Case Study",
-//         "Ad Scripts",
-//         "Video/Reel Production",
-//         "Copywriting",
-//         "Social Media Content",
-//         "Content Calendar",
-//       ],
-//     },
-//     {
-//       title: "Branding",
-//       items: [
-//         "Brand Positioning",
-//         "Brand Story",
-//         "Brand Messaging",
-//         "Brand Theme",
-//         "Digital Branding",
-//         "Brand Identity",
-//       ],
-//     },
-//     {
-//       title: "Development",
-//       items: [
-//         "Website Development",
-//         "App Development",
-//         "UI/UX Development",
-//         "Software Development",
-//       ],
-//     },
-//     {
-//       title: "Digital Marketing",
-//       items: [
-//         "Social Media Marketing",
-//         "Influencer Marketing",
-//         "Email Marketing",
-//         "SEO",
-//         "Meta And Google Ads",
-//         "Content Marketing",
-//         "WhatsApp Marketing",
-//         "Marketing Automation",
-//       ],
-//     },
-//     {
-//       title: "Strategy and Consultation",
-//       items: [
-//         "Market Research",
-//         "Competitor Analysis",
-//         "Audience Segmentation",
-//         "Content Strategy Development",
-//         "SEO Strategy",
-//         "Digital Marketing Strategy",
-//         "Social Media Strategy",
-//         "Analytics Reporting",
-//         "Digital Transformation Roadmap Creation",
-//       ],
-//     },
-//   ];
-
-//   const toggleCategory = (index) => {
-//     setOpenCategory(openCategory === index ? null : index);
-//   };
-
-//   return (
-    
-//     <div className="mobile-nav">
-//       <div className="go-back-flex-mobnav">
-//         <div className="go-back-txt-flex-mobnav" onClick={handleGoBack}>
-//           <img src={orgarw} alt="" />
-//           <div className="org-go-back-mobnav" >Go Back</div>
-//         </div>
-//         <img src={closebtn} alt="" />
-//       </div>
-
-//       <div className="categories-container">
-//         {services.map((category, index) => (
-//           <div key={index} className="category">
-//             <button
-//               onClick={() => toggleCategory(index)}
-//               className="category-button-mobnav"
-//             >
-//               <span>{category.title}</span>
-//               <IoIosArrowDown
-//                 className={`chevron-icon ${
-//                   openCategory === index ? "rotate" : ""
-//                 }`}
-//               />
-//             </button>
-
-//             <div
-//               className={`category-items ${
-//                 openCategory === index ? "open" : ""
-//               }`}
-//             >
-//               {category.items.map((item, itemIndex) => (
-//                 <div key={itemIndex} className="category-item">
-//                   {item}
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MobileNav;
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../MobNav/MobNav.css";
 import { IoIosArrowDown } from "react-icons/io";
 import orgarw from "../../assets/orgleft.svg";
 import closebtn from "../../assets/close-icon-nav.svg";
+import { NavLink } from "react-router-dom";
 
-const MobileNav = ({ handleGoBack, closeMenu }) => {
+const MobNav = ({ closeAllMenus, goBackToMainMenu }) => {
   const [openCategory, setOpenCategory] = useState(true);
 
-  const services = [
-    {
-      title: "Visual Experience",
-      items: [
-        "Logo Design",
-        "Print Design",
-        "Brochure Design",
-        "Packaging Design",
-        "Flyer Design",
-        "Product Design",
-        "Hoarding Design",
-        "Stationary Design",
-      ],
-    },
-    {
-      title: "Content Creation",
-      items: [
-        "Blogs",
-        "Articles",
-        "Case Study",
-        "Ad Scripts",
-        "Video/Reel Production",
-        "Copywriting",
-        "Social Media Content",
-        "Content Calendar",
-      ],
-    },
-    {
-      title: "Branding",
-      items: [
-        "Brand Positioning",
-        "Brand Story",
-        "Brand Messaging",
-        "Brand Theme",
-        "Digital Branding",
-        "Brand Identity",
-      ],
-    },
-    {
-      title: "Development",
-      items: [
-        "Website Development",
-        "App Development",
-        "UI/UX Development",
-        "Software Development",
-      ],
-    },
-    {
-      title: "Digital Marketing",
-      items: [
-        "Social Media Marketing",
-        "Influencer Marketing",
-        "Email Marketing",
-        "SEO",
-        "Meta And Google Ads",
-        "Content Marketing",
-        "WhatsApp Marketing",
-        "Marketing Automation",
-      ],
-    },
-    {
-      title: "Strategy and Consultation",
-      items: [
-        "Market Research",
-        "Competitor Analysis",
-        "Audience Segmentation",
-        "Content Strategy Development",
-        "SEO Strategy",
-        "Digital Marketing Strategy",
-        "Social Media Strategy",
-        "Analytics Reporting",
-        "Digital Transformation Roadmap Creation",
-      ],
-    },
-  ];
   const toggleCategory = (index) => {
     setOpenCategory(openCategory === index ? null : index);
   };
 
-  
+  let url = process.env.REACT_APP_DEV_URL;
+  const [service, setService] = useState([]);
 
+  const getData = async () => {
+    try {
+      let data = await fetch(`${url}/service`);
+      data = await data.json();
+      console.log(data.data, "service nav");
+
+      setService(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
-  
-      <div className="mobile-nav">
-        <div className="go-back-flex-mobnav">
-          <div className="go-back-txt-flex-mobnav" onClick={handleGoBack}>
-            <img src={orgarw} alt="" />
-            <div className="org-go-back-mobnav">Go Back</div>
-          </div>
-          <img src={closebtn} alt="Close" onClick={closeMenu} className="close-button" />
+    <div className="mobile-nav">
+      <div className="go-back-flex-mobnav">
+        <div className="go-back-txt-flex-mobnav" onClick={goBackToMainMenu}>
+          <img src={orgarw} alt="Back Arrow" />
+          <div className="org-go-back-mobnav">Go Back</div>
         </div>
+        <img
+          src={closebtn}
+          alt="Close"
+          onClick={closeAllMenus}
+          className="close-button"
+        />
+      </div>
 
-        <div className="categories-container">
-          {services.map((category, index) => (
-            <div key={index} className="category">
-              <button
-                onClick={() => toggleCategory(index)}
-                className="category-button-mobnav"
-              >
-                <span>{category.title}</span>
-                <IoIosArrowDown
-                  className={`chevron-icon ${
-                    openCategory === index ? "rotate" : ""
-                  }`}
-                />
-              </button>
+      <div className="categories-container">
+        {service?.map((category, index) => (
+          <div key={index} className="category">
+            <button
+              onClick={() => toggleCategory(index)}
+              className="category-button-mobnav"
+            >
+              <span>
+                {" "}
+                <NavLink
+                  to={`/service/${category?.slug}`}
+                  className="category-button-mobnav"
+                  // className={({ isActive }) =>
+                  //   isActive
+                  //     ? "text-deco nav-link-s active-nav-link-s"
+                  //     : "nav-link-s"
+                  // }
+                >
+                  {category?.name}
+                </NavLink>
+              </span>
+              <IoIosArrowDown
+                className={`chevron-icon ${
+                  openCategory === index ? "rotate" : ""
+                }`}
+              />
+            </button>
 
+            {category?.subservices && (
               <div
                 className={`category-items ${
                   openCategory === index ? "open" : ""
                 }`}
+                onClick={closeAllMenus}
               >
-                {category.items.map((item, itemIndex) => (
+                {category.subservices.map((item, itemIndex) => (
                   <div key={itemIndex} className="category-item">
-                    {item}
+                    <NavLink
+                      to={`/subservice/${item?.slug}`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "text-deco nav-link-s active-nav-link-s"
+                          : "nav-link-s"
+                      }
+                    >
+                      {item?.name}
+                    </NavLink>
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
+            )}
+          </div>
+        ))}
       </div>
-    // )
+    </div>
   );
 };
 
-export default MobileNav;
+export default MobNav;

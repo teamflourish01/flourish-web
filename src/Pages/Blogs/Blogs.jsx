@@ -1,27 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Blogs/Blogs.css";
 import cameraimg from "../../../src/assets/cameraimg.svg";
-
-const categories = [
-  "All",
-  "Advertising",
-  "App Development",
-  "Branding",
-  "Digital Marketing",
-  "Film Production",
-  "Graphic Design",
-  "Marketing Insights",
-  "Real Estate",
-  "Product and Package Design",
-  "Search Engine Optimisation",
-  "Small Business",
-  "Social Media",
-  "UI/UX Development",
-  "Web Development",
-];
+import arw from "../../assets/arw.svg";
 
 const Blogs = () => {
+  const [blogCategory, setBlogCategory] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  let url = process.env.REACT_APP_DEV_URL;
+
+  const getBlogData = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${url}/blogcategory`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const res = await response.json();
+      setBlogCategory(res.data);
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  useEffect(() => {
+    getBlogData();
+  }, []);
+
+  const filteredBlogs =
+    selectedCategory === "All"
+      ? blogCategory.flatMap((category) => category.blogs || [])
+      : blogCategory.find((category) => category.name === selectedCategory)
+          ?.blogs || [];
+
   return (
     <>
       <div className="blogsbanner">
@@ -44,103 +59,69 @@ const Blogs = () => {
             <p className="blg-main-pera">
               Explore our various collections of articles and informative blogs.
               From Small business tips to Branding our blog covers a wide range
-              of topics to keep you informed and entertained our latest posts
-              and discover something new today!
+              of topics to keep you informed and entertained. Check out our
+              latest posts and discover something new today!
             </p>
           </div>
-          <div>
-            <div className="category-container">
-              {categories.map((category) => (
-                <div
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`category-button ${
-                    selectedCategory === category ? "active" : ""
-                  }`}
-                >
-                  <p>{category}</p>
-                </div>
-              ))}
+
+          <div className="category-container">
+            <div
+              className={`category-button ${
+                selectedCategory === "All" ? "active" : ""
+              }`}
+              onClick={() => setSelectedCategory("All")}
+            >
+              <p>All</p>
             </div>
+            {blogCategory?.map((category, i) => (
+              <div
+                key={i}
+                onClick={() => setSelectedCategory(category?.name)}
+                className={`category-button ${
+                  selectedCategory === category?.name ? "active" : ""
+                }`}
+              >
+                <p>{category?.name}</p>
+              </div>
+            ))}
           </div>
         </div>
+
         <div className="blogmain-width1320">
           <div className="blg-main-card-cont">
-          <div className="blg-card" >
-            <div className="image-container">
-              <img src={cameraimg} alt="Camera Icon" className="image" />
-            </div>
-            <div className="blg-hr-clr">
-              <hr />
-            </div>
-            <div className="content">
-              <div className="author-container">
-                <p className="author">By Flourish Creation</p>
+            {filteredBlogs?.map((blogItem, index) => (
+              <div className="blg-card" key={index}>
+                <div className="image-container">
+                  <img
+                    src={`${url}/blog/${blogItem?.banner}`}
+                    alt="Camera Icon"
+                    className="image"
+                  />
+                </div>
+                <div className="blg-hr-clr">
+                  <hr />
+                </div>
+                <div className="content">
+                  <div className="author-container">
+                    <p className="author">By Flourish Creation</p>
+                  </div>
+                  <h3 className="blg-title">{blogItem?.name}</h3>
+                  <div className="hr-under-image blg-hr-clr">
+                    <hr />
+                  </div>
+                  <div className="blg-card-foot">
+                    <span className="blg-date">{blogItem?.date}</span>
+                    <a
+                      href={`/Singleblogpage/${blogItem?.slug}`}
+                      className="blg-read-more"
+                    >
+                      Read More
+                      <img src={arw} className="blg-arrow" />
+                    </a>
+                  </div>
+                </div>
               </div>
-              <h3 className="blg-title">
-                Optimizing Budgets and Resources in Film Production Projects
-              </h3>
-              <div className="hr-under-image blg-hr-clr">
-                <hr />
-              </div>
-              <div className="blg-card-foot">
-                <span className="blg-date">August 20, 2022</span>
-                <a href="/Singleblogpage" className="blg-read-more">
-                  Read More <span className="blg-arrow">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="blg-card">
-            <div className="image-container">
-              <img src={cameraimg} alt="Camera Icon" className="image" />
-            </div>
-            <div className="blg-hr-clr">
-              <hr />
-            </div>
-            <div className="content">
-              <div className="author-container">
-                <p className="author">By Flourish Creation</p>
-              </div>
-              <h3 className="blg-title">
-                Optimizing Budgets and Resources in Film Production Projects
-              </h3>
-              <div className="hr-under-image blg-hr-clr">
-                <hr />
-              </div>
-              <div className="blg-card-foot">
-                <span className="blg-date">August 20, 2022</span>
-                <a href="/Singleblogpage" className="blg-read-more">
-                  Read More <span className="blg-arrow">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="blg-card">
-            <div className="image-container">
-              <img src={cameraimg} alt="Camera Icon" className="image" />
-            </div>
-            <div className="blg-hr-clr">
-              <hr />
-            </div>
-            <div className="content">
-              <div className="author-container">
-                <p className="author">By Flourish Creation</p>
-              </div>
-              <h3 className="blg-title">
-                Optimizing Budgets and Resources in Film Production Projects
-              </h3>
-              <div className="hr-under-image blg-hr-clr">
-                <hr />
-              </div>
-              <div className="blg-card-foot">
-                <span className="blg-date">August 20, 2022</span>
-                <a href="/Singleblogpage" className="blg-read-more">
-                  Read More <span className="blg-arrow">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
+            ))}
           </div>
         </div>
       </div>

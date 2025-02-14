@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Contact from "../../Components/Contact/Contact";
 import "../ContactUs/ContactUs.css";
 import location from "../../assets/c-location.svg";
-import mail from '../../assets/cmail.svg';
-import call from '../../assets/cphone.svg';
-import BannerTop from '../../Components/service/BannerTop/BannerTop';
+import mail from "../../assets/cmail.svg";
+import call from "../../assets/cphone.svg";
+import BannerTop from "../../Components/service/BannerTop/BannerTop";
+import { useParams } from "react-router-dom";
 
 const ContactUs = () => {
+  const { slug } = useParams();
+  const [branch, setBranch] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  let url = process.env.REACT_APP_DEV_URL;
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        console.log(url);
+
+        setLoading(true);
+        const response = await fetch(`${url}/branch`);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const res = await response.json();
+
+        setBranch(res.data); // Store fetched data in state
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    getData();
+  }, []); 
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <>
-    <BannerTop btitle="Contact"/>
+      <BannerTop btitle="Contact" />
       <Contact />
 
       <div className="con-page">
@@ -27,60 +58,65 @@ const ContactUs = () => {
             ></iframe>
           </div>
           <div className="p-b-100">
-            <div className="office">
-              <p className="india-c-o">India Corporate Office</p>
-              <div className="container-ofc">
-                <div className="info-box">
-                  {/* Location */}
-                  <div className="info-item w-657">
-                    <div className="office-d-f">
-                      <img src={location} alt="" className="img-icon-contact" />
-                      <div className="hr-line-ofc">
-                        <span className="label">Location</span>
-                        <p className="text">
-                          A-206, PNTC, radio mirchi road, Vejalpur, Ahmedabad
-                          380015
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* <div className="info-i-f-r"> */}
-                  {/* Email */}
-                  <div className="info-item">
-                    <div className="office-d-f">
-                      <img src={mail} alt="" className="img-icon-contact" />
-                      <div className="hr-line-ofc">
-                        <span className="label">Email</span>
-                        <p className="text">
-                          <a href="mailto:info@teamflourish.com">
-                            info@teamflourish.com
+            {branch?.map((branch, index) => (
+              <div className="office" key={index}>
+                <p className="india-c-o">{branch.name}</p>
+                <div className="container-ofc">
+                  <div className="info-box">
+                    {/* Location */}
+                    <div className="info-item w-657">
+                      <div className="office-d-f">
+                        <img
+                          src={location}
+                          alt=""
+                          className="img-icon-contact"
+                        />
+                        <div className="hr-line-ofc">
+                          <span className="label">Location</span>
+                          <a href={branch.address_url} className="a-text-deco">
+                          <p className="text">{branch.address}</p>
                           </a>
-                        </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                    {/* <div className="info-i-f-r"> */}
+                    {/* Email */}
+                    <div className="info-item">
+                      <div className="office-d-f">
+                        <img src={mail} alt="" className="img-icon-contact" />
+                        <div className="hr-line-ofc">
+                          <span className="label">Email</span>
+                          <p className="text">
+                            <a href="mailto:info@teamflourish.com">
+                              {branch.mail}
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
 
-                  {/* Call */}
-                  <div className="info-item-l">
-                    <div className="office-d-f">
-                      <img src={call} alt="" className="img-icon-contact" />
-                      <div className="hr-line-ofc">
-                        <span className="label">Call</span>
-                        <p className="text">
-                          <a href="tel:+919499619901">+91 94996 19901</a>
-                        </p>
+                    {/* Call */}
+                    <div className="info-item-l">
+                      <div className="office-d-f">
+                        <img src={call} alt="" className="img-icon-contact" />
+                        <div className="hr-line-ofc">
+                          <span className="label">Call</span>
+                          <p className="text">
+                            <a href="tel:+919499619901">{branch.mobile}</a>
+                          </p>
+                        </div>
                       </div>
                     </div>
+                    {/* </div> */}
                   </div>
-                  {/* </div> */}
                 </div>
               </div>
-            </div>
-            <div className="office">
+            ))}
+            {/* <div className="office">
               <p className="india-c-o">Canada Branch Office</p>
               <div className="container-ofc">
                 <div className="info-box">
-                  {/* Location */}
+                  // {/* Location *
                   <div className="info-item w-657">
                     <div className="office-d-f">
                       <img src={location} alt="" className="img-icon-contact" />
@@ -92,9 +128,9 @@ const ContactUs = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="info-i-f-r"> */}
+                  {/* <div className="info-i-f-r"> 
 
-                  {/* Email */}
+                  {/* Email *
                   <div className="info-item">
                     <div className="office-d-f">
                       <img src={mail} alt="" className="img-icon-contact" />
@@ -109,7 +145,7 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  {/* Call */}
+                  {/* Call *
                   <div className="info-item-l">
                     <div className="office-d-f">
                       <img src={call} alt="" className="img-icon-contact" />
@@ -122,9 +158,9 @@ const ContactUs = () => {
                     </div>
                   </div>
                   </div>
-                {/* </div> */}
+                {/* </div> *
               </div>
-            </div>
+            </div> */}
             <div className="office">
               <p className="india-c-o">UK Branch Office</p>
               <div className="container-ofc">

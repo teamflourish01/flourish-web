@@ -20,7 +20,7 @@ const BrandingSubP = () => {
         
         setLoading(true);
         const response = await fetch(
-          `${url}/subservice/brand-positioning`
+          `${url}/subservice/${slug}`
         );
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
@@ -43,7 +43,7 @@ const BrandingSubP = () => {
 
   return (
     <>
-      <BannerTop btitle="Brand Positioning"/>
+      <BannerTop btitle={subServiceData?.name}/>
       <TopSubService SubServiceDetails={subServiceData}/>
       <CenterStatic SubServiceDetails={subServiceData}/>
       <SecLast SubServiceDetails={subServiceData}/>

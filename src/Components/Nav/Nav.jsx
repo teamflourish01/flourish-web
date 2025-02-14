@@ -12,7 +12,6 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -23,6 +22,7 @@ const Nav = () => {
 
   return (
     <>
+      <div className="display-in-desk">
         <div className="navbar">
           <div className="navbar-container">
             <div className="logo-c">
@@ -32,7 +32,6 @@ const Nav = () => {
               <img src={hicon} alt="Hamburger Icon" />
             </div>
           </div>
-          <div className="display-in-desk">
 
           <div className={`flex  ${menuOpen ? "open" : "close"}`}>
             <div className="menu-navbar">
@@ -68,9 +67,9 @@ const Nav = () => {
                   }}
                 >
                   <NavLink
-                    // to=""
+                    to=""
                     className={({ isActive }) =>
-                      isActive ? "nav-link active-nav-link" : "nav-link"
+                      isActive ? "nav-link " : "nav-link"
                     }
                     // onClick={toggleMenu}
                     onClick={(event) => {
@@ -143,7 +142,9 @@ const Nav = () => {
             </div>
             <hr className="hr-animation-servicenav " />
 
-            <div className="dropdown">{isDropdownOpen && <ServiceNav toggleMenu={toggleMenu} />}</div>
+            <div className="dropdown">
+              {isDropdownOpen && <ServiceNav toggleMenu={toggleMenu} />}
+            </div>
             <div className="menu-header-navbar">
               <button className="close-btn-navbar" onClick={toggleMenu}>
                 <img src={close} alt="Close" />

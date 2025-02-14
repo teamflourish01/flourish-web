@@ -6,7 +6,7 @@ import { div } from "three/tsl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const YourSuccess = () => {
+const YourSuccess = ({ homeDetails }) => {
   const ballRef = useRef(null);
   const sectionRef = useRef(null);
   const statItemsRef = useRef([]);
@@ -17,9 +17,9 @@ const YourSuccess = () => {
     const section = sectionRef.current;
     const boxes = statItemsRef.current;
     const texts = textItemsRef.current;
-  
+
     gsap.set(texts, { opacity: 0 });
-  
+
     const ballTimeline = gsap.to(ball, {
       x: "100vw",
       rotation: 1440, // Add rotation
@@ -37,60 +37,20 @@ const YourSuccess = () => {
             const boxRect = box.getBoundingClientRect();
             const isBallOverBox =
               ballRect.left >= boxRect.left && ballRect.right <= boxRect.right;
-  
+
             if (isBallOverBox && texts[index].style.opacity === "0") {
               gsap.to(texts[index], {
                 opacity: 1,
                 duration: 0.1,
               });
-
-              
             }
           });
         },
       },
     });
-  
+
     return () => ballTimeline.kill();
   }, []);
-
-  // useEffect(() => {
-  //   const ball = ballRef.current;
-  //   const section = sectionRef.current;
-  //   const boxes = statItemsRef.current;
-  //   const texts = textItemsRef.current;
-  
-  //   gsap.set(texts, { opacity: 0 });
-  
-  //   const ballTimeline = gsap.to(ball, {
-  //     x: "100vw",
-  //     scrollTrigger: {
-  //       trigger: section,
-  //       start: "top 2%",
-  //       end: "bottom center",
-  //       scrub: 0.01, // Changed from 0.0005 to 2 for slower movement
-  //       markers: false,
-  //       pin: true,
-  //       onUpdate: (self) => {
-  //         const ballRect = ball.getBoundingClientRect();
-  //         boxes.forEach((box, index) => {
-  //           const boxRect = box.getBoundingClientRect();
-  //           const isBallOverBox =
-  //             ballRect.left >= boxRect.left && ballRect.right <= boxRect.right;
-  
-  //           if (isBallOverBox && texts[index].style.opacity === "0") {
-  //             gsap.to(texts[index], {
-  //               opacity: 1,
-  //               duration: 0.01,
-  //             });
-  //           }
-  //         });
-  //       },
-  //     },
-  //   });
-  
-  //   return () => ballTimeline.kill();
-  // }, []);
 
   const addToStatRefs = (el) => {
     if (el && !statItemsRef.current.includes(el)) {
@@ -105,13 +65,19 @@ const YourSuccess = () => {
   };
 
   const stats = [
-    { value: "5m", text: "ROI achieved" },
-    { value: "300", text: "leads generated" },
-    { value: "5k", text: "Ad impressions delivered" },
-    { value: "80", text: "client retention rate" },
-    { value: "10", text: "industry served" },
-    { value: "5K", text: "creative assets crafted" },
+    { value: homeDetails?.first_box_title, text: homeDetails?.first_box_text },
+    {
+      value: homeDetails?.second_box_title,
+      text: homeDetails?.second_box_text,
+    },
+    { value: homeDetails?.third_box_title, text: homeDetails?.third_box_text },
+    { value: homeDetails?.forth_box_title, text: homeDetails?.forth_box_text },
+    { value: homeDetails?.fifth_box_title, text: homeDetails?.fifth_box_text },
+    { value: homeDetails?.sixth_box_title, text: homeDetails?.sixth_box_text },
   ];
+  const str = homeDetails?.forth_title || "";
+  const arr = str.split(" ");
+  const text = arr;
 
   return (
     <>
@@ -119,8 +85,9 @@ const YourSuccess = () => {
         <div className="your-success" ref={sectionRef}>
           <div className="your-success-container">
             <p className="your-f-our-c">
-              <span className="stroke-txt">Your</span> Success,
-              <span className="stroke-txt"> Our </span>Expertise
+              <span className="stroke-txt">{text[0]}</span> {text[1]}
+              <span className="stroke-txt"> {text[2]} </span>
+              {text[3]}
             </p>
             <p
               className="desc-y-o"
@@ -128,10 +95,7 @@ const YourSuccess = () => {
               data-aos-delay="200"
               data-aos-anchor-placement="bottom-bottom"
             >
-              Your success is the benchmark of our expertise. As a leading
-              branding and marketing agency in Ahmedabad, we craft customized
-              strategies that turn your business goals into measurable
-              achievements.
+              {homeDetails.forth_text}
             </p>
           </div>
           <div ref={ballRef} className="ball"></div>
@@ -146,7 +110,9 @@ const YourSuccess = () => {
                 </div>
                 <div
                   ref={addToTextRefs}
-                  className={`text-5x-300 po-${stat.value.toLowerCase()}`}
+                  className={`text-5x-300 po-${
+                    stat.value ? stat.value.toLowerCase() : "default"
+                  }`}
                   style={{ opacity: 0 }}
                 >
                   {stat.text}
@@ -160,13 +126,13 @@ const YourSuccess = () => {
       <div className="your-success hide-s">
         <div className="your-success-container">
           <p className="your-f-our-c">
-            <span className="stroke-txt">Your</span> Success,
-            <span className="stroke-txt"> Our </span>Expertise
+            <span className="stroke-txt">{text[0]}</span> {text[1]}
+            <span className="stroke-txt"> {text[2]}</span> {text[3]}
           </p>
           <p className="your-f-our-c-mobile">
-            <span className="stroke-txt">Your</span> Success,
+            <span className="stroke-txt">{text[0]}</span> {text[1]}
             <br />
-            <span className="stroke-txt"> Our </span>Expertise
+            <span className="stroke-txt">{text[2]}</span> {text[3]}
           </p>
           <p
             className="desc-y-o"

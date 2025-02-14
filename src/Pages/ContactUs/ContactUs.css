@@ -112,10 +112,14 @@
   display: flex;
   gap: unset;
 }
+.a-text-deco{
+  text-decoration: none;
+  cursor: pointer;
+}
 @media (max-width: 1024px) {
-  .info-box {
+  /* .info-box {
     flex-direction: column;
-  }
+  } */
   .info-item {
     border-right: unset;
   }

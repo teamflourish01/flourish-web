@@ -41,7 +41,7 @@ const TopSubService = ({SubServiceDetails}) => {
           <p className="flourish-process-title">Flourish’s Process</p>
           {SubServiceDetails?.process?.map((fp, index) => (
             <div className="f-p-boxes" key={index}>
-              <p className="f-p-b-n">{index + 1}</p>
+              <p className="f-p-b-n">0{index + 1}</p>
               <p className="f-p-b-title">{fp.heading}</p>
               <p className="f-p-b-desc">{fp.text}</p>
             </div>

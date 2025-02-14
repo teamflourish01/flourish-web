@@ -130,10 +130,11 @@
   transition: transform 0.3s ease-in-out;
 }
 .work-div-img{
-  max-width: 212px;
-  min-width: 50px;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 216px;
+    min-width: 50px;
+    width: 100%;
+    height: 152px;
+    margin: 0 auto;
 }
 .gried-box1 img {
   width: 100%;

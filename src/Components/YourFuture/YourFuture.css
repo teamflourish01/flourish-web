@@ -88,6 +88,9 @@
   line-height: 36.13px;
   display: none;
 }
+.flex-box-desc-b:hover{
+  color: black;
+}
 @media (max-width: 1024px) {
   .your-future {
     padding: 100px 0 80px;

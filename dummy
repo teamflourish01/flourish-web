@@ -1,0 +1,274 @@
+import React, { useEffect, useState } from "react";
+import "../Work/work.css";
+import Breadcrums from "../../Components/Breadcrums/Breadcrums";
+import ppeople from "../../assets/ppeople.svg";
+import notch from "../../assets/notch.svg";
+import food from "../../assets/foodw.svg";
+import fasw from "../../assets/fasw.svg";
+import fgcg from "../../assets/fgcg.svg";
+import renw from "../../assets/renw.svg";
+import premium from "../../assets/premium.svg";
+import workimg from "../../assets/real.svg";
+import premp from "../../assets/premp.png";
+import manufacture from "../../assets/mss.svg";
+import health from "../../assets/healthw.svg";
+import technow from "../../assets/technow.svg";
+import techno from "../../assets/techno.svg";
+import renuable from "../../assets/Renuable.svg";
+import education from "../../assets/educationw.svg";
+import fashion from "../../assets/fashion.svg";
+import BannerTop from "../../Components/service/BannerTop/BannerTop";
+import axios from "axios";
+const Work = () => {
+  const [work, setwork] = useState([]);
+  let url = process.env.REACT_APP_DEV_URL;
+
+  const [activeImage, setActiveImage] = useState();
+  const [worksImages, setWorksImages] = useState([]);
+
+  const fetchJourneyData = async () => {
+    try {
+      const response = await axios.get(`${url}/workcategory`);
+      setwork(response.data.data); // Assuming data is an array
+      if (response.data.data.length > 0) {
+        setActiveImage(`${url}/work/${response.data[0]?.image}`);
+      }
+      console.log(" Data:", response.data.data);
+    } catch (err) {
+      
+      console.error("Error:", err);
+    }
+  };
+
+  useEffect(() => {
+    // setwork(respo)
+    fetchJourneyData();
+  }, []);
+  return (
+    <>
+      <BannerTop btitle="Work" />
+
+      <Breadcrums pagename="Work" />
+      <section>
+        <div className="work-main-container-100">
+          <div className="padding-container-work">
+            <div className="gried-work-1320">
+              <div className="work-wrapper">
+                <div className="work-gried">
+                  <div className="work-box">
+                    <p className="work-p">All</p>
+                  </div>
+
+                  {work?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="work-boxs"
+                      onClick={() => setActiveImage(item?.image)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <div className="work-c-flex">
+                        <div className="div-img">
+                          <img
+                            src={`${url}/work/${item?.image}`}
+                            alt={item?.name}
+                            style={{
+                              opacity:
+                                activeImage === null ||
+                                activeImage === item?.image
+                                  ? 1
+                                  : 0.2,
+                              transition: "opacity 0.3s ease-in-out",
+                            }}
+                            className="work-div-img"
+                          />
+                        </div>
+                        <hr />
+                        <p
+                          className="real-work-p-m"
+                          style={{
+                            color:
+                              activeImage === item?.image ? "black" : "gray",
+                            fontWeight:
+                              activeImage === item?.image ? "bold" : "normal",
+                            transition: "color 0.3s ease-in-out",
+                          }}
+                        >
+                          {item?.name}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr className="hr-line" />
+          <section className="section-b-work">
+            <div className="gajanan-b-gried">
+              {work.length > 0 && work[0].works.length > 0 ? (
+                work[0].works.map((workItem, index) => (
+                  <div key={index} className="gried-box1">
+                    <img
+                      src={`${url}/work/${workItem.image}`}
+                      alt={workItem.name}
+                    />
+                    <div className="bg-name">{workItem.name}</div>
+                  </div>
+                ))
+              ) : (
+                <p>No works available</p>
+              )}
+            </div>
+          </section>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Work;
+
+
+ye meri jsx file hai 
+
+{
+  "msg": "workCategory successfully retrieved",
+  "data": [
+    {
+      "_id": "67ad84ea11d5ecc396b18469",
+      "name": "manufacturing",
+      "createdAt": "2025-02-13T05:36:42.087Z",
+      "updatedAt": "2025-02-13T06:07:29.035Z",
+      "image": "Group 524 (1).png",
+      "works": [
+        {
+          "_id": "67ad985ff7421bd1cd846011",
+          "name": "Gajanan Bunglows",
+          "category": "67ad84ea11d5ecc396b18469",
+          "createdAt": "2025-02-13T06:59:43.283Z",
+          "updatedAt": "2025-02-13T11:24:10.287Z",
+          "image": "image 14.png"
+        },
+        {
+          "_id": "67ad9c470d668b02731f7c62",
+          "name": "Gajanan Bunglows",
+          "category": "67ad84ea11d5ecc396b18469",
+          "createdAt": "2025-02-13T07:16:23.567Z",
+          "updatedAt": "2025-02-13T11:24:24.845Z",
+          "image": "image 14.png"
+        },
+        {
+          "_id": "67ad9c4a0d668b02731f7c64",
+          "name": "Gajanan Bunglows",
+          "category": "67ad84ea11d5ecc396b18469",
+          "createdAt": "2025-02-13T07:16:26.192Z",
+          "updatedAt": "2025-02-13T11:24:36.191Z",
+          "image": "image 14.png"
+        }
+      ]
+    },
+    {
+      "_id": "67ad8711d7269c06acd8c178",
+      "name": "food",
+      "createdAt": "2025-02-13T05:45:53.341Z",
+      "updatedAt": "2025-02-13T06:06:47.898Z",
+      "image": "Group 525.png",
+      "works": [
+        {
+          "_id": "67adedaaf3039c233c98cb27",
+          "name": "Royal Foods",
+          "category": "67ad8711d7269c06acd8c178",
+          "createdAt": "2025-02-13T13:03:38.916Z",
+          "updatedAt": "2025-02-13T13:03:57.461Z",
+          "image": "Artboard 1.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "67ad8c3dff20162b504ac731",
+      "name": "health care",
+      "createdAt": "2025-02-13T06:07:57.757Z",
+      "updatedAt": "2025-02-13T06:09:20.290Z",
+      "image": "Group 527.png",
+      "works": []
+    },
+    {
+      "_id": "67ad8c6bff20162b504ac735",
+      "name": "fashion",
+      "createdAt": "2025-02-13T06:08:43.463Z",
+      "updatedAt": "2025-02-13T06:09:43.596Z",
+      "image": "193473164_c11ba1aa-a7e6-4b27-bc02-7a54361b7632 1.png",
+      "works": []
+    },
+    {
+      "_id": "67ad8cb3ff20162b504ac73b",
+      "name": "Renuable",
+      "createdAt": "2025-02-13T06:09:55.868Z",
+      "updatedAt": "2025-02-13T06:10:16.507Z",
+      "image": "Group (7).png",
+      "works": []
+    },
+    {
+      "_id": "67ad8cd2ff20162b504ac73f",
+      "name": "Education",
+      "createdAt": "2025-02-13T06:10:26.823Z",
+      "updatedAt": "2025-02-13T06:10:47.965Z",
+      "image": "Group 528.png",
+      "works": []
+    },
+    {
+      "_id": "67ad8cf4ff20162b504ac743",
+      "name": "FMCG",
+      "createdAt": "2025-02-13T06:11:00.166Z",
+      "updatedAt": "2025-02-13T06:11:17.745Z",
+      "image": "Group 529.png",
+      "works": []
+    },
+    {
+      "_id": "67ad8d0fff20162b504ac747",
+      "name": "Technology",
+      "createdAt": "2025-02-13T06:11:27.953Z",
+      "updatedAt": "2025-02-13T10:58:24.767Z",
+      "image": "technow.svg",
+      "works": []
+    }
+  ]
+}
+ye mere api ka response hai 
+muje asa chahiye ki jo category active jese food vali categary active hai to uski work ki image niche show honi chahiye
+import React,{usestate} from "react";
+import axios from "axios";
+import "../Portfolio/Portfolio.css";
+import portfolio from "../../assets/portfolio.svg"
+import Breadcrums from "../../Components/Breadcrums/Breadcrums";
+import YellowWhiteBtn from "../../Components/YellowWhiteBtn/YellowWhiteBtn";
+import BannerTop from "../../Components/service/BannerTop/BannerTop";
+const Portfolio = () => {
+  let url = process.env.REACT_APP_DEV_URL;
+
+  const[formdata,setformdata] = usestate({
+    name: "",
+    mobile: "",
+    email: "",
+    company: "",
+    city: "",
+    message: ""
+  })
+  const handleChange = (e) => {
+    setformdata({ ...formdata, [e.target.name]: e.target.value });
+  };
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+     
+      const response = await axios.post(`${url}/workcategory`, formdata);
+      alert("PDF successfully sent to email!"); // ✅ Success Message
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send email."); // ❌ Error Message
+    }
+  };

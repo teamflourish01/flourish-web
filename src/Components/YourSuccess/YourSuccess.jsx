@@ -28,7 +28,7 @@ const YourSuccess = () => {
         trigger: section,
         start: "top 2%",
         end: "bottom center",
-        scrub: 0.1,
+        scrub: 5,
         markers: false,
         pin: true,
         onUpdate: (self) => {

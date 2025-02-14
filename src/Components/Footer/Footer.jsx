@@ -63,6 +63,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Home
                   </NavLink>
@@ -75,6 +76,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     About Us
                   </NavLink>
@@ -99,6 +101,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Portfolio
                   </NavLink>
@@ -111,7 +114,9 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
+                  
                     Work
                   </NavLink>
                 </li>
@@ -123,6 +128,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Blogs
                   </NavLink>
@@ -147,6 +153,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Contact Us
                   </NavLink>
@@ -164,6 +171,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Branding
                   </NavLink>
@@ -176,6 +184,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Visual Experience
                   </NavLink>
@@ -188,6 +197,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Content Creation
                   </NavLink>
@@ -200,6 +210,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Digital Marketing
                   </NavLink>
@@ -212,6 +223,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Web/App Development
                   </NavLink>
@@ -224,6 +236,7 @@ const Footer = () => {
                         ? "footer-link active-footer-link"
                         : "footer-link"
                     }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     Strategy and Consultation
                   </NavLink>

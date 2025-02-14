@@ -1,104 +1,107 @@
-import React,{useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../Work/work.css";
 import Breadcrums from "../../Components/Breadcrums/Breadcrums";
-import ppeople from "../../assets/ppeople.svg";
-import notch from "../../assets/notch.svg";
-import food from "../../assets/foodw.svg";
-import fasw from "../../assets/fasw.svg";
-import fgcg from "../../assets/fgcg.svg";
-import renw from "../../assets/renw.svg";
-import premium from "../../assets/premium.svg";
-import workimg from "../../assets/real.svg";
-import premp from "../../assets/premp.png";
-import manufacture from "../../assets/mss.svg";
-import health from "../../assets/healthw.svg";
-import technow from "../../assets/technow.svg"
-import techno from "../../assets/techno.svg";
-import renuable from "../../assets/Renuable.svg";
-import education from "../../assets/educationw.svg";
-import fashion from "../../assets/fashion.svg";
+import BannerTop from "../../Components/service/BannerTop/BannerTop";
+import axios from "axios";
+
 const Work = () => {
-  const [activeImage, setActiveImage] = useState(null);
-  const images = [
-    { src: workimg, label: "Real Estate" },
-    { src: manufacture, label: "Manufacturing" },
-    { src: food, label: "Food" },
-    { src: health, label: "Health care" },
-    { src: fasw, label: "Fashion" },
-    { src: renw, label: "Renewable" },
-    { src: education, label: "Education" },
-    { src: technow, label: "Technology" },
-    { src: fgcg, label: "FMCG" },
-  ];
+  const [work, setWork] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(null);
+  
+  const [activeWorks, setActiveWorks] = useState([]);
+  let url = process.env.REACT_APP_DEV_URL;
+
+  const fetchJourneyData = async () => {
+    try {
+      const response = await axios.get(`${url}/workcategory`);
+      setWork(response.data.data);
+
+      if (response.data.data.length > 0) {
+        const firstCategory = response.data.data[0];
+        setActiveCategory(firstCategory._id);
+        setActiveWorks(firstCategory.works);
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchJourneyData();
+  }, []);
+
+  const handleCategoryClick = (item) => {
+    setActiveCategory(item._id);
+    setActiveWorks(item.works.length > 0 ? item.works : []);
+  };
+
   return (
     <>
+      <BannerTop btitle="Work" />
       <Breadcrums pagename="Work" />
       <section>
         <div className="work-main-container-100">
-        <div className="padding-container-work">
-      <div className="gried-work-1320">
-      <div className="work-wrapper">
-  <div className="work-gried">
-    <div className="work-box">
-      <p className="work-p">All</p>
-    </div>
+          <div className="padding-container-work">
+            <div className="gried-work-1320">
+              <div className="work-wrapper">
+                <div className="work-gried">
+                  <div className="work-box">
+                    <p className="work-p">All</p>
+                  </div>
 
-    {images.map((item, index) => (
-      <div
-        key={index}
-        className="work-boxs"
-        onClick={() => setActiveImage(item.src)}
-        style={{ cursor: "pointer" }}
-      >
-        <div className="work-c-flex">
-          <div className="div-img">
-            <img
-              src={item.src}
-              alt={item.label}
-              style={{
-                opacity: activeImage === null || activeImage === item.src ? 1 : 0.2,
-                transition: "opacity 0.3s ease-in-out",
-              }}
-              className="work-div-img"
-            />
+                  {work?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="work-boxs"
+                      onClick={() => handleCategoryClick(item)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <div className="work-c-flex">
+                        <div className="div-img">
+                        <img
+  src={`${url}/work/${item.image}`}
+  alt={item.name}
+  className="work-div-img"
+  style={{
+    opacity: activeCategory === item._id ? 1 : 0.2,
+    transition: "opacity 0.3s ease-in-out",
+  }}
+/>
+
+                        </div>
+                        <hr />
+                        <p
+                          className="real-work-p-m"
+                          style={{
+                            color: activeCategory === item._id ? "black" : "gray",
+                            fontWeight: activeCategory === item._id ? "bold" : "normal",
+                          }}
+                        >
+                          {item.name}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <hr />
-          <p
-            className="real-work-p-m"
-            style={{
-              color: activeImage === item.src ? "black" : "gray",
-              fontWeight: activeImage === item.src ? "bold" : "normal",
-              transition: "color 0.3s ease-in-out",
-            }}
-          >
-            {item.label}
-          </p>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-      </div>
-    </div>
 
           <hr className="hr-line" />
+
+          {/* Active Works Section */}
           <section className="section-b-work">
             <div className="gajanan-b-gried">
-              <div className="gried-box1">
-                <img src={premium} alt="" srcset="" />
-                <div className="bg-name">Gajanan Bunglows</div>
-              </div>
-
-              <div className="gried-box1">
-                <img src={premium} alt="" srcset="" />
-                <div className="bg-name">Gajanan Bunglows</div>
-              </div>
-
-              <div className="gried-box1">
-                <img src={premium} alt="" srcset="" />
-                <div className="bg-name">Gajanan Bunglows</div>
-              </div>
+              {activeWorks.length > 0 ? (
+                activeWorks.map((workItem, index) => (
+                  <div key={index} className="gried-box1">
+                    <img src={`${url}/work/${workItem.image}`} alt={workItem.name} />
+                    <div className="bg-name">{workItem.name}</div>
+                  </div>
+                ))
+              ) : (
+                <p>No works available</p>
+              )}
             </div>
           </section>
         </div>

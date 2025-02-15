@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "../Nav/Nav.css";
 import logo from "../../assets/f-logo.svg";
 import hicon from "../../assets/ham-icon.svg";
@@ -11,9 +11,11 @@ import MobileNavBar from "../MobileNavBar/MobileNavBar";
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation(); // Get current URL path
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    setIsDropdownOpen(false);
   };
 
   const serviceOpen = () => {
@@ -26,7 +28,9 @@ const Nav = () => {
         <div className="navbar">
           <div className="navbar-container">
             <div className="logo-c">
+            <Link to='/home'>
               <img src={logo} alt="Logo" />
+              </Link>
             </div>
             <div className="h-icon-c" onClick={toggleMenu}>
               <img src={hicon} alt="Hamburger Icon" />
@@ -69,7 +73,7 @@ const Nav = () => {
                   <NavLink
                     to=""
                     className={({ isActive }) =>
-                      isActive ? "nav-link " : "nav-link"
+                       location.pathname.includes("/service") || location.pathname.includes("/subservice") ? "nav-link active-nav-link" : "nav-link"
                     }
                     // onClick={toggleMenu}
                     onClick={(event) => {

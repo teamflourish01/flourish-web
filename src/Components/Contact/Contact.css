@@ -31,7 +31,7 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
   /* padding-bottom: 50px; */
 }
 .ybtn{
@@ -41,7 +41,7 @@
 .input,
 .textarea {
   width: 100%;
-  padding: 12px;
+  padding: 15px 20px;
   border: unset;
   box-shadow: 0px 0px 4px 0px #0000000d;
   border-radius: 8px;
@@ -92,7 +92,7 @@
     line-height: 57.8px;
   }
   .contact-us {
-    padding: 60px 0;
+    padding: 100px 0 80px;
   }
   .contact-us-container {
     padding: 0 25px;
@@ -117,6 +117,9 @@
   }
   .half-width-container{
     flex-direction: column;
+  }
+  .form-container{
+    gap: 15px;
   }
 }
 

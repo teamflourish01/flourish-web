@@ -61,6 +61,8 @@ const MobNav = ({ closeAllMenus, goBackToMainMenu }) => {
                   //     ? "text-deco nav-link-s active-nav-link-s"
                   //     : "nav-link-s"
                   // }
+                  onClick={closeAllMenus}
+
                 >
                   {category?.name}
                 </NavLink>
@@ -88,6 +90,7 @@ const MobNav = ({ closeAllMenus, goBackToMainMenu }) => {
                           ? "text-deco nav-link-s active-nav-link-s"
                           : "nav-link-s"
                       }
+                      onClick={closeAllMenus}
                     >
                       {item?.name}
                     </NavLink>

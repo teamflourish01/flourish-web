@@ -18,11 +18,12 @@
   /* padding-top: 100px; */
 }
 .stroke-txt {
-  font-family: Jost-Bold;
+  font-family: 'Futura', 'Futura PT', 'Arial', sans-serif;
   font-size: 50px;
   line-height: 72.25px;
   color: transparent; /* Make the text itself invisible */
-  -webkit-text-stroke: 1.5px black; /* Outline color and width */
+  -webkit-text-stroke: 1.1px black; /* Outline color and width */
+  font-weight: 700;
 }
 .desc-y-o {
   font-family: Jost-Regular;

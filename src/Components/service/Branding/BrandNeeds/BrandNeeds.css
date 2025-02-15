@@ -26,8 +26,9 @@
 }
 
 .brand-image img {
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+  width: 436px;
+  height: 500px;
 }
 
 .brand-text {
@@ -144,6 +145,8 @@
   }
   .brand-image {
     padding-bottom: 30px;
+    /* align-items: center; */
+    justify-content: center;
   }
   .brand-title {
     font-size: 40px;
@@ -163,6 +166,7 @@
     height: 1px;
     background-color: rgba(252, 252, 252, 0.5);
   }
+ 
 }
 
 
@@ -189,5 +193,9 @@
 }
 .brand-needs {
   padding: 50px 0;
+}
+.brand-image img{
+  width: 250px;
+  height: 281px;
 }
 }

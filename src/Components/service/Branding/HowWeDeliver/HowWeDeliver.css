@@ -65,8 +65,7 @@
   font-weight: 500;
   line-height: 31.79px;
   text-align: left;
-  -webkit-text-stroke: 1px #060606;
-  color: white;
+  color:  #060606;
 }
 
 .step-title {
@@ -179,6 +178,9 @@
   .title-h-w-d {
     font-size: 40px;
     line-height: 57.8px;
+}
+.how-we-deliver{
+  padding: 80px 0px;
 }
 }
 

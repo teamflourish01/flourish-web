@@ -87,7 +87,7 @@
   .btn-yellow-w:hover .circle-bg-arrow-w img {
     transform: scale(1.1);
     opacity: 0.8;
-    transform: rotate(60deg);
+    transform: rotate(58deg);
   }
   .btn-yellow-w:hover p {
     transition: all 1s ease-out;

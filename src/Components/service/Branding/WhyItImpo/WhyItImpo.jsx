@@ -38,17 +38,17 @@ const WhyItImpo = ({ ServiceData }) => {
           </p>
 
           <div className="img-div-imp">
-            <img src={impl} alt="" className="img-r-imp" />
+            <img src={`${url}/service/${ServiceData?.imp_vector}`} alt="" className="img-r-imp" />
             <div className="vertical-line-why-imp">
               {impicon.map((imp, index) => (
                 <React.Fragment key={index}>
                   <div
                     className="horizontal-line-why-imp"
-                    style={{ top: `${110 + index * 120}px` }} // Adjust values as needed
+                    style={{ top: `${70 + index * 90}px` }} // Adjust values as needed
                   ></div>
                   <div
                     className="imp-img-bg-w"
-                    style={{ top: `${85 + index * 70}px` }}
+                    style={{ top: `${45 + index * 40}px` }}
                   >
                     <img
                       src={`${url}/service/${imp.img}`}
@@ -76,7 +76,7 @@ const WhyItImpo = ({ ServiceData }) => {
                   </div>
                   <p
                     className="why-imp-txt-dsc"
-                    style={{ top: `${-123 + index * 90}px` }}
+                    style={{ top: `${-75 + index * 57}px` }}
                     key={index}
                   >
                     {imp.desc}

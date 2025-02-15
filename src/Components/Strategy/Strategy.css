@@ -9,7 +9,7 @@
   margin: 0 auto;
   padding: 0 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .left-side-v-s-c {
@@ -31,6 +31,8 @@
   line-height: 60.25px;
   color: transparent;
   -webkit-text-stroke: 1px white;
+  font-family: 'Futura', 'Futura PT', 'Arial', sans-serif;
+  font-weight: 700;
 }
 .v-s-desc {
   font-family: Jost-Regular;
@@ -47,7 +49,7 @@
   height: 564px;
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
-  margin: 0 116px 0 124px;
+  /* margin: 0 116px 0 124px; */
   overflow: hidden;
 }
 

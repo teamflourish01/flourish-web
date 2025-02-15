@@ -6,6 +6,7 @@ import mail from "../../assets/cmail.svg";
 import call from "../../assets/cphone.svg";
 import BannerTop from "../../Components/service/BannerTop/BannerTop";
 import { useParams } from "react-router-dom";
+import Breadcrums from "../../Components/Breadcrums/Breadcrums";
 
 const ContactUs = () => {
   const { slug } = useParams();
@@ -41,6 +42,8 @@ const ContactUs = () => {
   return (
     <>
       <BannerTop btitle="Contact" />
+      <Breadcrums pagename="Contact Us" />
+
       <Contact />
 
       <div className="con-page">

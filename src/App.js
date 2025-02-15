@@ -26,13 +26,26 @@ import MobNav from "./Components/MobNav/MobNav";
 function App() {
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 7500); // Set the desired loading duration
+  //   return () => clearTimeout(timer);
+  // }, []);
+
   useEffect(() => {
+    if (window.innerWidth <= 1024) {
+      setLoading(false); // Immediately hide PreLoader on smaller screens
+      return;
+    }
+  
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500); // Set the desired loading duration
+    }, 7500); // Set timeout only for larger screens
+  
     return () => clearTimeout(timer);
   }, []);
-
+  
   return (
     <>
       {loading ? (

@@ -1,5 +1,5 @@
 import React from "react";
-import '../PreLoader/PreLoader.css';
+import "../PreLoader/PreLoader.css";
 
 const PreLoader = () => {
   return (
@@ -11,7 +11,9 @@ const PreLoader = () => {
           <div className="word">Consistency</div>
         </div>
         <div className="box"></div>
-        <div className="team-text">Team Flourish</div>
+        <div className="team-text">
+          Team <span className="org-text-f"> Flourish</span>
+        </div>
       </div>
     </div>
   );

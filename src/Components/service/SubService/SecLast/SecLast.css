@@ -78,8 +78,7 @@
   font-weight: 500;
   line-height: 46.24px;
   text-align: left;
-  -webkit-text-stroke: 1px black;
-  color: white;
+  color: #060606;
 }
 
 .benefit-text-sl {
@@ -122,6 +121,9 @@
   .sec-last-container {
     padding: 0 25px;
   }
+  .b-p-img{
+    margin: 0 auto;
+  }
 }
 @media (max-width: 768px) {
   .sec-last-container {
@@ -148,6 +150,11 @@
   }
   .b-p-img {
     padding-bottom: 20px;
+    margin: 0 auto;
+    max-width: unset;
+    min-width: unset;
+    width: 242px;
+    height: 326px;
   }
   .benefit-sl {
     border-bottom: unset;

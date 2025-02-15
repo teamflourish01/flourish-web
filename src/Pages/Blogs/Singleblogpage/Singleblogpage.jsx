@@ -42,7 +42,7 @@ const Singleblogpage = () => {
         <div style={{ border: "1px solid #00000080" }}>
           <div className="blogmain-width1320">
             <div className="blog-top-breadcrums">
-              <p>{`Homepage / ${slug}`}</p>
+              <p>{`Homepage / ${blog?.name}`}</p>
             </div>
           </div>
         </div>

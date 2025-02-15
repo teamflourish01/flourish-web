@@ -6,7 +6,7 @@
 }
 
 .icosahedron-right {
-  top: -135px;
+  top: -125px;
   right: -240px;
   width: 600px;
   height: 600px;
@@ -69,6 +69,9 @@
   text-align: left;
   color: #ffffffb2;
   padding: 30.11px 0 59.85px;
+  max-width: 749px;
+  min-width: 200px;
+  width: 100%;
 }
 .view-works-container {
   position: relative;
@@ -158,6 +161,9 @@
     font-size: 60px;
     font-weight: 700;
     line-height: 86.7px;
+    max-width: 606px;
+    min-width: 200px;
+    width: 100%;
   }
   .icosahedron-left {
     display: none;
@@ -171,6 +177,10 @@
   .view-works-container {
     margin: 0 0 60px;
     /* top: 23px; */
+  }
+  .span-txt-t-b{
+    font-size: 60px;
+    line-height: 86.7px;
   }
 }
 

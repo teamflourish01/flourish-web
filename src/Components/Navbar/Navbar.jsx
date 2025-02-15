@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../Navbar/Navbar.css";
 import logo from "../../assets/f-logo.svg";
 import hicon from "../../assets/ham-icon.svg";
@@ -18,7 +18,9 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-container">
           <div className="logo-c">
+            <Link to='/home'>
             <img src={logo} alt="Logo" />
+            </Link>
           </div>
           <div className="h-icon-c" onClick={toggleMenu}>
             <img src={hicon} alt="Hamburger Icon" />

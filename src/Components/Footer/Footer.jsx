@@ -5,16 +5,39 @@ import { PiWhatsappLogoLight } from "react-icons/pi";
 import { SlSocialInstagram } from "react-icons/sl";
 import { LuFacebook } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import call from "../../assets/call.svg";
 import mail from "../../assets/mail.svg";
 import location from "../../assets/location.svg";
 
 const Footer = () => {
+  const { slug } = useParams();
+
   const [footerContent, setFooterContent] = useState([]);
+  const [service, setService] = useState([]);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   let url = process.env.REACT_APP_DEV_URL;
+
+  const getService = async () => {
+    try {
+      console.log(url);
+
+      setLoading(true);
+      const response = await fetch(`${url}/service/`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const res = await response.json();
+      console.log(res, "dattta");
+
+      setService(res.data); // Store fetched data in state
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   const getData = async () => {
     setLoading(true);
@@ -39,6 +62,7 @@ const Footer = () => {
 
   useEffect(() => {
     getData();
+    getService();
   }, [url]);
 
   return (
@@ -47,7 +71,9 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-column-1">
             <div className="logo-c">
-              <img src={logo} alt="Logo" />
+              <Link to="/home">
+                <img src={logo} alt="Logo" />
+              </Link>
             </div>
             <p className="f-desc-txt">{footerContent?.text}</p>
             <hr className="hr-line-footer" />
@@ -152,7 +178,6 @@ const Footer = () => {
                     }
                     onClick={() => window.scrollTo(0, 0)}
                   >
-                  
                     Work
                   </NavLink>
                 </li>
@@ -199,20 +224,23 @@ const Footer = () => {
             <div className="footer-column-3">
               <p className="title-head-f">Services</p>
               <ul>
-                <li className="margin-b-8-f">
-                  <NavLink
-                    to="/service/Branding"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "footer-link active-footer-link"
-                        : "footer-link"
-                    }
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
-                    Branding
-                  </NavLink>
-                </li>
-                <li className="margin-b-8-f">
+                {service?.map((s, index) => (
+                  <li className="margin-b-8-f" key={index}>
+                    <NavLink
+                      to={`/service/${s?.slug}`} // Make sure 'slug' comes from 's'
+                      className={({ isActive }) =>
+                        isActive
+                          ? "footer-link active-footer-link"
+                          : "footer-link"
+                      }
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
+                      {s?.name} {/* Assuming you want dynamic service names */}
+                    </NavLink>
+                  </li>
+                ))}
+
+                {/* <li className="margin-b-8-f">
                   <NavLink
                     to="-"
                     className={({ isActive }) =>
@@ -276,25 +304,37 @@ const Footer = () => {
                   >
                     Strategy and Consultation
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="footer-column-4">
               <p className="title-head-f">Contact Info</p>
               <ul>
-                <a href={`tel:${footerContent?.mobile}`} target="_blank" className="text-deco">
+                <a
+                  href={`tel:${footerContent?.mobile}`}
+                  target="_blank"
+                  className="text-deco"
+                >
                   <li className="margin-b-8-f flex-con-info-f">
                     <img src={call} alt="" />
                     <p className="con-info-text">{footerContent?.mobile}</p>
                   </li>
                 </a>
-                <a href={`mailto:${footerContent?.mail}`} target="_blank" className="text-deco">
+                <a
+                  href={`mailto:${footerContent?.mail}`}
+                  target="_blank"
+                  className="text-deco"
+                >
                   <li className="margin-b-8-f flex-con-info-f">
                     <img src={mail} alt="" />
                     <p className="con-info-text">{footerContent?.mail}</p>
                   </li>
                 </a>
-                <a href={footerContent?.address_url} target="_blank" className="text-deco">
+                <a
+                  href={footerContent?.address_url}
+                  target="_blank"
+                  className="text-deco"
+                >
                   <li className="margin-b-8-f  flex-con-info-f-l">
                     <div className="loc-top-p">
                       <img src={location} alt="" />

@@ -7,10 +7,11 @@ import VisionWhiteBanner from "../../../../Components/service/Branding/VisionWhi
 import WhyItImpo from "../../../../Components/service/Branding/WhyItImpo/WhyItImpo";
 import { useParams } from "react-router-dom";
 import { log } from "three/src/nodes/TSL.js";
+import Breadcrums from "../../../../Components/Breadcrums/Breadcrums";
 
 const BrandingMainP = () => {
   const { slug } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   let url=process.env.REACT_APP_DEV_URL
@@ -37,15 +38,16 @@ const BrandingMainP = () => {
     };
 
     getData();
-  }, []); // Runs when `slug` changes
+  }, [slug]); // Runs when `slug` changes
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   return (
     <>
       <BannerTop btitle={data?.name} />
+      <Breadcrums pagename={data?.name} />
       <TopBrandingB  ServiceData={data}/>
-      <WhyItImpo ServiceData={data}/>
+      <WhyItImpo ServiceData={data} />
       <HowWeDeliver ServiceData={data}/>
       <BrandNeeds ServiceData={data}/>
       <VisionWhiteBanner ServiceData={data}/>

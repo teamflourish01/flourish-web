@@ -21,27 +21,19 @@ const YourExperience = ({ homeDetails, testimonials, url }) => {
   }, [isAutoPlay, currentIndex, testimonials?.length]);
 
   const changeTestimonial = (step) => {
-    setSlideDirection(step > 0 ? "right" : "left"); // Determine slide direction
-  
+    setSlideDirection(step > 0 ? "right" : "left"); 
+
     setCurrentIndex((prevIndex) => {
-      const newIndex = (prevIndex + step + testimonials.length) % testimonials.length;
+      const newIndex =
+        (prevIndex + step + testimonials.length) % testimonials.length;
       return newIndex;
     });
-  
-    setIsAutoPlay(false); // Pause autoplay when clicking arrows
+
+    setIsAutoPlay(false); 
     setTimeout(() => setIsAutoPlay(true), 4000);
   };
-  
-  // const changeTestimonial = (step) => {
-  //   setIsSliding(true);
-  //   setTimeout(() => {
-  //     setCurrentIndex(
-  //       (prevIndex) =>
-  //         (prevIndex + step + testimonials.length) % testimonials.length
-  //     );
-  //     setIsSliding(false);
-  //   }, 500); // Match the CSS transition duration
-  // };
+
+
   const showTestimonial = (index) => {
     if (index === currentIndex) return;
     setSlideDirection(index > currentIndex ? "right" : "left");
@@ -50,7 +42,6 @@ const YourExperience = ({ homeDetails, testimonials, url }) => {
     setTimeout(() => setIsAutoPlay(true), 2000);
   };
 
-  // Reorder images array so current image is first
   const reorderedTestimonials = testimonials
     ? [
         ...testimonials.slice(currentIndex),
@@ -120,34 +111,20 @@ const YourExperience = ({ homeDetails, testimonials, url }) => {
             ))}
           </div>
           <div className="arrows">
-  <button onClick={() => changeTestimonial(-1)}>←</button>
-  <div className="dots">
-    {testimonials.map((_, index) => (
-      <span
-        key={index}
-        className={`dot ${index === currentIndex ? "active-dot" : ""}`}
-        onClick={() => showTestimonial(index)}
-      ></span>
-    ))}
-  </div>
-  <button onClick={() => changeTestimonial(1)}>→</button>
-</div>
-
-          {/* <div className="arrows">
-              <button onClick={() => changeTestimonial(-1)}>←</button>
-              <div className="dots">
-                {testimonials.map((_, index) => (
-                  <span
-                    key={index}
-                    className={`dot ${
-                      index === currentIndex ? "active-dot" : ""
-                    }`}
-                    onClick={() => showTestimonial(index)}
-                  ></span>
-                ))}
-              </div>
-              <button onClick={() => changeTestimonial(1)}>→</button>
-            </div> */}
+            <button onClick={() => changeTestimonial(-1)}>←</button>
+            <div className="dots">
+              {testimonials.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${
+                    index === currentIndex ? "active-dot" : ""
+                  }`}
+                  onClick={() => showTestimonial(index)}
+                ></span>
+              ))}
+            </div>
+            <button onClick={() => changeTestimonial(1)}>→</button>
+          </div>
         </div>
       </div>
     </div>

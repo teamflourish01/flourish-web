@@ -2,7 +2,7 @@ import React from "react";
 import "../BrandNeeds/BrandNeeds.css";
 import chess from "../../../../assets/Branding/chess.png";
 
-const BrandNeeds = ({ ServiceData }) => {
+const BrandNeeds = ({ ServiceData}) => {
   let url = process.env.REACT_APP_DEV_URL;
 
   return (
@@ -14,7 +14,7 @@ const BrandNeeds = ({ ServiceData }) => {
         </p>
         <div className="brand-content">
           <div className="brand-image">
-            <img src={chess} alt="Chess Branding" />
+            <img src={`${url}/service/${ServiceData?.need_vector}`} alt="Chess Branding" />
           </div>
           {/* <div className="vertical-line"></div> */}
           <div className="vertical-line">

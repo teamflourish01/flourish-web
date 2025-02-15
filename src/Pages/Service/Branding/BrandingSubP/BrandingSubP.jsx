@@ -5,6 +5,7 @@ import CenterStatic from '../../../../Components/service/SubService/CenterStatic
 import LastLets from '../../../../Components/service/SubService/LastLets/LastLets';
 import SecLast from '../../../../Components/service/SubService/SecLast/SecLast';
 import { useParams } from 'react-router-dom';
+import Breadcrums from '../../../../Components/Breadcrums/Breadcrums';
 
 const BrandingSubP = () => {
 
@@ -36,7 +37,7 @@ const BrandingSubP = () => {
     };
 
     getData();
-  }, []); // Runs when `slug` changes
+  }, [slug]); // Runs when `slug` changes
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -44,9 +45,10 @@ const BrandingSubP = () => {
   return (
     <>
       <BannerTop btitle={subServiceData?.name}/>
+      <Breadcrums pagename={subServiceData?.name} />
       <TopSubService SubServiceDetails={subServiceData}/>
       <CenterStatic SubServiceDetails={subServiceData}/>
-      <SecLast SubServiceDetails={subServiceData}/>
+      <SecLast SubServiceDetails={subServiceData} url={url}/>
       <LastLets SubServiceDetails={subServiceData}/>
     </>
   );

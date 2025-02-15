@@ -118,7 +118,7 @@
   font-size: 35px;
   line-height: 50.58px;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); */
 }
 .title-branding-box {
   font-family: Jost-SemiBold;
@@ -130,13 +130,14 @@
   color: rgba(255, 255, 255, 0.5);
 }
 .text-gray-400{
-  color: transparent;
+  color: rgba(255, 255, 255, 0.5);
 }
 .text-white{
   color: white;
 }
 .text-white-no{
-  -webkit-text-stroke: 0.7px white;
+  color: white;
+  /* -webkit-text-stroke: 0.7px white !important; */
 }
 .desc-arr-container-flex {
   display: flex;
@@ -290,6 +291,7 @@
   }
   .box-scroll-container {
     padding: 44px 10px 30px;
+    gap: 20px;
   }
   .right-side-your-challange {
     padding-bottom: 50px;
@@ -312,6 +314,7 @@
     color: black;
     font-size: 24px;
     line-height: 34.68px;
+    padding-bottom: 10px;
     -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
   }
   .desc-box {

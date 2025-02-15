@@ -96,10 +96,12 @@
     overflow-x: scroll;
     overflow-y: hidden;
     scrollbar-width: none;
+    gap: 12px;
   }
   .card-details-nine {
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
+    padding: 20px 10px;
   }
   .card-front-nine img {
     transform: translateY(-150%);
@@ -127,5 +129,9 @@
   }
   .card-container-nine {
     width: 290px;
+}
+.nine-grid-cards{
+  gap: 7px;
+  padding-left: 1px;
 }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "../Nav/Nav.css";
 import logo from "../../assets/f-logo.svg";
 import hicon from "../../assets/ham-icon.svg";
@@ -10,6 +10,7 @@ import TabNav from "../TabNav/TabNav";
 const TabletNavBar = () => {
   const [isMainMenuOpen, setIsMainMenuOpen] = useState(false);
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
+  const location = useLocation(); // Get current URL path
 
   // Toggle Main Menu
   const toggleMainMenu = () => {
@@ -79,8 +80,8 @@ const TabletNavBar = () => {
                   <NavLink
                     to=""
                     className={({ isActive }) =>
-                      isActive ? "nav-link nav-link" : "nav-link"
-                    }
+                      location.pathname.includes("/service") || location.pathname.includes("/subservice") ? "nav-link active-nav-link" : "nav-link"
+                  }
                     onClick={openServiceMenu}
                   >
                     Services <span className="arrow"></span>

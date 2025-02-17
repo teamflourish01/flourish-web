@@ -23,7 +23,7 @@
   .portfolio-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     gap: 26px;
     border-radius: 10px;
     
@@ -47,6 +47,10 @@
     max-width: 541px;
     min-width: 200px;
     width: 100%;
+    max-height: 464px;
+    min-height: 100px;
+    height: 100%;
+    border-radius: 10px;
     background-color: white;
     padding: 59px 11px;
   }
@@ -122,6 +126,9 @@ line-height: 28.9px;
     .portfolio-container{
       flex-direction: column;
     }
+    .yellow-btn{
+      padding: 25px 0 44px 0;
+    }
     .portfolio-container{
       padding: unset;
     }
@@ -161,6 +168,9 @@ line-height: 28.9px;
     .portfolio-right-main {
        
         padding: 9px 18px;
+    }
+    .yellow-btn{
+      padding: 35px 0 44px 0;
     }
     .form-row{
       flex-direction: column;

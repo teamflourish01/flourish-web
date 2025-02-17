@@ -35,6 +35,12 @@ const Work = () => {
     setActiveWorks(item.works.length > 0 ? item.works : []);
   };
 
+  const handleAllClick = () => {
+    setActiveCategory(null); 
+    const allWorks = work.flatMap(category => category.works);
+    setActiveWorks(allWorks);
+  };
+
   return (
     <>
       <BannerTop btitle="Work" />
@@ -45,9 +51,22 @@ const Work = () => {
             <div className="gried-work-1320">
               <div className="work-wrapper">
                 <div className="work-gried">
-                  <div className="work-box">
-                    <p className="work-p">All</p>
-                  </div>
+                <div 
+  className="work-box" 
+  onClick={handleAllClick} 
+  style={{ cursor: "pointer" }}
+>
+  <p 
+    className="work-p" 
+    style={{ 
+      fontWeight: activeCategory === null ? "bold" : "normal",
+      color: activeCategory === null ? "black" : "gray" 
+    }}
+  >
+    All
+  </p>
+</div>
+
 
                   {work?.map((item, index) => (
                     <div

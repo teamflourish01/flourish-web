@@ -101,7 +101,9 @@ const Portfolio = () => {
                 value={formdata.message}
                 onChange={handleChange}
               ></textarea>
+              <div className="yellow-btn">
               <YellowWhiteBtn btnName="Submit" />
+              </div>
             </form>
           </div>
 

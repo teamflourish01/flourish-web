@@ -79,9 +79,9 @@
   background: rgba(245, 245, 245, 1);
 }
 .heading-inner {
-  max-width: 1320px;
+  max-width: 1380px;
   min-width: 200px;
-
+padding: 0 30px;
   width: 100%;
 
   margin: 0 auto;
@@ -583,6 +583,9 @@
     flex-direction: column;
     gap: 15px;
     padding: 0 10px;
+  }
+  .discovery-flex{
+    grid-template-columns: repeat(1, 1fr);
   }
   .timeline {
     padding: 50px 10px 0 10px;

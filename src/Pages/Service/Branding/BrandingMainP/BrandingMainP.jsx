@@ -30,7 +30,7 @@ const BrandingMainP = () => {
         const res = await response.json();
         console.log(res, "dattta");
 
-        setData(res.data); // Store fetched data in state
+        setData(res.data[0]); // Store fetched data in state
         setLoading(false);
       } catch (error) {
         setError(error.message);

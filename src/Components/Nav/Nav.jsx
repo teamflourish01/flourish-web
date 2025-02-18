@@ -43,7 +43,7 @@ const Nav = () => {
 
     useEffect(()=>{
       getLogo();
-    })
+    },[]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -91,7 +91,7 @@ const Nav = () => {
                     }
                     onClick={toggleMenu}
                   >
-                    About
+                    About Us
                   </NavLink>
                 </li>
                 <li

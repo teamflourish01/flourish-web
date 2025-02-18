@@ -79,7 +79,7 @@ const TabletNavBar = ({logo}) => {
                     }
                     onClick={closeAllMenus}
                   >
-                    About
+                    About Us
                   </NavLink>
                 </li>
                 <li className="margin-b-30 dropdown-container">

@@ -17,6 +17,7 @@ import Breadcrums from "../../Components/Breadcrums/Breadcrums";
 import VisionWhiteBanner from "../../Components/service/Branding/VisionWhiteBanner/VisionWhiteBanner";
 import BannerTop from "../../Components/service/BannerTop/BannerTop";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const [data, setData] = useState([]);
@@ -29,7 +30,7 @@ const About = () => {
     try {
       const response = await axios.get(`${url}/about`);
       setData(response.data.data[0]);
-      console.log("Data fetched successfully:", response.data.data[0]);
+      console.log("about:", response.data.data[0]);
     } catch (err) {
       setError("Data fetch failed!");
       console.error("Error:", err);
@@ -192,7 +193,7 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    // Check screen width before initializing AOS
+   
     if (window.innerWidth >= 1024) {
       AOS.init({
         duration: 1000,
@@ -204,6 +205,10 @@ const About = () => {
   return (
     <>
       {" "}
+      <Helmet>
+        <title>{data?.meta_title}</title>
+        <meta name="description" content={data?.meta_description} />
+      </Helmet>
       <BannerTop btitle="About Us" />
       <Breadcrums pagename="About Us" />
       {/* about-section */}

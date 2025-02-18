@@ -178,6 +178,11 @@
   .padding-container-work {
     padding: 100px 25px 0 25px;
 }
+.bg-name {
+
+  font-size: 20.47px;
+  line-height: 29.47px;
+}
   
 }
 
@@ -185,14 +190,26 @@
   .gajanan-b-gried{
     grid-template-columns: repeat(1, 1fr);
   }
+  .bg-name {
+
+    font-size: 18px;
+    line-height: 26.1px;
+  }
   .padding-container-work {
-    padding: 100px 10px 0 10px;
+    padding: 60px 10px 0 10px;
+}
+.gajanan-b-gried {
+ 
+  gap: 20px;
+}
+.hr-line {
+  margin: 40px 0;
 }
   .about-left {
     margin: unset;
     margin-right: 15px;
 }
 .section-b-work {
-  padding: 0 10px 100px;
+  padding: 0 10px 60px;
 }
 }

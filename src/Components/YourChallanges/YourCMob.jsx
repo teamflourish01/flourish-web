@@ -146,7 +146,7 @@ const YourCMob = ({ homeDetails }) => {
                   border: `${
                     index === 0
                       ? "1px solid white"
-                      : " 1px solid rgba(255, 255, 255, 0.5)"
+                      : " 1px solid white"
                   }`,
                 }}
               >
@@ -154,12 +154,12 @@ const YourCMob = ({ homeDetails }) => {
                   <div>
                     <p
                       className={`stroke-txt-strategy-01 ${
-                        index === 0 ? "text-white-no" : "text-gray-400"
+                        index === 0 ? "text-white-no" : "text-white-no"
                       }`}
                     >{`0${index + 1}`}</p>
                     <p
                       className={`title-branding-box ${
-                        index === 0 ? "text-white" : "text-gray-400-p"
+                        index === 0 ? "text-white" : "text-white"
                       }`}
                     >
                       {box?.name}

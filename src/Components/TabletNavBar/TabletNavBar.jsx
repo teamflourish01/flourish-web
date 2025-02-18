@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "../Nav/Nav.css";
 import logo from "../../assets/f-logo.svg";
 import hicon from "../../assets/ham-icon.svg";
@@ -7,10 +7,11 @@ import close from "../../assets/close-icon-nav.svg";
 import ServiceNav from "../ServiceNav/ServiceNav";
 import TabNav from "../TabNav/TabNav";
 
-const TabletNavBar = () => {
+const TabletNavBar = ({logo}) => {
   const [isMainMenuOpen, setIsMainMenuOpen] = useState(false);
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
   const location = useLocation(); // Get current URL path
+  let url = process.env.REACT_APP_DEV_URL;
 
   // Toggle Main Menu
   const toggleMainMenu = () => {
@@ -38,14 +39,19 @@ const TabletNavBar = () => {
     <>
       <div className="navbar">
         <div className="navbar-container">
-          <div className="logo-c">
-            <img src={logo} alt="Logo" />
-          </div>
+          <Link to="/">
+            <div className="logo-c">
+              <img src={`${url}/logo/${logo}`} alt="Logo" />
+            </div>
+          </Link>
           <div className="h-icon-c" onClick={toggleMainMenu}>
             <img src={hicon} alt="Hamburger Icon" />
           </div>
         </div>
-        <div className={`flex ${isMainMenuOpen ? "open" : "close"}`} style={{padding:`${isServiceMenuOpen ? "0px" : "50px"}`}}>
+        <div
+          className={`flex ${isMainMenuOpen ? "open" : "close"}`}
+          style={{ padding: `${isServiceMenuOpen ? "0px" : "50px"}` }}
+        >
           {isMainMenuOpen && !isServiceMenuOpen && (
             <div className="menu-navbar">
               <div className="menu-header-navbar">
@@ -80,8 +86,11 @@ const TabletNavBar = () => {
                   <NavLink
                     to=""
                     className={({ isActive }) =>
-                      location.pathname.includes("/service") || location.pathname.includes("/subservice") ? "nav-link active-nav-link" : "nav-link"
-                  }
+                      location.pathname.includes("/service") ||
+                      location.pathname.includes("/subservice")
+                        ? "nav-link active-nav-link"
+                        : "nav-link"
+                    }
                     onClick={openServiceMenu}
                   >
                     Services <span className="arrow"></span>

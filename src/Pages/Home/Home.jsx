@@ -9,6 +9,7 @@ import YourExperience from '../../Components/YourExperience/YourExperience';
 import YourChallanges from '../../Components/YourChallanges/YourChallanges';
 import YourSuccess from '../../Components/YourSuccess/YourSuccess';
 import ServiceNav from '../../Components/ServiceNav/ServiceNav';
+import YourCMob from '../../Components/YourChallanges/YourCMob';
 
 function Home() {
 
@@ -98,7 +99,14 @@ function Home() {
       {/* <ServiceNav/> */}
       <TopBanner homeDetails={homeDetails}/>
       <YourFuture homeDetails={homeDetails} url={url}/>
+      <div className="dis-in-d">
+
       <YourChallanges homeDetails={homeDetails}/>
+      </div>
+      <div className="dis-in-m">
+      <YourCMob homeDetails={homeDetails}/>
+      </div>
+      
       <YourSuccess homeDetails={homeDetails}/>
       <YourExperience homeDetails={homeDetails} testimonials={testimonial} url={url}/>
       <YourBrand homeDetails={homeDetails} client={client}/>

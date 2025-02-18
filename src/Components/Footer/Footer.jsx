@@ -20,6 +20,35 @@ const Footer = () => {
   const [error, setError] = useState(null);
   let url = process.env.REACT_APP_DEV_URL;
 
+
+
+
+  const [logo, setLogo] = useState([]);
+
+  const getLogo = async () => {
+    try {
+      // console.log(url);
+      
+      setLoading(true);
+      const response = await fetch(
+        `${url}/logo`
+      );
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const res = await response.json();
+      // console.log(res, "home");
+
+      setLogo(res.data[0].logo); // Store fetched data in state
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+  }
+
+  useEffect(()=>{
+    getLogo();
+  })
   const getService = async () => {
     try {
       console.log(url);
@@ -71,8 +100,8 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-column-1">
             <div className="logo-c">
-              <Link to="/home">
-                <img src={logo} alt="Logo" />
+              <Link to="/">
+                <img src={`${url}/logo/${logo}`} alt="Logo" />
               </Link>
             </div>
             <p className="f-desc-txt">{footerContent?.text}</p>

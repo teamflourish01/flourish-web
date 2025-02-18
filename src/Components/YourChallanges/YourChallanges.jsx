@@ -135,54 +135,47 @@
 
 // export default YourChallanges;
 
-
-
 import React, { useState, useEffect, useRef } from "react";
 import "../YourChallanges/YourChallanges.css";
 import YellowBtn from "../YellowBtn/YellowBtn";
 import arrowr from "../../assets/arrowr.svg";
-
-// const boxes = [
-//   { no: "01", title: "Branding", description: "Build a powerful, memorable brand identity that stands out and drives trust." },
-//   { no: "02", title: "Visual Experience", description: "Create stunning, strategic visuals that enhance engagement and brand presence." },
-//   { no: "03", title: "Content Creation", description: "Craft compelling content that connects, informs, and converts your audience." },
-//   { no: "04", title: "Digital Marketing", description: "Drive traffic, leads, and sales with data-driven marketing strategies." },
-//   { no: "05", title: "Web/App Development", description: "Develop user-friendly, high-performing websites and apps for business growth." },
-//   { no: "06", title: "SEO Optimization", description: "Improve search rankings with effective, data-driven SEO strategies." }
-// ];
+import { Link, useParams } from "react-router-dom";
 
 const YourChallanges = ({ homeDetails }) => {
+  const { slug } = useParams();
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef(null);
   const scrollBlocked = useRef(false);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [boxes,setBoxes]=useState([])
+  const [boxes, setBoxes] = useState([]);
+  const [dup, setDup] = useState([]);
   let url = process.env.REACT_APP_DEV_URL;
 
- const getData = async () => {
-      try {
-        console.log(url);
+  const getData = async () => {
+    try {
+      console.log(url);
 
-        setLoading(true);
-        const response = await fetch(`${url}/service`);
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
-        }
-        const res = await response.json();
-        console.log(res, "dattta");
-
-        setData(res.data[0]);
-         // Store fetched data in state
-         setBoxes(res.data)
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
+      setLoading(true);
+      const response = await fetch(`${url}/service`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
       }
-    };
+      const res = await response.json();
+      console.log(res, "dattta");
 
-
+      setData(res.data[0]);
+      setDup(res.data);
+      let arr = res.data?.map((e, i) => ({ ...e, count: i }));
+      console.log(arr, "arr");
+      // Store fetched data in state
+      setBoxes(arr);
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -215,7 +208,9 @@ const YourChallanges = ({ homeDetails }) => {
 
     if (currentIndex < 5 && sectionRef.current) {
       sectionRef.current.style.overflow = "hidden"; // Disable page scroll
-      sectionRef.current.addEventListener("wheel", handleScroll, { passive: false });
+      sectionRef.current.addEventListener("wheel", handleScroll, {
+        passive: false,
+      });
     }
 
     return () => {
@@ -225,17 +220,17 @@ const YourChallanges = ({ homeDetails }) => {
     };
   }, [currentIndex]);
 
-  useEffect(()=>{
+  useEffect(() => {
     getData();
-  },[]);
+  }, [slug]);
 
   const displayedBoxes = [
     boxes[currentIndex % boxes.length],
     boxes[(currentIndex + 1) % boxes.length],
-    boxes[(currentIndex + 2) % boxes.length]
+    boxes[(currentIndex + 2) % boxes.length],
   ];
 
-    const str = homeDetails?.third_title ||"";
+  const str = homeDetails?.third_title || "";
   const arr = str.split(" ");
   const text = arr;
 
@@ -243,13 +238,15 @@ const YourChallanges = ({ homeDetails }) => {
     <div className="your-challanges" ref={sectionRef}>
       <div className="your-challenge-container">
         <div className="left-side-your-challange">
-                   <p className="your-our-strategy">
-             <span className="stroke-txt-strategy">{text[0]} {" "}</span>{text[1]}
-             <br />
-             <span className="stroke-txt-strategy"> {text[2]} </span>{text[3]}
-           </p>
+          <p className="your-our-strategy">
+            <span className="stroke-txt-strategy">{text[0]} </span>
+            {text[1]}
+            <br />
+            <span className="stroke-txt-strategy"> {text[2]} </span>
+            {text[3]}
+          </p>
           <p className="v-s-desc">{homeDetails.third_text}</p>
-          <YellowBtn btnName="View Services" />
+          {/* <YellowBtn btnName="View Services" /> */}
         </div>
         <hr className="hr-animation-chalange" />
         <div className="right-side-your-challange">
@@ -259,24 +256,50 @@ const YourChallanges = ({ homeDetails }) => {
                 key={index}
                 className={`box-of-one ${index === 0 ? "active" : "hidden"}`}
                 style={{
-                  border: index === 0 ? "1px solid #ff9800" : "1px solid rgba(255, 255, 255, 0.5)"
+                  border:
+                    index === 0
+                      ? "1px solid #ff9800"
+                      : "1px solid rgba(255, 255, 255, 0.5)",
                 }}
               >
                 <div className="box-num-flex">
-                  <p className={`stroke-txt-strategy-01 ${index === 0 ? "text-white-no" : "text-gray-400"}`}>
-                    {`0${index+1}`}
+                  <p
+                    className={`stroke-txt-strategy-01 ${
+                      index === 0 ? "text-white-no" : "text-gray-400"
+                    }`}
+                  >
+                    {`0${+box?.count + 1}`}
                   </p>
-                  <p className={`title-branding-box ${index === 0 ? "text-white" : "text-gray-400-p"}`}>
+                  <p
+                    className={`title-branding-box ${
+                      index === 0 ? "text-white" : "text-gray-400-p"
+                    }`}
+                  >
                     {box?.name}
                   </p>
                 </div>
                 <div className="desc-arr-container-flex">
-                  <p className={`desc-box ${index === 0 ? "text-white" : "text-gray-400-p"}`}>
+                  <p
+                    className={`desc-box ${
+                      index === 0 ? "text-white" : "text-gray-400-p"
+                    }`}
+                  >
                     {box?.short_note}
                   </p>
-                  <div className="arrow-box" style={{ backgroundColor: index === 0 ? "white" : "rgba(255, 255, 255, 0.5)" }}>
-                    <img src={arrowr} alt="Arrow" />
-                  </div>
+                  <Link
+                    to={`/service/${box?.slug}`}
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    <div
+                      className="arrow-box"
+                      style={{
+                        backgroundColor:
+                          index === 0 ? "white" : "rgba(255, 255, 255, 0.5)",
+                      }}
+                    >
+                      <img src={arrowr} alt="Arrow" />
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}

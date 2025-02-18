@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "../Nav/Nav.css";
 import logo from "../../assets/f-logo.svg";
@@ -12,6 +12,38 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation(); // Get current URL path
+
+   const [logo, setLogo] = useState([]);
+  
+  
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    let url=process.env.REACT_APP_DEV_URL
+  
+    const getLogo = async () => {
+      try {
+        // console.log(url);
+        
+        setLoading(true);
+        const response = await fetch(
+          `${url}/logo`
+        );
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const res = await response.json();
+        // console.log(res, "home");
+  
+        setLogo(res.data[0]); // Store fetched data in state
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+      }
+    }
+
+    useEffect(()=>{
+      getLogo();
+    })
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -28,8 +60,8 @@ const Nav = () => {
         <div className="navbar">
           <div className="navbar-container">
             <div className="logo-c">
-            <Link to='/home'>
-              <img src={logo} alt="Logo" />
+            <Link to='/'>
+              <img src={`${url}/logo/${logo.logo}`} alt="Logo" />
               </Link>
             </div>
             <div className="h-icon-c" onClick={toggleMenu}>
@@ -158,10 +190,10 @@ const Nav = () => {
         </div>
       </div>
       <div className="display-in-tab">
-        <TabletNavBar />
+        <TabletNavBar logo={logo.logo}/>
       </div>
       <div className="display-in-mob">
-        <MobileNavBar />
+        <MobileNavBar logo={logo.logo}/>
       </div>
     </>
   );

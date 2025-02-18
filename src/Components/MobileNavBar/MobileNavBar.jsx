@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "../Nav/Nav.css";
-import logo from "../../assets/f-logo.svg";
+// import logo from "../../assets/f-logo.svg";
 import hicon from "../../assets/ham-icon.svg";
 import close from "../../assets/close-icon-nav.svg";
 import ServiceNav from "../ServiceNav/ServiceNav";
 import MobNav from "../MobNav/MobNav";
 
-const MobileNavBar = () => {
+const MobileNavBar = ({logo}) => {
   const [isMainMenuOpen, setIsMainMenuOpen] = useState(false);
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
   const location = useLocation(); // Get current URL path
+  let url = process.env.REACT_APP_DEV_URL;
 
   // Toggle Main Menu
   const toggleMainMenu = () => {
@@ -38,9 +39,12 @@ const MobileNavBar = () => {
     <>
       <div className="navbar">
         <div className="navbar-container">
+        <Link to='/'>
+
           <div className="logo-c">
-            <img src={logo} alt="Logo" />
+            <img src={`${url}/logo/${logo}`} alt="Logo" />
           </div>
+          </Link>
           <div className="h-icon-c" onClick={toggleMainMenu}>
             <img src={hicon} alt="Hamburger Icon" />
           </div>

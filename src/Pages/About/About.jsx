@@ -64,7 +64,7 @@ const About = () => {
     fetchData();
     fetchJourneyData();
     fetchprocessdata();
-  }, []);
+  }, [url]);
  
 
   const lineRef = useRef(null);

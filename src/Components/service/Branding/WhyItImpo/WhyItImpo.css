@@ -132,6 +132,10 @@
 .imp-img-bg-w-res {
   display: none;
 }
+.img-res-imp{
+width: 35px;
+height: 35px;
+}
 @media (max-width: 1024px) {
   .why-imp-container {
     padding: unset;

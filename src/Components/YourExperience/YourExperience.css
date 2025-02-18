@@ -73,7 +73,7 @@
 .images {
   display: flex;
   gap: 30px;
-  margin: 20px 29px 20px 26px;
+  margin: 0 29px 0 26px;
   position: relative;
   max-width: 600px;
   min-width: 200px;

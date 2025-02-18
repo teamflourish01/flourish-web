@@ -9,7 +9,7 @@
   margin: 0 auto;
   padding: 0 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .your-our-strategy-black {
@@ -68,7 +68,7 @@
   height: 564px;
   background-color: rgba(6, 6, 6, 0.09);
   border: none;
-  margin: 0 116px 0 124px;
+  margin: 0 20px 0 20px;
   overflow: hidden;
 }
 

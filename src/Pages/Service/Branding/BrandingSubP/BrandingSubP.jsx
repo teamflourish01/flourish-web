@@ -6,6 +6,7 @@ import LastLets from '../../../../Components/service/SubService/LastLets/LastLet
 import SecLast from '../../../../Components/service/SubService/SecLast/SecLast';
 import { useParams } from 'react-router-dom';
 import Breadcrums from '../../../../Components/Breadcrums/Breadcrums';
+import { Helmet } from 'react-helmet';
 
 const BrandingSubP = () => {
 
@@ -44,6 +45,10 @@ const BrandingSubP = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{subServiceData?.meta_title}</title>
+        <meta name="description" content={subServiceData?.meta_description} />
+      </Helmet>
       <BannerTop btitle={subServiceData?.name}/>
       <Breadcrums pagename={subServiceData?.name} />
       <TopSubService SubServiceDetails={subServiceData}/>

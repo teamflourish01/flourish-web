@@ -8,6 +8,7 @@ import WhyItImpo from "../../../../Components/service/Branding/WhyItImpo/WhyItIm
 import { useParams } from "react-router-dom";
 import { log } from "three/src/nodes/TSL.js";
 import Breadcrums from "../../../../Components/Breadcrums/Breadcrums";
+import { Helmet } from "react-helmet";
 
 const BrandingMainP = () => {
   const { slug } = useParams();
@@ -42,6 +43,10 @@ const BrandingMainP = () => {
   if (error) return <p>Error: {error}</p>;
   return (
     <>
+        <Helmet>
+        <title>{data?.meta_title}</title>
+        <meta name="description" content={data?.meta_description} />
+      </Helmet>
       <BannerTop btitle={data?.name} />
       <Breadcrums pagename={data?.name} />
       <TopBrandingB ServiceData={data} />

@@ -94,7 +94,7 @@ padding: 0 30px;
 }
 .about-r-l-flex {
   display: flex;
-  gap: 57px;
+  gap: 58px;
   margin: 0 30px;
   align-items: center;
   justify-content: space-between;
@@ -398,6 +398,7 @@ padding: 0 30px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 20px;
   line-height: 28.9px;
+  padding-top: 10.95px;
 }
 
 .img-process {
@@ -468,6 +469,15 @@ padding: 0 30px;
   .our-journy {
     padding: unset;
   }
+  .heading-inner{
+    padding: unset;
+  }
+  .at-flourish {
+    font-family: Jost-Bold;
+    font-size: 40px;
+    line-height: 57.8px;
+   
+}
   .timeline {
     padding: 50px 25px 0 25px;
   }
@@ -478,6 +488,8 @@ padding: 0 30px;
   .our-glowing {
     font-size: 40px;
     line-height: 57px;
+    text-align: left;
+    padding-left: 25px;
   }
   .about-left {
     margin: unset;
@@ -500,6 +512,7 @@ padding: 0 30px;
     flex-wrap: wrap;
     flex-flow: column-reverse;
     padding: 0 25px;
+    gap: 50px;
     margin: unset;
   }
   .timeline-line {
@@ -512,6 +525,9 @@ padding: 0 30px;
   .timeline-item {
     justify-content: flex-end;
     flex-direction: row-reverse;
+    align-items: center;
+    display: flex
+;
   }
   .timeline-image {
     position: static;
@@ -551,6 +567,10 @@ padding: 0 30px;
   }
   .our-process-heading {
     padding-bottom: 30px;
+    text-align: left;
+    font-size: 40px;
+    line-height: 57.8px;
+        padding-left: 25px;
   }
   .discovery-flex {
     gap: 18px;
@@ -579,6 +599,17 @@ padding: 0 30px;
   .timeline-item.right .timeline-image {
     display: none;
   }
+  .timeline-container{
+    padding: 80px 0;
+  }
+  .timeline-header {
+    
+    margin-bottom: 30px;
+}
+.timeline-header p {
+  margin-top: 30px;
+  
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -586,6 +617,59 @@ padding: 0 30px;
     flex-direction: column;
     gap: 15px;
     padding: 0 10px;
+  }
+  .home-main-heading-inner {
+    padding: 20px 0 20px 10px;
+}
+.work-p {
+  font-size: 21px;
+  line-height: 31.57px;
+ 
+}
+.real-work-p-m {
+
+  font-size: 15px;
+  line-height: 21px;
+  
+}
+
+
+  .img-discovery-flex-ss {
+   
+    padding: 10px;
+  
+}
+  .zeroone-h {
+    font-size: 17px;
+    
+    line-height: 24.57px;
+}
+.number {
+  font-size: 17px;
+  line-height: 24.57px;
+ 
+}
+.we-take{
+  font-size: 16px;
+  line-height: 23.12px;
+}
+  .milstone-describe {
+   
+    font-size: 16px;
+    line-height: 23.12px;
+   
+}
+.our-process-heading {
+  padding-bottom: 30px;
+  text-align: left;
+      padding-left: 10px;
+}
+  .timeline-container{
+    padding: 50px 0;
+  }
+  .our-glowing {
+   
+    padding-left: 10px;
   }
   .discovery-flex{
     grid-template-columns: repeat(1, 1fr);

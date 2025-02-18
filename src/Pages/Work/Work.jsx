@@ -3,6 +3,7 @@ import "../Work/work.css";
 import Breadcrums from "../../Components/Breadcrums/Breadcrums";
 import BannerTop from "../../Components/service/BannerTop/BannerTop";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const Work = () => {
   const [work, setWork] = useState([]);
@@ -43,6 +44,10 @@ const Work = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Work</title>
+        <meta name="description" content="" />
+      </Helmet>
       <BannerTop btitle="Work" />
       <Breadcrums pagename="Work" />
       <section>

@@ -12,24 +12,24 @@ const Work = () => {
   const [activeWorks, setActiveWorks] = useState([]);
   let url = process.env.REACT_APP_DEV_URL;
 
-  const fetchJourneyData = async () => {
-    try {
-      const response = await axios.get(`${url}/workcategory`);
-      setWork(response.data.data);
-
-      if (response.data.data.length > 0) {
-        const firstCategory = response.data.data[0];
-        setActiveCategory(firstCategory._id);
-        setActiveWorks(firstCategory.works);
-      }
-    } catch (err) {
-      console.error("Error:", err);
-    }
-  };
-
   useEffect(() => {
+    const fetchJourneyData = async () => {
+      try {
+        const response = await axios.get(`${url}/workcategory`);
+        setWork(response.data.data);
+  
+        // Set "All" as the default active category
+        setActiveCategory(null);
+        const allWorks = response.data.data.flatMap(category => category.works);
+        setActiveWorks(allWorks);
+      } catch (err) {
+        console.error("Error:", err);
+      }
+    };
+  
     fetchJourneyData();
   }, []);
+  
 
   const handleCategoryClick = (item) => {
     setActiveCategory(item._id);

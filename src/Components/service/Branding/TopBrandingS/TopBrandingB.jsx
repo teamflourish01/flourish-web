@@ -85,7 +85,7 @@
 // };
 
 // export default TopBrandingB;
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../TopBrandingS/TopBrandingB.css";
 import ladyque from "../../../../assets/Branding/ladyque.svg";
 import que from "../../../../assets/Branding/que.svg";
@@ -105,7 +105,17 @@ const SubService = [
 
 const TopBrandingB = ({ ServiceData }) => {
   const scrollRef = useRef(null);
-
+  let url=process.env.REACT_APP_DEV_URL
+  const [subService,setSubService]=useState([])
+  const getData=async()=>{
+    try {
+      let data=await fetch(`${url}/subservice`)
+       data=await data.json()
+       setSubService(data.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -117,6 +127,10 @@ const TopBrandingB = ({ ServiceData }) => {
       scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
+useEffect(()=>{
+  setSubService(ServiceData?.subservices)
+},[ServiceData])
+
 
   return (
     <div className="brand-top-banner">
@@ -138,14 +152,14 @@ const TopBrandingB = ({ ServiceData }) => {
             <img src={leftArrow} alt="Scroll Left" />
           </button>
           <div className="sub-s-box-container" ref={scrollRef}>
-            {SubService.map((ss, index) => (
+            {subService?.map((ss, index) => (
               <div className="sub-s-box" key={index}>
                 <div className="p-10-15-d">
-                  <p className="s-s-b-01">{ss.number}</p>
-                  <p className="s-s-b-b-t">{ss.title}</p>
+                  <p className="s-s-b-01">0{index+1}</p>
+                  <p className="s-s-b-b-t">{ss?.name}</p>
                 </div>
                 <div className="p-10-15-d">
-                  <p className="bet-desc">{ss.description}</p>
+                  <p className="bet-desc">{ss?.short_note}</p>
                 </div>
                 <Link to="/branding-positioning" className="link-txt">
                   <div className="explore-btn">

@@ -2,3 +2,19 @@
     /* position: relative;
     top: 89px; */
 }
+
+.dis-in-d{
+    display: block;
+}
+.dis-in-m{
+    display: none;
+}
+
+@media(max-width:1024px){
+    .dis-in-d{
+        display: none;
+    }
+    .dis-in-m{
+        display: block;
+    }
+}

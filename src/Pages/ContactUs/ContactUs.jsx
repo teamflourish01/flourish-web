@@ -41,7 +41,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <BannerTop btitle="Contact" />
+      <BannerTop btitle="Contact Us" />
       <Breadcrums pagename="Contact Us" />
 
       <Contact />

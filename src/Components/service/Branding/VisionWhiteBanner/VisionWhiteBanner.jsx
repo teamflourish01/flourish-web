@@ -2,6 +2,7 @@ import React from "react";
 import "../VisionWhiteBanner/VisionWhiteBanner.css";
 import YellowBtn from "../../../YellowBtn/YellowBtn";
 import YellowWhiteBtn from "../../../YellowWhiteBtn/YellowWhiteBtn";
+import { Link } from "react-router-dom";
 
 const VisionWhiteBanner = () => {
   return (
@@ -17,7 +18,13 @@ const VisionWhiteBanner = () => {
             <p className="v-s-desc-v">
               Ready to Flourish? Let's Make Your Brand Unstoppable!
             </p>
+            <Link
+              to="/contact"
+              className="text-deco"
+              onClick={() => window.scrollTo(0, 0)}
+            >
             <YellowWhiteBtn btnName="Contact Us" />
+            </Link>
           </div>
           <hr className="hr-animation-white-bg " />
           <p className="right-desc-v">

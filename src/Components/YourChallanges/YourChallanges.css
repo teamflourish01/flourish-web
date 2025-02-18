@@ -272,6 +272,7 @@
     flex-direction: row;
     padding: 0 25px;
     gap: 40px;
+    display: none;
   }
   .arrows-chal button {
     font-size: 24px;
@@ -288,6 +289,12 @@
   .your-challanges{
     height: unset;
   }
+  .box-num-flex{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
 }
 
 @media (max-width: 768px) {
@@ -348,6 +355,9 @@
   }
   .arrows-chal {
     padding: 0 10px;
+}
+.desc-box{
+  max-width: 285px;
 }
 }
 

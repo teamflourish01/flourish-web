@@ -3,6 +3,7 @@ import "../Singleblogpage/Singleblogpage.css";
 import cameraimg from "../../../assets/cameraimg.svg";
 import right from '../../../assets/right.svg';
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const Singleblogpage = () => {
@@ -38,6 +39,10 @@ const Singleblogpage = () => {
 
   return (
     <>
+        <Helmet>
+        <title>{blog?.meta_title}</title>
+        <meta name="description" content={blog?.meta_description} />
+      </Helmet>
       <div className="blogmain">
         <div style={{ border: "1px solid #00000080" }}>
           <div className="blogmain-width1320">

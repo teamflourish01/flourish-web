@@ -125,7 +125,7 @@ const YourCMob = ({ homeDetails }) => {
             <span className="stroke-txt-strategy"> {text[2]} </span>
             {text[3]}
           </p>
-          <p className="v-s-desc">{homeDetails.third_text}</p>
+          <p className="v-s-desc-chall">{homeDetails.third_text}</p>
           {/* <YellowBtn btnName="View Services" /> */}
         </div>
         <hr className="hr-animation-chalange " />

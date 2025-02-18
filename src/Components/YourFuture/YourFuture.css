@@ -115,7 +115,7 @@
   .flex-boxes-y-o {
     flex-direction: column;
     gap: 30px;
-    padding: 30px 0;
+    /* padding: 30px 0; */
   }
   .hr-straight {
     /* display: none; */

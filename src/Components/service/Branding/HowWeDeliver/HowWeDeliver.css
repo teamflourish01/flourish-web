@@ -54,7 +54,10 @@
   padding-bottom: 30px;
   padding-left: 22px;
 }
-
+.step-image{
+  width: 116px;
+  height: 122px;
+}
 .step-content {
   flex: 1;
 }

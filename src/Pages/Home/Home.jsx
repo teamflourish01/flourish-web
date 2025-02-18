@@ -10,6 +10,7 @@ import YourChallanges from '../../Components/YourChallanges/YourChallanges';
 import YourSuccess from '../../Components/YourSuccess/YourSuccess';
 import ServiceNav from '../../Components/ServiceNav/ServiceNav';
 import YourCMob from '../../Components/YourChallanges/YourCMob';
+import { Helmet } from 'react-helmet';
 
 function Home() {
 
@@ -96,6 +97,10 @@ function Home() {
   if (error) return <p>Error: {error}</p>;
   return (
     <div className='home'>
+       <Helmet>
+        <title>{homeDetails?.meta_title}</title>
+        <meta name="description" content={homeDetails?.meta_description} />
+      </Helmet>
       {/* <ServiceNav/> */}
       <TopBanner homeDetails={homeDetails}/>
       <YourFuture homeDetails={homeDetails} url={url}/>

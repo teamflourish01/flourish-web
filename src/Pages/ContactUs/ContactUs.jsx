@@ -7,6 +7,7 @@ import call from "../../assets/cphone.svg";
 import BannerTop from "../../Components/service/BannerTop/BannerTop";
 import { useParams } from "react-router-dom";
 import Breadcrums from "../../Components/Breadcrums/Breadcrums";
+import { Helmet } from "react-helmet";
 
 const ContactUs = () => {
   const { slug } = useParams();
@@ -41,6 +42,10 @@ const ContactUs = () => {
 
   return (
     <>
+        <Helmet>
+        <title>Contact Us - Team Flourish</title>
+        <meta name="description" content='Connecting with us' />
+      </Helmet>
       <BannerTop btitle="Contact Us" />
       <Breadcrums pagename="Contact Us" />
 

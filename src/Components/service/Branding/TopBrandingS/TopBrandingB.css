@@ -144,6 +144,9 @@
   .que-con {
     display: none;
   }
+  .brand-top-banner{
+    padding: 100px 0 80px;
+  }
 }
 @media (max-width: 768px) {
   .ladyqueimg {
@@ -192,6 +195,9 @@
   }
   .sub-s-box-container {
     padding-bottom: unset;
+  }
+  .brand-top-banner{
+    padding: 60px 0;
   }
 }
 

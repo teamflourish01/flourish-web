@@ -60,7 +60,7 @@ const TopBanner = ({ homeDetails }) => {
           <p className="desc-text-area">
            {homeDetails?.top_text}
           </p>
-          <YellowBtn btnName="View Works" />
+          <YellowBtn btnName="What We Do" />
         </div>
         <div className="view-works-container">
           <div className="view-works-circle">

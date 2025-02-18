@@ -18,11 +18,12 @@
   /* padding-top: 100px; */
 }
 .stroke-txt {
-  font-family: 'Futura', 'Futura PT', 'Arial', sans-serif;
+  /* font-family: 'Futura', 'Futura PT', 'Arial', sans-serif; */
+  font-family: Jost-Bold;
   font-size: 50px;
   line-height: 72.25px;
-  color: transparent; /* Make the text itself invisible */
-  -webkit-text-stroke: 1.1px black; /* Outline color and width */
+  color: #ff9800; /* Make the text itself invisible */
+  /* -webkit-text-stroke: 1.1px black; Outline color and width */
   font-weight: 700;
 }
 .desc-y-o {
@@ -132,11 +133,11 @@
     display: none;
   }
   .stroke-txt {
-    font-family: Jost-Bold;
+    /* font-family: Jost-Bold; */
     font-size: 25px;
     line-height: 36.13px;
-    color: transparent;
-    -webkit-text-stroke: 1px black;
+    /* color: transparent; */
+    /* -webkit-text-stroke: 0.8px black; */
   }
   .desc-y-o {
     padding: 25px 0 40px;

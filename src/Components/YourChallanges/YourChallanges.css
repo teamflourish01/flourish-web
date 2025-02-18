@@ -1,6 +1,7 @@
 .your-challanges {
   width: 100%;
   background-color: #060606;
+  height: 100vh;
 }
 .your-challenge-container {
   max-width: 1380px;
@@ -98,6 +99,10 @@
   opacity: 0;
   transform: translateY(50px);
   animation: fadeIn 0.5s forwards;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+
+
 }
 @keyframes fadeIn {
   to {
@@ -107,9 +112,9 @@
 }
 .box-num-flex {
   display: flex;
-  align-items: center;
-  /* flex-direction: column; */
-  justify-content: space-between;
+  align-items: unset;
+  flex-direction: column;
+  /* justify-content: space-between; */
   /* gap: 10px; */
   width: 100%;
 }
@@ -117,7 +122,7 @@
   font-family: Jost-SemiBold;
   font-size: 35px;
   line-height: 50.58px;
-  color: transparent;
+  color: rgba(255, 255, 255, 0.5);
   /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); */
 }
 .title-branding-box {
@@ -125,6 +130,7 @@
   font-size: 30px;
   line-height: 43.35px;
   text-align: left;
+  color: rgba(255, 255, 255, 0.5);
 }
 .text-gray-400-p{
   color: rgba(255, 255, 255, 0.5);
@@ -153,13 +159,14 @@
   font-size: 20px;
   line-height: 28.9px;
   text-align: left;
-  /* color: rgba(255, 255, 255, 0.5); */
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 336px;
 }
 .arrow-box {
-  width: 83.33px;
+  width: 42px;
   height: 42px;
   border-radius: 50%;
-  /* background-color: rgba(255, 255, 255, 0.5); */
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,6 +282,12 @@
     transition: transform 0.3s;
     margin: unset;
   }
+  .hidee-sss{
+    display: none;
+  }
+  .your-challanges{
+    height: unset;
+  }
 }
 
 @media (max-width: 768px) {
@@ -304,18 +317,18 @@
   .stroke-txt-strategy {
     font-size: 25px;
     line-height: 36.13px;
-    -webkit-text-stroke: 0.5px white;
+    /* -webkit-text-stroke: 0.5px white; */
   }
   .title-branding-box {
     font-size: 20px;
     line-height: 28.9px;
   }
   .stroke-txt-strategy-01 {
-    color: black;
+    /* color: black; */
     font-size: 24px;
     line-height: 34.68px;
     padding-bottom: 10px;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+    /* -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5); */
   }
   .desc-box {
     font-size: 16px;
@@ -336,4 +349,11 @@
   .arrows-chal {
     padding: 0 10px;
 }
+}
+
+
+
+.box-of-one.active {
+  opacity: 1;
+  color: white;
 }

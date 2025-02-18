@@ -84,8 +84,9 @@
 }
 
 .ball {
-  position: absolute;
+  position: relative;
   top: 43%;
+  top:4%;
   left: -80px;
   width: 58px;
   height: 58px;
@@ -178,6 +179,14 @@
   line-height: 28.9px;
   text-align: center;
   padding: 25px 0 40px;
+  color: #06060680;
+}
+.desc-y-o-success {
+  font-family: Jost-Regular;
+  font-size: 20px;
+  line-height: 28.9px;
+  text-align: center;
+  padding: 25px 0 0;
   color: #06060680;
 }
 @media (max-width: 1024px) {

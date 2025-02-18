@@ -55,7 +55,6 @@
   overflow-y: scroll;
   scrollbar-width: none;
   padding-top: 50px;
-
 }
 
 .margin-b-30 {
@@ -260,18 +259,19 @@ ul {
   .arrow {
     display: none;
   }
-  .flex{
+  .flex {
     display: block;
     padding: 50px;
   }
-  .menu-navbar ul{
+  .menu-navbar ul {
     padding-top: unset;
   }
   .close-btn-navbar {
     top: 50px;
     right: 23px;
+    z-index: 9;
   }
-  .nav-link{
+  .nav-link {
     padding-left: unset;
   }
 }
@@ -293,19 +293,47 @@ ul {
     font-size: 21px;
     line-height: 30.35px;
     padding-left: unset;
+    text-align: center;
+    display: contents;
   }
-  .margin-b-30{
+  .margin-b-30 {
     margin-bottom: 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 16px;
+    width: 100%;
   }
-  .flex{
+  .flex {
     display: block;
     padding: 20px;
   }
-  .menu-navbar ul{
+  .menu-navbar ul {
     padding-top: unset;
   }
   .close-btn-navbar {
     top: 20px;
     right: 20px;
+  }
+  ul {
+    max-width: 768px;
+    min-width: 100px;
+    width: 100%;
+  }
+
+
+  .menu-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
   }
 }

@@ -30,6 +30,7 @@ const YourBrand = ({ homeDetails, client }) => {
   const str = homeDetails?.sixth_title || "";
   const arr = str.split(" ");
   const text = arr;
+  let url = process.env.REACT_APP_DEV_URL;
 
   return (
     <>
@@ -53,7 +54,7 @@ const YourBrand = ({ homeDetails, client }) => {
               <div className="card-container-nine" key={index}>
                 <div className="card-nine">
                   <div className="card-front-nine">
-                    <img src={logo} alt="Logo" />
+                    <img src={`${url}/client/${c.image} `} alt="Logo" className="client-logo-l"/>
                   </div>
                   <div className="card-details-nine">
                     <p className="details-p-card">

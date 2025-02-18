@@ -6,6 +6,9 @@
   color: #00000080;
 
 }
+.process-img{
+  display: flex;
+}
 .bread-t {
   color: black;
   font-size: 18px;
@@ -374,7 +377,7 @@ padding: 0 30px;
   max-width: 653px;
   min-width: 200px;
   width: 100%;
-  height: 235px;
+  /* height: 235px; */
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 10px;
 }
@@ -386,7 +389,7 @@ padding: 0 30px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 30px 15px;
 }
 .discovery-top-p {
   padding-top: 30px;
@@ -399,7 +402,7 @@ padding: 0 30px;
 
 .img-process {
   width: 300px;
-  height: 210px;
+  height: 205px;
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 .img-discovery-flex {
@@ -413,8 +416,8 @@ padding: 0 30px;
   line-height: 31.79px;
   font-family: Jost-Medium;
 
-  color: transparent; /* Make the inside color transparent */
-  -webkit-text-stroke: 0.5px white;
+  color: white; /* Make the inside color transparent */
+
 }
 .zeroone-h {
   font-size: 22px;

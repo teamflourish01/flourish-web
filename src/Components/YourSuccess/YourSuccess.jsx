@@ -190,7 +190,7 @@ const YourSuccess = ({ homeDetails }) => {
 
     ScrollTrigger.create({
       trigger: section,
-      start: "top 1%",
+      start: "top top",
       end: "bottom center",
       onEnter: () => setIsActive(true),
       onLeaveBack: () => setIsActive(false),

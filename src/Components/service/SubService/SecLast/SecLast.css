@@ -78,7 +78,8 @@
   font-weight: 500;
   line-height: 46.24px;
   text-align: left;
-  color: #060606;
+  /* color: #060606; */
+  color: #3b3b3b;
 }
 
 .benefit-text-sl {

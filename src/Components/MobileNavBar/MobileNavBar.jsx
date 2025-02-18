@@ -32,6 +32,7 @@ const MobileNavBar = () => {
   const closeAllMenus = () => {
     setIsMainMenuOpen(false);
     setIsServiceMenuOpen(false);
+    window.scrollTo(0, 0)
   };
   return (
     <>
@@ -49,7 +50,7 @@ const MobileNavBar = () => {
             <div className="menu-navbar">
               <div className="menu-header-navbar">
                 <button className="close-btn-navbar" onClick={closeAllMenus}>
-                  <img src={close} alt="Close" />
+                  <img src={close} alt="Close" onClick={closeAllMenus} />
                 </button>
               </div>
               <ul>

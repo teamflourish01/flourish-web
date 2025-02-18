@@ -14,23 +14,21 @@ const BrandingMainP = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  let url=process.env.REACT_APP_DEV_URL
+  let url = process.env.REACT_APP_DEV_URL;
   useEffect(() => {
     const getData = async () => {
       try {
         console.log(url);
-        
+
         setLoading(true);
-        const response = await fetch(
-          `${url}/service/${slug}`
-        );
+        const response = await fetch(`${url}/service/${slug}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
         const res = await response.json();
         console.log(res, "dattta");
 
-        setData(res.data); // Store fetched data in state
+        setData(res.data[0]); // Store fetched data in state
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -46,11 +44,11 @@ const BrandingMainP = () => {
     <>
       <BannerTop btitle={data?.name} />
       <Breadcrums pagename={data?.name} />
-      <TopBrandingB  ServiceData={data}/>
+      <TopBrandingB ServiceData={data} />
       <WhyItImpo ServiceData={data} />
-      <HowWeDeliver ServiceData={data}/>
-      <BrandNeeds ServiceData={data}/>
-      <VisionWhiteBanner ServiceData={data}/>
+      <HowWeDeliver ServiceData={data} />
+      <BrandNeeds ServiceData={data} />
+      <VisionWhiteBanner ServiceData={data} />
     </>
   );
 };

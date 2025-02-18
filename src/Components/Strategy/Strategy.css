@@ -29,9 +29,10 @@
   font-family: Jost-Bold;
   font-size: 50px;
   line-height: 60.25px;
-  color: transparent;
-  -webkit-text-stroke: 1px white;
-  font-family: 'Futura', 'Futura PT', 'Arial', sans-serif;
+  color: #ff9800;
+  font-family: Jost-Bold;
+  /* -webkit-text-stroke: 1px white; */
+  /* font-family: 'Futura', 'Futura PT', 'Arial', sans-serif; */
   font-weight: 700;
 }
 .v-s-desc {

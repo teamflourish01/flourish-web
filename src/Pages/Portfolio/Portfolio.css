@@ -126,9 +126,9 @@ line-height: 28.9px;
     .portfolio-container{
       flex-direction: column;
     }
-    .yellow-btn{
-      padding: 25px 0 44px 0;
-    }
+    .yellow-btn {
+      padding: 25px 0 26px 0;
+  }
     .portfolio-container{
       padding: unset;
     }
@@ -169,9 +169,9 @@ line-height: 28.9px;
        
         padding: 9px 18px;
     }
-    .yellow-btn{
-      padding: 35px 0 44px 0;
-    }
+    .yellow-btn {
+      padding: 25px 0 14px 0;
+  }
     .form-row{
       flex-direction: column;
     }

@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const [data, setData] = useState([]);
   const [timeline, setTimeline] = useState([]);
-  const[processdata,setprocessdata] =useState([])
+  const [processdata, setprocessdata] = useState([]);
   const [error, setError] = useState(null);
   let url = process.env.REACT_APP_DEV_URL;
 
@@ -37,7 +37,6 @@ const About = () => {
     }
   };
 
-
   const fetchJourneyData = async () => {
     try {
       const response = await axios.get(`${url}/Journey`);
@@ -48,7 +47,6 @@ const About = () => {
       console.error("Error:", err);
     }
   };
-
 
   const fetchprocessdata = async () => {
     try {
@@ -66,7 +64,6 @@ const About = () => {
     fetchJourneyData();
     fetchprocessdata();
   }, [url]);
- 
 
   const lineRef = useRef(null);
   const yearRefs = useRef([]);
@@ -124,16 +121,14 @@ const About = () => {
         "Continuing to innovate and grow, Flourish is now focused on helping brands leverage cutting-edge technology to stay ahead in the digital landscape.",
       // image: images["im2025"],
     },
-
   ];
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Ensure lineRef is not null before setting styles
+    
     if (lineRef.current) {
       lineRef.current.style.background = `linear-gradient(to bottom, orange 0%, gray 100%)`;
     }
-
     ScrollTrigger.create({
       trigger: ".timeline",
       start: "top 60%",
@@ -146,16 +141,16 @@ const About = () => {
         if (lineRef.current) {
           gsap.to(lineRef.current, {
             background: `linear-gradient(to bottom, orange ${progress}%, gray ${progress}%)`,
-            duration: 0.1,
+            duration: 0.2,
           });
         }
 
         yearRefs.current.forEach((yearRef, index) => {
           if (yearRef) {
-            const itemPosition = (index / (milestones.length - 1)) * 100;
+            const itemPosition = (index / (milestones.length - 1 )) * 100;
 
-            if (progress >= itemPosition) {
-              gsap.to(yearRef, { color: "orange", duration: 0.3 });
+            if (progress >= itemPosition ) {
+              gsap.to(yearRef, { color: "orange", duration: 0.2});
               setActiveYear(milestones[index].year);
 
               // Show the image for the corresponding year
@@ -193,7 +188,6 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-   
     if (window.innerWidth >= 1024) {
       AOS.init({
         duration: 1000,
@@ -271,16 +265,20 @@ const About = () => {
 
                 {/* First image appears when you reach 2020 */}
                 <div>
-  {milestone.image && (
-    <div className="timeline-image">
-      <img
-        className={parseInt(milestone.year) % 2 === 0 ? "first-image" : "second-image"}
-        src={`${url}/journey/${milestone.image}`}
-        alt={`${milestone.year} milestone`}
-      />
-    </div>
-  )}
-</div>
+                  {milestone.image && (
+                    <div className="timeline-image">
+                      <img
+                        className={
+                          parseInt(milestone.year) % 2 === 0
+                            ? "first-image"
+                            : "second-image"
+                        }
+                        src={`${url}/journey/${milestone.image}`}
+                        alt={`${milestone.year} milestone`}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -312,59 +310,72 @@ const About = () => {
       </section>
       {/* our process */}
       <section>
-      <div className="our-process-container">
-        <div className="our-process-heading">Our Process</div>
-
-        {error && <p className="error-message">{error}</p>} {/* Error Handling */}
-
-        <div className="discovery-flex">
-          {processdata.map((item, index) => (
-            <div className="discovery" key={item._id}>
-              <div className={`img-discovery-flex${index % 2 === 0 ? "" : "-ss"}`}>
-                {index % 2 === 0 ? (
-                  <>
-                    <div className="process-img">
-                      <img
-                        src={`${url}/process/${item.image}`} // Correct image path
-                        alt={item.title}
-                        className="img-process"
-                      />
-                    </div>
-                    <div className="we-take-flex">
-                      <div className="number-discovery">
-                        <div className="number">{String(index + 1).padStart(2, "0")}</div>
-                        <div className="zeroone-h">{item.title}</div>
+        <div className="our-process-container">
+          <div className="our-process-heading">Our Process</div>
+          {error && <p className="error-message">{error}</p>}{" "}
+          {/* Error Handling */}
+          <div className="discovery-flex">
+            {processdata.map((item, index) => (
+              <div className="discovery" key={item._id}>
+                <div
+                  className={`img-discovery-flex${
+                    index % 2 === 0 ? "" : "-ss"
+                  }`}
+                >
+                  {index % 2 === 0 ? (
+                    <>
+                      <div className="process-img">
+                        <img
+                          src={`${url}/process/${item.image}`} // Correct image path
+                          alt={item.title}
+                          className="img-process"
+                        />
                       </div>
-                      <div className="we-take">{item.text}</div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="we-take-flex">
-                      <div className="number-discovery">
-                        <div className="number">{String(index + 1).padStart(2, "0")}</div>
-                        <div className="zeroone-h">{item.title}</div>
+                      <div className="we-take-flex">
+                        <div className="number-discovery">
+                          <div className="number">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
+                          <div className="zeroone-h">{item.title}</div>
+                        </div>
+                        <div className="we-take">{item.text}</div>
                       </div>
-                      <div className="we-take">{item.text}</div>
-                      
-                    </div>
-                    <div className="process-img">
-                      <img
-                        src={`${url}/Process/${item.image}`} // Correct image path
-                        alt={item.title}
-                        className="img-process"
-                      />
-                    </div>
-                  </>
-                 
-
-                )}
+                    </>
+                  ) : (
+                    <>
+                      {/* <div className="we-take-flex">
+                        <div className="number-discovery">
+                          <div className="number">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
+                          <div className="zeroone-h">{item.title}</div>
+                        </div>
+                        <div className="we-take">{item.text}</div>
+                      </div> */}
+                      <div className="we-take-flex">
+                        <div className="number-discovery">
+                          <div className="number">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
+                          <div className="zeroone-h">{item.title}</div>
+                        </div>
+                        <div className="we-take">{item.text}</div>
+                      </div>
+                      <div className="process-img">
+                        <img
+                          src={`${url}/process/${item.image}`} // Correct image path
+                          alt={item.title}
+                          className="img-process"
+                        />
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
       <VisionWhiteBanner />
     </>
   );

@@ -7,6 +7,8 @@ import Breadcrums from "../../Components/Breadcrums/Breadcrums";
 import YellowWhiteBtn from "../../Components/YellowWhiteBtn/YellowWhiteBtn";
 import BannerTop from "../../Components/service/BannerTop/BannerTop";
 import { Helmet } from "react-helmet";
+import { toast, ToastContainer } from "react-toastify";
+import Modal from "../../Components/Modal/Modal";
 const Portfolio = () => {
   let url = process.env.REACT_APP_DEV_URL;
 
@@ -18,15 +20,29 @@ const Portfolio = () => {
     city: "",
     message: "",
   });
+  
+
+const [Loading ,setLoading] =useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   const handleChange = (e) => {
     setformdata({ ...formdata, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Loader start
+
     try {
       const response = await axios.post(`${url}/email/portfolio`, formdata);
-      alert("PDF successfully sent to email!");
+
+      // Success message (Toast notification)
+      setModalMessage("PDF successfully sent to your email!");
+      setIsModalOpen(true);
+
+      // Reset form after submission
       setformdata({
         name: "",
         mobile: "",
@@ -35,11 +51,20 @@ const Portfolio = () => {
         city: "",
         message: "",
       });
+
       console.log("response", response);
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send email.");
+      toast.error("Failed to send email.");
+    } finally {
+      setTimeout(() => {
+        setLoading(false); // Hide loader after API response
+      }, 1000);
     }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
   return (
     <>
@@ -47,6 +72,14 @@ const Portfolio = () => {
         <title>Portfolio</title>
         <meta name="description" content="" />
       </Helmet>
+
+      {Loading && (
+        <div className="overlay">
+          <div className="loader"></div>
+        </div>
+      )}
+      {isModalOpen && <Modal message={modalMessage} onClose={handleCloseModal} />}
+      <ToastContainer/> 
       <BannerTop btitle="Portfolio" />
       <Breadcrums pagename="Portfolio" />
       <div className="portfoilio-100">

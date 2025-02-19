@@ -285,7 +285,7 @@ const About = () => {
         </div>
       </section>
       {/* vision mission */}
-      <section>
+      <section className="disc-color-bg-c">
         <div className="discovery-container">
           <div className="mission-vision-flex">
             <div className="mission" data-aos="fade-up" data-aos-delay="200">

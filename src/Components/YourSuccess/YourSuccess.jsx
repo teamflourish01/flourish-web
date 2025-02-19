@@ -206,45 +206,101 @@ const YourSuccess = ({ homeDetails }) => {
     const ball = ballRef.current;
     const boxes = statItemsRef.current;
 
+
     const updateBallPosition = (event) => {
       event.preventDefault();
-
+    
       setScrollPosition((prev) => {
         let newPos = prev + event.deltaY * 0.5;
         newPos = Math.max(0, Math.min(newPos, window.innerWidth * 1.2));
-
+    
         if (newPos >= window.innerWidth * 1) {
           setIsScrollEnabled(true);
           sectionRef.current?.removeEventListener("wheel", updateBallPosition);
         }
-
+    
         return newPos;
       });
-
+    
       gsap.to(ball, {
         x: scrollPosition,
         rotation: scrollPosition * 4,
         ease: "power2.out",
         duration: 0.3,
       });
-
+    
       const ballRect = ball.getBoundingClientRect();
       boxes.forEach((box, index) => {
         if (!box) return;
-        
+    
         const boxRect = box.getBoundingClientRect();
         const isBallOverBox =
           ballRect.left >= boxRect.left && ballRect.right <= boxRect.right;
-
+    
         if (isBallOverBox && !revealedTexts[index]) {
-          setRevealedTexts(prev => {
+          setRevealedTexts((prev) => {
             const newRevealedTexts = [...prev];
             newRevealedTexts[index] = true;
             return newRevealedTexts;
           });
+    
+          // Animate text fade-up
+          gsap.to(textItemsRef.current[index], {
+            opacity: 1,
+            y: -10, // Move up by 10px
+            duration: 0.5,
+            ease: "power2.out",
+          });
+    
+          // Animate the value text (box-success) moving up
+          gsap.to(box.querySelector(".box-success"), {
+            y: -10, // Move up by 10px
+            duration: 0.5,
+            ease: "power2.out",
+          });
         }
       });
     };
+    
+    // const updateBallPosition = (event) => {
+    //   event.preventDefault();
+
+    //   setScrollPosition((prev) => {
+    //     let newPos = prev + event.deltaY * 0.5;
+    //     newPos = Math.max(0, Math.min(newPos, window.innerWidth * 1.2));
+
+    //     if (newPos >= window.innerWidth * 1) {
+    //       setIsScrollEnabled(true);
+    //       sectionRef.current?.removeEventListener("wheel", updateBallPosition);
+    //     }
+
+    //     return newPos;
+    //   });
+
+    //   gsap.to(ball, {
+    //     x: scrollPosition,
+    //     rotation: scrollPosition * 4,
+    //     ease: "power2.out",
+    //     duration: 0.3,
+    //   });
+
+    //   const ballRect = ball.getBoundingClientRect();
+    //   boxes.forEach((box, index) => {
+    //     if (!box) return;
+        
+    //     const boxRect = box.getBoundingClientRect();
+    //     const isBallOverBox =
+    //       ballRect.left >= boxRect.left && ballRect.right <= boxRect.right;
+
+    //     if (isBallOverBox && !revealedTexts[index]) {
+    //       setRevealedTexts(prev => {
+    //         const newRevealedTexts = [...prev];
+    //         newRevealedTexts[index] = true;
+    //         return newRevealedTexts;
+    //       });
+    //     }
+    //   });
+    // };
 
     sectionRef.current?.addEventListener("wheel", updateBallPosition, {
       passive: false,

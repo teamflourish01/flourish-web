@@ -48,7 +48,7 @@ const Footer = () => {
 
   useEffect(()=>{
     getLogo();
-  })
+  },[])
   const getService = async () => {
     try {
       console.log(url);

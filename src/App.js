@@ -23,25 +23,112 @@ import Nav from "./Components/Nav/Nav";
 import TabNav from "./Components/TabNav/TabNav";
 import MobNav from "./Components/MobNav/MobNav";
 
+// function App() {
+//   const [loading, setLoading] = useState(true);
+//   let url=process.env.REACT_APP_DEV_URL
+
+//   // useEffect(() => {
+//   //   const timer = setTimeout(() => {
+//   //     setLoading(false);
+//   //   }, 7500); // Set the desired loading duration
+//   //   return () => clearTimeout(timer);
+//   // }, []);
+
+//   const [homeData, setHomeData] = useState(null);
+  
+//   const fetchHomeData = async () => {
+//     try {
+//       setLoading(true);
+//       const response = await fetch(`${process.env.REACT_APP_DEV_URL}/home`);
+//       const data = await response.json();
+//       setHomeData(data);
+//     } catch (error) {
+//       console.error("Error fetching home data:", error);
+//     } finally {
+//       setLoading(false); // Hide loader when data is fetched
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchHomeData();
+//   }, []);
+
+
+//   useEffect(() => {
+//     if (window.innerWidth <= 1024) {
+//       setLoading(false); // Immediately hide PreLoader on smaller screens
+//       return;
+//     }
+
+//     const timer = setTimeout(() => {
+//       setLoading(false);
+//     }, 7500); // Set timeout only for larger screens
+
+//     return () => clearTimeout(timer);
+//   }, []);
+  
+
+//   return (
+//     <>
+//       {loading ? (
+//         <PreLoader />
+//       ) : (
+//         <div className="app-container">
+//           <Nav />
+//           <Routes>
+//             <Route path="/" element={<Home />}></Route>
+//             <Route path="/about" element={<About />}></Route>
+//             <Route path="/portfolio" element={<Portfolio />}></Route>
+//             <Route path="/work" element={<Work />}></Route>
+//             <Route path="/contact" element={<ContactUs />}></Route>
+//             <Route path="/service/:slug" element={<BrandingMainP />}></Route>
+//             <Route path="/subservice/:slug" element={<BrandingSubP />}></Route>
+//             <Route path="/blogs" element={<Blogs />}></Route>
+//             <Route
+//               path="/Singleblogpage/:slug"
+//               element={<Singleblogpage />}
+//             ></Route>
+//           </Routes>
+//           {/* </div> */}
+//           <Footer />
+//           <a
+//             href="https://wa.me/9499619901?text=Hello%20Flourish%20Creations%2C%20I%20want%20to%20know%20more%20about%20your%20services%20and%20want%20to%20know%20how%20your%20services%20can%20be%20beneficial%20for%20me."
+//             class="whatsapp-float"
+//             target="_blank"
+//           >
+//             <img src={wp} alt="WhatsApp" />
+//           </a>
+//         </div>
+//       )}
+//     </>
+//   );
+// }
+
+// export default App;
+
+
 function App() {
   const [loading, setLoading] = useState(true);
+  const [homeData, setHomeData] = useState(null);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 7500); // Set the desired loading duration
-  //   return () => clearTimeout(timer);
-  // }, []);
+  const fetchHomeData = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_DEV_URL}/home`);
+      const data = await response.json();
+      setHomeData(data);
+    } catch (error) {
+      console.error("Error fetching home data:", error);
+    }
+  };
 
   useEffect(() => {
-    if (window.innerWidth <= 1024) {
-      setLoading(false); // Immediately hide PreLoader on smaller screens
-      return;
-    }
+    // Start data fetching
+    fetchHomeData();
 
+    // Ensure PreLoader shows for 7 seconds before hiding
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 7500); // Set timeout only for larger screens
+    }, 7500); // 7 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -62,17 +149,14 @@ function App() {
             <Route path="/service/:slug" element={<BrandingMainP />}></Route>
             <Route path="/subservice/:slug" element={<BrandingSubP />}></Route>
             <Route path="/blogs" element={<Blogs />}></Route>
-            <Route
-              path="/Singleblogpage/:slug"
-              element={<Singleblogpage />}
-            ></Route>
+            <Route path="/Singleblogpage/:slug" element={<Singleblogpage />} />
           </Routes>
-          {/* </div> */}
           <Footer />
           <a
             href="https://wa.me/9499619901?text=Hello%20Flourish%20Creations%2C%20I%20want%20to%20know%20more%20about%20your%20services%20and%20want%20to%20know%20how%20your%20services%20can%20be%20beneficial%20for%20me."
-            class="whatsapp-float"
+            className="whatsapp-float"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={wp} alt="WhatsApp" />
           </a>
@@ -83,3 +167,4 @@ function App() {
 }
 
 export default App;
+

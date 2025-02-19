@@ -87,7 +87,7 @@ const YourChallanges = ({homeDetails}) => {
           <p className="v-s-desc">
             {homeDetails.third_text}
           </p>
-          <YellowBtn btnName="View Services" />
+          {/* <YellowBtn btnName="View Services" /> */}
         </div>
         <hr className="hr-animation-chalange " />
         <div className="right-side-your-challange">

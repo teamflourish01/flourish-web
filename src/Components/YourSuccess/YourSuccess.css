@@ -189,6 +189,17 @@
   padding: 25px 0 0;
   color: #06060680;
 }
+.box-success {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  transition: transform 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.box-success.move-up {
+  transform: translateY(-10px); /* Move the text up */
+}
+
 @media (max-width: 1024px) {
   .hide-s {
     display: block;

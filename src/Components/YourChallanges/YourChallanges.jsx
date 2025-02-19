@@ -2,48 +2,40 @@ import React, { useState, useEffect, useRef } from "react";
 import "../YourChallanges/YourChallanges.css";
 import YellowBtn from "../YellowBtn/YellowBtn";
 import arrowr from '../../assets/arrowr.svg'
-const boxes = [
-  {
-    no: "01",
-    title: "Branding",
-    description:
-      "Build a powerful, memorable brand identity that stands out and drives trust.",
-  },
-  {
-    no: "02",
-    title: "Visual Experience",
-    description:
-      "Create stunning, strategic visuals that enhance engagement and brand presence.",
-  },
-  {
-    no: "03",
-    title: "Content Creation",
-    description:
-      "Craft compelling content that connects, informs, and converts your audience.",
-  },
-  {
-    no: "04",
-    title: "Digital Marketing",
-    description:
-      "Drive traffic, leads, and sales with data-driven marketing strategies.",
-  },
-  {
-    no: "05",
-    title: "Web/App Development",
-    description:
-      "Develop user-friendly, high-performing websites and apps for business growth.",
-  },
-  {
-    no: "06",
-    title: "Visual Experience",
-    description:
-      "Create stunning, strategic visuals that enhance engagement and brand presence.",
-  },
-];
+
 
 const YourChallanges = ({homeDetails}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [boxes, setBoxes] = useState([]);
+    let url = process.env.REACT_APP_DEV_URL;
+  
+    const getData = async () => {
+      try {
+        console.log(url);
+  
+        setLoading(true);
+        const response = await fetch(`${url}/service`);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const res = await response.json();
+        console.log(res, "dattta");
+  
+        //   setData(res.data[0]);
+        // Store fetched data in state
+        // setBoxes(res.data);
+             let arr = res.data?.map((e, i) => ({ ...e, count: i }));
+       console.log(arr, "arr");
+       setBoxes(arr)
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
 
   // Automatically scroll every 5 seconds
   useEffect(() => {
@@ -51,7 +43,7 @@ const YourChallanges = ({homeDetails}) => {
       scrollBoxes(1);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [boxes]);
 
   const scrollBoxes = (direction) => {
     if (isTransitioning) return;
@@ -74,6 +66,10 @@ const YourChallanges = ({homeDetails}) => {
     const third = boxes[(currentIndex + 2) % boxes.length];
     return [first, second, third];
   };
+
+  useEffect(() =>{
+    getData();
+  },[])
 
   const str = homeDetails?.third_title ||"";
   const arr = str.split(" ");
@@ -100,7 +96,7 @@ const YourChallanges = ({homeDetails}) => {
             <button onClick={() => scrollBoxes(1)}>↓</button>
           </div>
           <div className="box-scroll-container">
-            {getVisibleBoxes().map((box, index) => (
+            {getVisibleBoxes()?.map((box, index) => (
               <div
                 key={`${currentIndex}-${index}`}
                 className={`box-of-one ${isTransitioning ? 'transitioning' : ''}`}
@@ -109,8 +105,8 @@ const YourChallanges = ({homeDetails}) => {
               >
                 <div className="box-num-flex">
                   <div>
-                  <p className={`stroke-txt-strategy-01 ${index === 0 ? 'text-white-no' : 'text-gray-400'}`}>{box.no}</p>
-                  <p className={`title-branding-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box.title}</p>
+                  <p className={`stroke-txt-strategy-01 ${index === 0 ? 'text-white-no' : 'text-gray-400'}`}>{`0${+box?.count + 1}`}</p>
+                  <p className={`title-branding-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box?.name}</p>
                   </div>
                   <div className="arrow-box-r">
                     {/* <button>→</button> */}
@@ -119,7 +115,7 @@ const YourChallanges = ({homeDetails}) => {
                   </div>
                 </div>
                 <div className="desc-arr-container-flex">
-                  <p className={`desc-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box.description}</p>
+                  <p className={`desc-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box?.short_note}</p>
                   <div className="arrow-box" style={{backgroundColor:`${index === 0 ? 'white' : 'rgba(255, 255, 255, 0.5)'}`}}>
                   <img src={arrowr} alt="" />
                   </div>
@@ -134,6 +130,25 @@ const YourChallanges = ({homeDetails}) => {
 };
 
 export default YourChallanges;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

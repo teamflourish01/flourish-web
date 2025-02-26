@@ -2,6 +2,26 @@
   width: 100%;
   background-color: #060606;
 }
+
+.hr-width{
+  width: 50%;
+  border-bottom: 1px solid white;
+  margin: 3px 0;
+}
+.margin-b-8-f1 {
+  margin: 6px 0;
+}
+.hr-widths{
+  width: 60%;
+  border-bottom: 1px solid white;
+  margin: 3px 0;
+}
+
+
+
+
+
+
 .footer-container {
   max-width: 1380px;
   min-width: 200px;
@@ -89,7 +109,7 @@
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .margin-b-8-f {
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 .footer-link:hover {

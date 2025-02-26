@@ -255,6 +255,145 @@
 
 
 
+// import React, { useEffect, useRef, useState } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import "../YourSuccess/YourSuccess.css";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const YourSuccess = ({ homeDetails }) => {
+//   const ballRef = useRef(null);
+//   const sectionRef = useRef(null);
+//   const statItemsRef = useRef([]);
+//   const textItemsRef = useRef([]);
+//   const [isAnimating, setIsAnimating] = useState(false);
+//   const [isScrollEnabled, setIsScrollEnabled] = useState(false);
+//   const [revealedTexts, setRevealedTexts] = useState(new Array(6).fill(false));
+
+//   useEffect(() => {
+//     const section = sectionRef.current;
+
+//     ScrollTrigger.create({
+//       trigger: section,
+//       start: "top 30%",
+//       end: "+=0%", // Keep section pinned while animation runs
+//       pin: true, // Keep the section fixed
+//       onEnter: () => startBallAnimation(),
+//       onLeaveBack: () => resetAnimation(),
+//       markers: false,
+//     });
+
+//     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+//   }, []);
+
+//   const startBallAnimation = () => {
+//     if (isAnimating) return;
+//     setIsAnimating(true);
+//     let ball = ballRef.current;
+//     let boxes = statItemsRef.current;
+//     let progress = { x: 0 };
+
+//     gsap.to(progress, {
+//       x: window.innerWidth * 1.1,
+//       duration: 9.9,
+//       ease: "power2.inOut",
+//       onUpdate: () => {
+//         gsap.set(ball, { x: progress.x, rotation: progress.x * 0.1 });
+//         revealText(progress.x, boxes);
+//       },
+//       onComplete: () => {
+//         setIsScrollEnabled(true);
+//         ScrollTrigger.refresh(); // Allow scrolling after animation
+//       },
+//     });
+//   };
+
+//   const revealText = (position, boxes) => {
+//     if (!ballRef.current) return;
+//     let ballRect = ballRef.current.getBoundingClientRect();
+//     boxes.forEach((box, index) => {
+//       if (!box) return;
+//       let boxRect = box.getBoundingClientRect();
+//       let isBallOverBox = ballRect.left >= boxRect.left && ballRect.right <= boxRect.right;
+
+//       if (isBallOverBox && !revealedTexts[index]) {
+//         setRevealedTexts((prev) => {
+//           let newRevealedTexts = [...prev];
+//           newRevealedTexts[index] = true;
+//           return newRevealedTexts;
+//         });
+//         if (textItemsRef.current[index]) {
+//           gsap.to(textItemsRef.current[index], { opacity: 1, y: -15, ease: "power2.out" });
+//         }
+//         // 
+//         let boxText = box.querySelector(".box-success p");
+//         if (boxText) {
+//           gsap.to(boxText, { y: -30, duration: 0.5, ease: "power2.out" });
+//         }
+//       }
+//     });
+//   };
+
+//   const resetAnimation = () => {
+//     setIsAnimating(false);
+//     setIsScrollEnabled(false);
+//     setRevealedTexts(new Array(6).fill(false));
+//     gsap.set(ballRef.current, { x: -80, rotation: 0 });
+//     textItemsRef.current.forEach((text) => gsap.set(text, { opacity: 0, y: 0 }));
+//   };
+
+//   const stats = [
+//     { value: homeDetails?.first_box_title, text: homeDetails?.first_box_text },
+//     { value: homeDetails?.second_box_title, text: homeDetails?.second_box_text },
+//     { value: homeDetails?.third_box_title, text: homeDetails?.third_box_text },
+//     { value: homeDetails?.forth_box_title, text: homeDetails?.forth_box_text },
+//     { value: homeDetails?.fifth_box_title, text: homeDetails?.fifth_box_text },
+//     { value: homeDetails?.sixth_box_title, text: homeDetails?.sixth_box_text },
+//   ];
+
+//   const str = homeDetails?.forth_title || "";
+//   const arr = str.split(" ");
+//   const text = arr;
+
+//   return (
+//     <div className="your-success" ref={sectionRef} style={{ overflow: isScrollEnabled ? "visible" : "hidden" }}>
+//       <div className="your-success-container">
+//         <p className="your-f-our-c">
+//           <span className="stroke-txt">{text[0]}</span> {text[1]}
+//           <span className="stroke-txt"> {text[2]} </span>
+//           {text[3]}
+//         </p>
+//         <p className="desc-y-o-success">{homeDetails.forth_text}</p>
+//       </div>
+//       <div ref={ballRef} className="ball"></div>
+//       <div className="shadow-box"></div>
+//       <div className="stats-container">
+//         {stats.map((stat, index) => (
+//           <div key={index} className="stat-group">
+//             <div className="stat-item" ref={(el) => (statItemsRef.current[index] = el)}>
+//               <div className="line"></div>
+//               <div className="box-success">
+//                 <p>{stat.value}</p>
+//               </div>
+//             </div>
+//             <div ref={(el) => (textItemsRef.current[index] = el)}
+//               className="text-5x-300"
+//               style={{ opacity: revealedTexts[index] ? 1 : 0 }}>
+//               {stat.text}
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default YourSuccess;
+
+
+
+
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -277,7 +416,7 @@ const YourSuccess = ({ homeDetails }) => {
     ScrollTrigger.create({
       trigger: section,
       start: "top 30%",
-      end: "+=0%", // Keep section pinned while animation runs
+      end: "+=1%", // Keep section pinned while animation runs
       pin: true, // Keep the section fixed
       onEnter: () => startBallAnimation(),
       onLeaveBack: () => resetAnimation(),
@@ -310,6 +449,7 @@ const YourSuccess = ({ homeDetails }) => {
   };
 
   const revealText = (position, boxes) => {
+    if (!ballRef.current) return;
     let ballRect = ballRef.current.getBoundingClientRect();
     boxes.forEach((box, index) => {
       if (!box) return;
@@ -322,9 +462,15 @@ const YourSuccess = ({ homeDetails }) => {
           newRevealedTexts[index] = true;
           return newRevealedTexts;
         });
-        gsap.to(textItemsRef.current[index], { opacity: 1, y: -15, ease: "power2.out" });
+
+        if (textItemsRef.current[index]) {
+          gsap.to(textItemsRef.current[index], { opacity: 1, y: -15, ease: "power2.out" });
+        }
+       
         let boxText = box.querySelector(".box-success p");
-        if (boxText) gsap.to(boxText, { y: -30, duration: 0.5, ease: "power2.out" });
+        if (boxText) {
+          gsap.to(boxText, { y: -30, duration: 0.5, ease: "power2.out" });
+        }
       }
     });
   };
@@ -351,7 +497,39 @@ const YourSuccess = ({ homeDetails }) => {
   const text = arr;
 
   return (
-    <div className="your-success" ref={sectionRef} style={{ overflow: isScrollEnabled ? "visible" : "hidden" }}>
+    // <div className="your-success" ref={sectionRef} style={{ overflow: isScrollEnabled ? "visible" : "hidden" }}>
+    //   <div className="your-success-container">
+    //     <p className="your-f-our-c">
+    //       <span className="stroke-txt">{text[0]}</span> {text[1]}
+    //       <span className="stroke-txt"> {text[2]} </span>
+    //       {text[3]}
+    //     </p>
+    //     <p className="desc-y-o-success">{homeDetails.forth_text}</p>
+    //   </div>
+    //   <div ref={ballRef} className="ball"></div>
+    //   <div className="shadow-box"></div>
+    //   <div className="stats-container">
+    //     {stats.map((stat, index) => (
+    //       <div key={index} className="stat-group">
+    //         <div className="stat-item" ref={(el) => (statItemsRef.current[index] = el)}>
+    //           <div className="line"></div>
+    //           <div className="box-success">
+    //             <p>{stat.value}</p>
+    //           </div>
+    //         </div>
+    //         <div ref={(el) => (textItemsRef.current[index] = el)}
+    //           className="text-5x-300"
+    //           style={{ opacity: revealedTexts[index] ? 1 : 0 }}>
+    //           {stat.text}
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div>
+    <>
+
+
+<div className="your-success hidee-sss" ref={sectionRef} style={{ overflow: isScrollEnabled ? "visible" : "hidden" }}>
       <div className="your-success-container">
         <p className="your-f-our-c">
           <span className="stroke-txt">{text[0]}</span> {text[1]}
@@ -380,7 +558,53 @@ const YourSuccess = ({ homeDetails }) => {
         ))}
       </div>
     </div>
+         <div className="your-success hide-s">
+         <div className="your-success-container">
+           <p className="your-f-our-c">
+             <span className="stroke-txt">{text[0]}</span> {text[1]}
+             <span className="stroke-txt"> {text[2]}</span> {text[3]}
+           </p>
+           <p className="your-f-our-c-mobile">
+             <span className="stroke-txt">{text[0]}</span> {text[1]}
+             <br />
+             <span className="stroke-txt">{text[2]}</span> {text[3]}
+           </p>
+           <p
+             className="desc-y-o"
+             data-aos="fade-up"
+             data-aos-delay="200"
+             data-aos-anchor-placement="bottom-bottom"
+           >
+             Your success is the benchmark of our expertise. As a leading
+             branding and marketing agency in Ahmedabad, we craft customized
+             strategies that turn your business goals into measurable
+             achievements.
+           </p>
+           <div
+             className="box-grid-ani"
+             data-aos="fade-up"
+             data-aos-delay="400"
+             data-aos-anchor-placement="bottom-bottom"
+           >
+             {stats.map((stat, index) => (
+               <div className="box-s-y-s">
+                 <p className="box-s-y-s-txt">{stat.value}</p>
+                 <p className="text-5x-300-res">{stat.text}</p>
+               </div>
+             ))}
+           </div>
+         </div>
+       </div>
+    </>
   );
 };
 
 export default YourSuccess;
+
+
+
+
+
+
+
+

@@ -349,16 +349,22 @@ const Footer = () => {
                     <p className="con-info-text">{footerContent?.mobile}</p>
                   </li>
                 </a>
+               
+                
                 <a
                   href={`mailto:${footerContent?.mail}`}
                   target="_blank"
                   className="text-deco"
                 >
-                  <li className="margin-b-8-f flex-con-info-f">
+                  <li className="margin-b-8-f1 flex-con-info-f">
                     <img src={mail} alt="" />
                     <p className="con-info-text">{footerContent?.mail}</p>
                   </li>
                 </a>
+              
+
+
+                
                 <a
                   href={footerContent?.address_url}
                   target="_blank"

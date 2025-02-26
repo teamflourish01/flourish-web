@@ -23,6 +23,10 @@
 .logo-c {
   display: flex;
 }
+.logo-c img{
+  width: 145px;
+  height: 44.78px;
+}
 .h-icon-c {
   cursor: pointer;
 }

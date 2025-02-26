@@ -108,7 +108,7 @@ import MobNav from "./Components/MobNav/MobNav";
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [homeData, setHomeData] = useState(null);
 
   const fetchHomeData = async () => {
@@ -121,17 +121,21 @@ function App() {
     }
   };
 
+  const [loading, setLoading] = useState(
+    !sessionStorage.getItem("preloaderShown")
+  );
+
   useEffect(() => {
-    // Start data fetching
-    fetchHomeData();
+    if (loading) {
+      // Ensure PreLoader shows for 7.5 seconds
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem("preloaderShown", "true");
+      }, 7500);
 
-    // Ensure PreLoader shows for 7 seconds before hiding
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 7500); // 7 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   return (
     <>

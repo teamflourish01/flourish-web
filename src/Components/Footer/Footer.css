@@ -61,7 +61,10 @@
   color: #5aba47;
   outline-color: #5aba47;
 }
-
+.footer-column-3{
+  width: 100%;
+  max-width: 230px;
+}
 .title-head-f {
   font-family: Jost-SemiBold;
   font-size: 25px;

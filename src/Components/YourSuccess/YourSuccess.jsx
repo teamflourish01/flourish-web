@@ -276,8 +276,8 @@ const YourSuccess = ({ homeDetails }) => {
 
     ScrollTrigger.create({
       trigger: section,
-      start: "top top",
-      end: "+=500%", // Keep section pinned while animation runs
+      start: "top 30%",
+      end: "+=0%", // Keep section pinned while animation runs
       pin: true, // Keep the section fixed
       onEnter: () => startBallAnimation(),
       onLeaveBack: () => resetAnimation(),

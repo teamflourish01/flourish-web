@@ -8,9 +8,9 @@ const SecLast = ({SubServiceDetails, url}) => {
     <>
       <div className="sec-last">
         <div className="sec-last-container">
-          <p className="lets-dev-title">Why Brand Positioning Matters</p>
+          <p className="lets-dev-title">{SubServiceDetails.second_last_heading}</p>
           <p className="sec-last-desc">
-            With strategic branding, your business can
+            {SubServiceDetails.second_last_text}
           </p>
           <div className="flex-brand-posi">
             <img src={`${url}/subservice/${SubServiceDetails.second_last_img}`} alt="" className="b-p-img" />

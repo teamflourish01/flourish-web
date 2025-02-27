@@ -53,6 +53,9 @@ const Nav = () => {
   const serviceOpen = () => {
     setMenuOpen(true);
   };
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -78,7 +81,10 @@ const Nav = () => {
                     className={({ isActive }) =>
                       isActive ? "nav-link active-nav-link" : "nav-link"
                     }
-                    onClick={toggleMenu}
+                    onClick={()=>{
+                      toggleMenu();
+                      handleClick();
+                    }}
                   >
                     Home
                   </NavLink>
@@ -89,7 +95,10 @@ const Nav = () => {
                     className={({ isActive }) =>
                       isActive ? "nav-link active-nav-link" : "nav-link"
                     }
-                    onClick={toggleMenu}
+                    onClick={()=>{
+                      toggleMenu();
+                      handleClick();
+                    }}
                   >
                     About Us
                   </NavLink>
@@ -100,6 +109,7 @@ const Nav = () => {
                   onClick={() => {
                     setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown state
                     serviceOpen();
+                    handleClick();
                   }}
                 >
                   <NavLink
@@ -125,7 +135,10 @@ const Nav = () => {
                     className={({ isActive }) =>
                       isActive ? "nav-link active-nav-link" : "nav-link"
                     }
-                    onClick={toggleMenu}
+                    onClick={()=>{
+                      toggleMenu();
+                      handleClick();
+                    }}
                   >
                     Portfolio
                   </NavLink>
@@ -136,7 +149,10 @@ const Nav = () => {
                     className={({ isActive }) =>
                       isActive ? "nav-link active-nav-link" : "nav-link"
                     }
-                    onClick={toggleMenu}
+                    onClick={()=>{
+                      toggleMenu();
+                      handleClick();
+                    }}
                   >
                     Work
                   </NavLink>
@@ -147,7 +163,10 @@ const Nav = () => {
                     className={({ isActive }) =>
                       isActive ? "nav-link active-nav-link" : "nav-link"
                     }
-                    onClick={toggleMenu}
+                    onClick={()=>{
+                      toggleMenu();
+                      handleClick();
+                    }}
                   >
                     Blogs
                   </NavLink>
@@ -169,7 +188,10 @@ const Nav = () => {
                     className={({ isActive }) =>
                       isActive ? "nav-link active-nav-link" : "nav-link"
                     }
-                    onClick={toggleMenu}
+                    onClick={()=>{
+                      toggleMenu();
+                      handleClick();
+                    }}
                   >
                     Contact Us
                   </NavLink>

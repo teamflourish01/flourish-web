@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Blogs/Blogs.css";
 import cameraimg from "../../../src/assets/cameraimg.svg";
 import arw from "../../assets/arw.svg";
+import { Link } from "react-router-dom";
 
 const Blogs = () => {
   const [blogCategory, setBlogCategory] = useState([]);
@@ -36,7 +37,9 @@ const Blogs = () => {
       ? blogCategory.flatMap((category) => category.blogs || [])
       : blogCategory.find((category) => category.name === selectedCategory)
           ?.blogs || [];
-
+const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <div className="blogsbanner">
@@ -46,7 +49,7 @@ const Blogs = () => {
         <div style={{ border: "1px solid #00000080" }}>
           <div className="blogmain-width1320">
             <div className="blog-top-breadcrums">
-              <p>Homepage / Blogs</p>
+              <p> <span><Link to="/" style={{textDecoration:"none",color: "#00000080"}}>Homepage </Link></span> / Blogs</p>
             </div>
           </div>
         </div>
@@ -103,7 +106,7 @@ const Blogs = () => {
                 </div>
                 <div className="content">
                   <div className="author-container">
-                    <p className="author">By Flourish Creation</p>
+                    <p className="author">By Flourish Creations</p>
                   </div>
                   <h3 className="blg-title">{blogItem?.name}</h3>
                   <div className="hr-under-image blg-hr-clr">
@@ -111,13 +114,14 @@ const Blogs = () => {
                   </div>
                   <div className="blg-card-foot">
                     <span className="blg-date">{blogItem?.date}</span>
-                    <a
-                      href={`/Singleblogpage/${blogItem?.slug}`}
+                    <Link
+                      to={`/Singleblogpage/${blogItem?.slug}`}
                       className="blg-read-more"
+                      onClick={handleClick}
                     >
                       Read More
                       <img src={arw} className="blg-arrow" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

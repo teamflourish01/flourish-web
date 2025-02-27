@@ -1,41 +1,41 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../YourChallanges/YourChallanges.css";
 import YellowBtn from "../YellowBtn/YellowBtn";
-import arrowr from '../../assets/arrowr.svg'
+import arrowr from "../../assets/arrowr.svg";
+import { Link } from "react-router-dom";
 
-
-const YourChallanges = ({homeDetails}) => {
+const YourChallanges = ({ homeDetails }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [boxes, setBoxes] = useState([]);
-    let url = process.env.REACT_APP_DEV_URL;
-  
-    const getData = async () => {
-      try {
-        console.log(url);
-  
-        setLoading(true);
-        const response = await fetch(`${url}/service`);
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
-        }
-        const res = await response.json();
-        console.log(res, "dattta");
-  
-        //   setData(res.data[0]);
-        // Store fetched data in state
-        // setBoxes(res.data);
-             let arr = res.data?.map((e, i) => ({ ...e, count: i }));
-       console.log(arr, "arr");
-       setBoxes(arr)
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [boxes, setBoxes] = useState([]);
+  let url = process.env.REACT_APP_DEV_URL;
+
+  const getData = async () => {
+    try {
+      console.log(url);
+
+      setLoading(true);
+      const response = await fetch(`${url}/service`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
       }
-    };
+      const res = await response.json();
+      console.log(res, "dattta");
+
+      //   setData(res.data[0]);
+      // Store fetched data in state
+      // setBoxes(res.data);
+      let arr = res.data?.map((e, i) => ({ ...e, count: i }));
+      console.log(arr, "arr");
+      setBoxes(arr);
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   // Automatically scroll every 5 seconds
   useEffect(() => {
@@ -67,11 +67,11 @@ const YourChallanges = ({homeDetails}) => {
     return [first, second, third];
   };
 
-  useEffect(() =>{
+  useEffect(() => {
     getData();
-  },[])
+  }, []);
 
-  const str = homeDetails?.third_title ||"";
+  const str = homeDetails?.third_title || "";
   const arr = str.split(" ");
   const text = arr;
 
@@ -80,13 +80,13 @@ const YourChallanges = ({homeDetails}) => {
       <div className="your-challenge-container">
         <div className="left-side-your-challange">
           <p className="your-our-strategy">
-            <span className="stroke-txt-strategy">{text[0]} {" "}</span>{text[1]}
+            <span className="stroke-txt-strategy">{text[0]} </span>
+            {text[1]}
             <br />
-            <span className="stroke-txt-strategy"> {text[2]} </span>{text[3]}
+            <span className="stroke-txt-strategy"> {text[2]} </span>
+            {text[3]}
           </p>
-          <p className="v-s-desc">
-            {homeDetails.third_text}
-          </p>
+          <p className="v-s-desc">{homeDetails.third_text}</p>
           {/* <YellowBtn btnName="View Services" /> */}
         </div>
         <hr className="hr-animation-chalange " />
@@ -99,26 +99,57 @@ const YourChallanges = ({homeDetails}) => {
             {getVisibleBoxes()?.map((box, index) => (
               <div
                 key={`${currentIndex}-${index}`}
-                className={`box-of-one ${isTransitioning ? 'transitioning' : ''}`}
-                style={{border:`${index === 0 ? '1px solid white' : ' 1px solid rgba(255, 255, 255, 0.5)'}`}}
-
+                className={`box-of-one ${
+                  isTransitioning ? "transitioning" : ""
+                }`}
+                style={{
+                  border: `${
+                    index === 0
+                      ? "1px solid white"
+                      : " 1px solid rgba(255, 255, 255, 0.5)"
+                  }`,
+                }}
               >
                 <div className="box-num-flex">
                   <div>
-                  <p className={`stroke-txt-strategy-01 ${index === 0 ? 'text-white-no' : 'text-gray-400'}`}>{`0${+box?.count + 1}`}</p>
-                  <p className={`title-branding-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box?.name}</p>
+                    <p
+                      className={`stroke-txt-strategy-01 ${
+                        index === 0 ? "text-white-no" : "text-gray-400"
+                      }`}
+                    >{`0${+box?.count + 1}`}</p>
+                    <p
+                      className={`title-branding-box ${
+                        index === 0 ? "text-white" : "text-gray-400-p"
+                      }`}
+                    >
+                      {box?.name}
+                    </p>
                   </div>
                   <div className="arrow-box-r">
                     {/* <button>→</button> */}
                     <img src={arrowr} alt="" />
-
                   </div>
                 </div>
                 <div className="desc-arr-container-flex">
-                  <p className={`desc-box ${index === 0 ? 'text-white' : 'text-gray-400-p'}`}>{box?.short_note}</p>
-                  <div className="arrow-box" style={{backgroundColor:`${index === 0 ? 'white' : 'rgba(255, 255, 255, 0.5)'}`}}>
-                  <img src={arrowr} alt="" />
-                  </div>
+                  <p
+                    className={`desc-box ${
+                      index === 0 ? "text-white" : "text-gray-400-p"
+                    }`}
+                  >
+                    {box?.short_note}
+                  </p>
+                  <Link to={`/service/${box?.slug}`}>
+                    <div
+                      className="arrow-box"
+                      style={{
+                        backgroundColor: `${
+                          index === 0 ? "white" : "rgba(255, 255, 255, 0.5)"
+                        }`,
+                      }}
+                    >
+                      <img src={arrowr} alt="" />
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -130,28 +161,6 @@ const YourChallanges = ({homeDetails}) => {
 };
 
 export default YourChallanges;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect, useRef } from "react";
 // import "../YourChallanges/YourChallanges.css";

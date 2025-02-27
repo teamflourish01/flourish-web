@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Singleblogpage/Singleblogpage.css";
 import cameraimg from "../../../assets/cameraimg.svg";
 import right from '../../../assets/right.svg';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 
@@ -47,7 +47,7 @@ const Singleblogpage = () => {
         <div style={{ border: "1px solid #00000080" }}>
           <div className="blogmain-width1320">
             <div className="blog-top-breadcrums">
-              <p>{`Homepage / ${blog?.name}`}</p>
+              <p> <span><Link to="/" style={{textDecoration:"none",color: "#00000080"}}> Homepage</Link></span> / <span> <Link to="/blogs" style={{textDecoration:"none",color: "#00000080"}}> Blogs </Link></span> / {`${blog?.name}`}</p>
             </div>
           </div>
         </div>
